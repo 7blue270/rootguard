@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.utils import get_topological_order
 from utils.med_domain.all_templates import template_edges
 
-RECON_DIR = "results_rq3_adversarial_v3"
+RECON_DIR = "results_rq2_reconstruction"
 ALLOC_DIR = "allocations_v2"
 # Benchmark data lives at the repo root (../data/), one level up from this RQ folder.
 # Fall back to ./data/ for legacy callers that supply a local copy.
@@ -33,21 +33,21 @@ TEMPLATES = ["ANEMIA", "FIB4", "AIP", "CONICITY", "VASCULAR", "TYG", "HOMA", "NL
 NUM_SAMPLES = 200
 
 MECHANISMS = [
-    ("Exponential",      "Exp",   "vanilla",          "vanilla_roots",           "popabs"),
-    ("Bounded Laplace",  "BLap",  "blap_all",         "blap_roots_uniform",      "blap_roots_opt"),
-    ("Staircase",        "Stair", "staircase_all",    "staircase_roots_uniform", "staircase_roots_opt"),
+    ("Exponential",      "Exp",   "exp_all",          "exp_roots",           "exp_opt"),
+    ("Bounded Laplace",  "BLap",  "blap_all",         "blap_roots",      "blap_opt"),
+    ("Staircase",        "Stair", "stair_all",    "stair_roots", "stair_opt"),
 ]
 
 METHOD_LABELS = {
-    "vanilla":                 "M-All",
-    "vanilla_roots":           "M-Roots",
-    "popabs":                  "M-Opt",
+    "exp_all":                 "M-All",
+    "exp_roots":           "M-Roots",
+    "exp_opt":                  "M-Opt",
     "blap_all":                "M-All",
-    "blap_roots_uniform":      "M-Roots",
-    "blap_roots_opt":          "M-Opt",
-    "staircase_all":           "M-All",
-    "staircase_roots_uniform": "M-Roots",
-    "staircase_roots_opt":     "M-Opt",
+    "blap_roots":      "M-Roots",
+    "blap_opt":          "M-Opt",
+    "stair_all":           "M-All",
+    "stair_roots": "M-Roots",
+    "stair_opt":     "M-Opt",
 }
 
 TEMPLATE_ROOTS = {

@@ -21,7 +21,7 @@ Run from rq2_reconstruction/:
 
     python analysis/gen_paper_tables.py
 
-Requires ``results_rq3_adversarial_v3/`` and ``allocations_v2/`` to be present
+Requires ``results_rq2_reconstruction/`` and ``allocations_v2/`` to be present
 or symlinked at the cwd.
 """
 import os
@@ -40,9 +40,9 @@ EPS_PAPER = [0.01, 0.05, 0.1, 0.5, 1.0]
 
 # Method names in the result-JSON namespace, per mechanism family
 METHODS_BY_MECH = {
-    "exponential":  ("vanilla",       "vanilla_roots",        "popabs"),
-    "boundedlaplace": ("blap_all",      "blap_roots_uniform",   "blap_roots_opt"),
-    "staircase":    ("staircase_all", "staircase_roots_uniform", "staircase_roots_opt"),
+    "exponential":  ("exp_all",       "exp_roots",        "exp_opt"),
+    "boundedlaplace": ("blap_all",      "blap_roots",   "blap_opt"),
+    "staircase":    ("stair_all", "stair_roots", "stair_opt"),
 }
 
 

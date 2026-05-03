@@ -29,9 +29,9 @@ OUT_DIR = os.path.join(
 )
 EPS = 0.1
 PRIORS_TO_PLOT = ["uniform", "informed"]
-METHODS_TO_PLOT = ["vanilla", "vanilla_roots", "popabs"]
-COLORS = {"vanilla": "#d62728", "vanilla_roots": "#2ca02c", "popabs": "#1f77b4"}
-MARKERS = {"vanilla": "o", "vanilla_roots": "s", "popabs": "^"}
+METHODS_TO_PLOT = ["exp_all", "exp_roots", "exp_opt"]
+COLORS = {"exp_all": "#d62728", "exp_roots": "#2ca02c", "exp_opt": "#1f77b4"}
+MARKERS = {"exp_all": "o", "exp_roots": "s", "exp_opt": "^"}
 STRATEGIES = ["A", "B"]
 STRAT_TITLES = {"A": "Strategy A (single-root, r*)",
                 "B": "Strategy B (all roots)"}

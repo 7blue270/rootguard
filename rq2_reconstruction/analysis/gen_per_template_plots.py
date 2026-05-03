@@ -33,9 +33,9 @@ OUT_DIR = os.path.join(
 EPS_FIXED = 0.1
 PRIORS = ["uniform", "informed"]
 MECH_FAMILIES = {
-    "exp":   ("Exponential",     "vanilla",       "vanilla_roots",           "popabs"),
-    "blap":  ("Bounded Laplace", "blap_all",      "blap_roots_uniform",      "blap_roots_opt"),
-    "stair": ("Staircase",       "staircase_all", "staircase_roots_uniform", "staircase_roots_opt"),
+    "exp":   ("Exponential",     "exp_all",       "exp_roots",           "exp_opt"),
+    "blap":  ("Bounded Laplace", "blap_all",      "blap_roots",      "blap_opt"),
+    "stair": ("Staircase",       "stair_all", "stair_roots", "stair_opt"),
 }
 
 COLORS = {"M-All": "#d62728", "M-Roots": "#2ca02c", "M-Opt": "#1f77b4"}

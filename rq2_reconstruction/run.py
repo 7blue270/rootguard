@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-RQ3 Adversarial Queries v3: Reconstruction under repeated queries (root-only).
+RQ2: Reconstruction under repeated adversarial queries (root-only).
 
 Difference from v2: there is no separate "target release" feeding into the MAP
 likelihood. Instead, the adversary's last turn directly requests root values,
@@ -20,11 +20,11 @@ MAP collapses to per-root 1-D argmax in every (strategy, prior, variant)
 cell — there is no derived-node coupling without a target release.
 
 Usage:
-  python run_rq3_adversarial_v3.py                    # full run
-  python run_rq3_adversarial_v3.py --method vanilla   # single method
-  python run_rq3_adversarial_v3.py --strategy A       # single strategy
-  python run_rq3_adversarial_v3.py --template ANEMIA  # single template
-  python run_rq3_adversarial_v3.py --verify           # quick sanity checks
+  python run.py                    # full run
+  python run.py --method exp_all   # single method
+  python run.py --strategy A       # single strategy
+  python run.py --template ANEMIA  # single template
+  python run.py --verify           # quick sanity checks
 """
 # _REPO_ROOT_BOOTSTRAP: ensure repo root is on sys.path so that
 # 'from utils.*' / 'from preempt.*' imports resolve when this script
@@ -59,9 +59,9 @@ from baselines.staircase_baseline import staircase_noise
 
 # ── CLI ──────────────────────────────────────────────────────────────────
 
-parser = argparse.ArgumentParser(description="RQ3 adversarial queries v2 experiment")
+parser = argparse.ArgumentParser(description="RQ2 reconstruction-attack sweep")
 parser.add_argument("--method", type=str, default=None,
-                    help="Run only this method (e.g. vanilla, vanilla_roots, popabs)")
+                    help="Run only this method (e.g. exp_all, exp_roots, exp_opt)")
 parser.add_argument("--strategy", type=str, default=None, choices=["A", "B"],
                     help="Run only this strategy")
 parser.add_argument("--template", type=str, default=None,
@@ -90,7 +90,7 @@ NUM_CANDIDATES = 1000
 NUM_WORKERS = cli_args.workers
 
 ALLOCATIONS_BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "allocations_v2")
-OUTPUT_BASE = "./results_rq3_adversarial_v3"
+OUTPUT_BASE = "./results_rq2_reconstruction"
 HOLDOUT_STATS_PATH = "../data/holdout_population_means.json"
 BENCHMARK_PATH = "../data/nhanes_benchmark_200.json"
 
@@ -98,17 +98,17 @@ STAIRCASE_MAX_ROOT_EPS = 0.962  # per-root cap for staircase PMF validity
 
 METHODS = {
     # M-All
-    "vanilla":                 ("exponential",      "all"),
+    "exp_all":                 ("exponential",      "all"),
     "blap_all":                ("bounded_laplace",  "all"),
-    "staircase_all":           ("staircase",        "all"),
+    "stair_all":           ("staircase",        "all"),
     # M-Roots (single cached draw per root at uniform eps_r)
-    "vanilla_roots":           ("exponential",      "roots_uniform"),
-    "blap_roots_uniform":      ("bounded_laplace",  "roots_uniform"),
-    "staircase_roots_uniform": ("staircase",        "roots_uniform"),
+    "exp_roots":           ("exponential",      "roots_uniform"),
+    "blap_roots":      ("bounded_laplace",  "roots_uniform"),
+    "stair_roots": ("staircase",        "roots_uniform"),
     # M-Opt (single cached draw per root at sensitivity-weighted eps_i^Opt)
-    "popabs":                  ("exponential",      "roots_opt"),
-    "blap_roots_opt":          ("bounded_laplace",  "roots_opt"),
-    "staircase_roots_opt":     ("staircase",        "roots_opt"),
+    "exp_opt":                  ("exponential",      "roots_opt"),
+    "blap_opt":          ("bounded_laplace",  "roots_opt"),
+    "stair_opt":     ("staircase",        "roots_opt"),
 }
 
 # Variants that use a cached per-root draw
@@ -116,15 +116,15 @@ CACHED_VARIANTS = ("roots_opt", "roots_uniform")
 
 # Map method to its M-Opt counterpart (for r_star selection)
 METHOD_TO_OPT = {
-    "vanilla":                 "popabs",
-    "blap_all":                "blap_roots_opt",
-    "staircase_all":           "staircase_roots_opt",
-    "vanilla_roots":           "popabs",
-    "blap_roots_uniform":      "blap_roots_opt",
-    "staircase_roots_uniform": "staircase_roots_opt",
-    "popabs":                  "popabs",
-    "blap_roots_opt":          "blap_roots_opt",
-    "staircase_roots_opt":     "staircase_roots_opt",
+    "exp_all":                 "exp_opt",
+    "blap_all":                "blap_opt",
+    "stair_all":           "stair_opt",
+    "exp_roots":           "exp_opt",
+    "blap_roots":      "blap_opt",
+    "stair_roots": "stair_opt",
+    "exp_opt":                  "exp_opt",
+    "blap_opt":          "blap_opt",
+    "stair_opt":     "stair_opt",
 }
 
 # Legacy alias used below
@@ -432,9 +432,9 @@ NOISE_FNS = {
 # ── Allocation loading (v2) ─────────────────────────────────────────────
 
 _OPT_MECH_MAP = {
-    "popabs":              "exponential",
-    "blap_roots_opt":      "bounded_laplace",
-    "staircase_roots_opt": "staircase",
+    "exp_opt":              "exponential",
+    "blap_opt":      "bounded_laplace",
+    "stair_opt": "staircase",
 }
 
 
@@ -769,7 +769,7 @@ def main():
 
             # Pre-load M-Opt allocations for r_star selection
             opt_allocations = {}
-            for opt_method in ["popabs", "blap_roots_opt", "staircase_roots_opt"]:
+            for opt_method in ["exp_opt", "blap_opt", "stair_opt"]:
                 alloc = load_opt_allocation(tmpl_name, opt_method, epsilon)
                 if alloc:
                     opt_allocations[opt_method] = alloc
@@ -1078,10 +1078,10 @@ def verify():
     # 2. M-All draw 0 == M-Roots cached draw (method-agnostic seed)
     print("\n2. M-All draw 0 == M-Roots cached draw (seeded):")
     obs_all = generate_adversarial_obs(
-        gt_roots, tmpl, "vanilla", eps, None, noise_fn,
+        gt_roots, tmpl, "exp_all", eps, None, noise_fn,
         "B", 1, domains, None, 0)
     obs_roots = generate_adversarial_obs(
-        gt_roots, tmpl, "vanilla_roots", eps, alloc_uniform, noise_fn,
+        gt_roots, tmpl, "exp_roots", eps, alloc_uniform, noise_fn,
         "B", 1, domains, None, 0)
     all_ok = True
     for r in roots:
@@ -1098,7 +1098,7 @@ def verify():
     for q_test in [1, 4, 8, 16]:
         # Strategy B: every root has q+1 obs
         obs_b = generate_adversarial_obs(
-            gt_roots, tmpl, "vanilla_roots", eps, alloc_uniform, noise_fn,
+            gt_roots, tmpl, "exp_roots", eps, alloc_uniform, noise_fn,
             "B", q_test, domains, None, 0)
         ok_len = all(len(obs_b[r]) == q_test + 1 for r in roots)
         # Cached: all q+1 copies identical
@@ -1107,7 +1107,7 @@ def verify():
             for r in roots)
         # Strategy A: only r_star has obs, length q+1
         obs_a = generate_adversarial_obs(
-            gt_roots, tmpl, "vanilla", eps, None, noise_fn,
+            gt_roots, tmpl, "exp_all", eps, None, noise_fn,
             "A", q_test, domains, "hb", 0)
         ok_a = (len(obs_a["hb"]) == q_test + 1
                 and all(len(obs_a[r]) == 0 for r in roots if r != "hb"))
@@ -1120,10 +1120,10 @@ def verify():
     map_q = {}
     for q_test in [1, 4, 8, 16]:
         obs_q = generate_adversarial_obs(
-            gt_roots, tmpl, "vanilla_roots", eps, alloc_uniform, noise_fn,
+            gt_roots, tmpl, "exp_roots", eps, alloc_uniform, noise_fn,
             "B", q_test, domains, None, 0)
         est = map_estimate_multi_obs(
-            obs_q, {}, tmpl, "vanilla_roots", eps, alloc_uniform,
+            obs_q, {}, tmpl, "exp_roots", eps, alloc_uniform,
             log_pmf_exponential, "informed", pop_stats,
             mech_family="exponential", strategy="B", r_star=None)
         map_q[q_test] = {r: est[r] for r in roots}
@@ -1136,10 +1136,10 @@ def verify():
     # 5. Uniform + cached + Strategy B: per-root MAP == cached value
     print("\n5. Uniform + cached + B: MAP == cached:")
     obs1 = generate_adversarial_obs(
-        gt_roots, tmpl, "vanilla_roots", eps, alloc_uniform, noise_fn,
+        gt_roots, tmpl, "exp_roots", eps, alloc_uniform, noise_fn,
         "B", 1, domains, None, 0)
     est = map_estimate_multi_obs(
-        obs1, {}, tmpl, "vanilla_roots", eps, alloc_uniform,
+        obs1, {}, tmpl, "exp_roots", eps, alloc_uniform,
         log_pmf_exponential, "uniform", pop_stats,
         mech_family="exponential", strategy="B", r_star=None)
     max_err = max(abs(est[r] - obs1[r][0]) for r in roots)
@@ -1152,10 +1152,10 @@ def verify():
     errors = {}
     for q_test in [1, 4, 8, 16]:
         obs = generate_adversarial_obs(
-            gt_roots, tmpl, "vanilla", eps, None, noise_fn,
+            gt_roots, tmpl, "exp_all", eps, None, noise_fn,
             "A", q_test, domains, r_star_t, 0)
         est = map_estimate_multi_obs(
-            obs, {}, tmpl, "vanilla", eps, None,
+            obs, {}, tmpl, "exp_all", eps, None,
             log_pmf_exponential, "uniform", pop_stats,
             mech_family="exponential", strategy="A", r_star=r_star_t)
         err = abs(est[r_star_t] - gt_roots[r_star_t])

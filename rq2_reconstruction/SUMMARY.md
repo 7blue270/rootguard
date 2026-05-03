@@ -12,7 +12,7 @@ This folder contains the deliverables for the RQ3 **v3** experiment (sweep launc
 | `per_template/` | 80 files: 16 per-template Exponential plots + 12 grid overviews + 12 all-eps log-scale grids (each ×2 priors). |
 | `per_epsilon/` | 44 files: per-epsilon plots, per-mechanism all-ε grids, wMAPE-vs-ε log-log plots (×2 priors). |
 
-Raw results: `../results_rq3_adversarial_v3/epsilon_{ε}/{template}/{method}_{prior}_{strategy}_q{q}_results.json` — 5360 JSON files. Allocations reused unchanged from `../allocations_v2/`.
+Raw results: `../results_rq2_reconstruction/epsilon_{ε}/{template}/{method}_{prior}_{strategy}_q{q}_results.json` — 5360 JSON files. Allocations reused unchanged from `../allocations_v2/`.
 
 ## What changed from v2
 
@@ -37,7 +37,7 @@ Method-agnostic seeding `hash((template, root, sample_idx, draw_idx))` is preser
 
 ## Implementation
 
-`run_rq3_adversarial_v3.py` was a copy of v2 with the following changes:
+`run.py` was a copy of v2 with the following changes:
 1. `generate_target_release` is no longer called from the main loop; target-release plumbing dropped from worker, JSON output, and naive baseline.
 2. `generate_adversarial_obs` now appends a single extra root release (draw_idx = q for M-All; cached value replayed for M-Roots/M-Opt).
 3. `map_estimate_multi_obs` rewritten as **per-root 1-D argmax** with optional Gaussian prior. The whole joint-MAP optimizer block deleted (~150 lines).
@@ -47,7 +47,7 @@ End-to-end runtime: **~10 minutes** for the full 5360-config sweep on a single c
 
 ## Verification
 
-`run_rq3_adversarial_v3.py --verify` passes 6 sanity checks:
+`run.py --verify` passes 6 sanity checks:
 
 1. PMF normalization sums to 1 for all three mechanisms.
 2. M-All draw 0 ≡ M-Roots cached draw (method-agnostic seed).
@@ -67,7 +67,7 @@ End-to-end runtime: **~10 minutes** for the full 5360-config sweep on a single c
 - Templates (8): ANEMIA, FIB4, AIP, CONICITY, VASCULAR, TYG, HOMA, NLR
 - 200 samples per template
 
-Total valid configs: **5360** (5760 planned − 400 staircase skips at ε_r > 0.962). The 400 skips are: 3 staircase methods × 8 templates × 2 strategies × 2 priors × 4 q values = 384 at ε=1.0, plus 16 staircase_roots_opt configs at ε=0.5 / AIP where the max per-root allocation exceeds 0.962.
+Total valid configs: **5360** (5760 planned − 400 staircase skips at ε_r > 0.962). The 400 skips are: 3 staircase methods × 8 templates × 2 strategies × 2 priors × 4 q values = 384 at ε=1.0, plus 16 stair_opt configs at ε=0.5 / AIP where the max per-root allocation exceeds 0.962.
 
 ## v2 vs v3 — high-level comparison
 
@@ -88,7 +88,7 @@ Aggregate over all 5360 configs (per-config wMAPE, threshold 0.5%):
 
 ### Why v3 looks worse than v2 in M-All informed cells (and better in M-All uniform A)
 
-- **M-All uniform Strategy A**: v3 *better* (e.g. mean wMAPE Δ = -6.6% for vanilla). v2 in this cell did 1-D MAP on r* with **only the q adv obs, no target term**. v3 adds the +1 extra release, giving the adversary q+1 obs on r*.
+- **M-All uniform Strategy A**: v3 *better* (e.g. mean wMAPE Δ = -6.6% for exp_all). v2 in this cell did 1-D MAP on r* with **only the q adv obs, no target term**. v3 adds the +1 extra release, giving the adversary q+1 obs on r*.
 - **M-All informed (any strategy)**: v3 *worse* in some templates. v2 ran a joint MAP over all k roots that included a target release on every root + every derived node, all at ε_r each. The adversary effectively got multiple noisy observations of every root via derived-node formulas. v3 correctly excludes this — the adversary now only has q+1 direct observations on each affected root.
 - **M-All Strategy B (any prior)**: v3 slightly worse for the same reason — v2's joint MAP exploited the derived-node target release; v3 does not.
 
@@ -101,10 +101,10 @@ The takeaway: **v2's higher reconstruction success against M-All under informed/
 python precompute_mopt_allocations_v2.py
 
 # 2. Sanity checks
-python run_rq3_adversarial_v3.py --verify
+python run.py --verify
 
 # 3. Full sweep (~10 min single-threaded)
-python run_rq3_adversarial_v3.py 2>&1 | tee logs/rq3_v3_full.log
+python run.py 2>&1 | tee logs/rq3_v3_full.log
 
 # 4. Generate deliverables
 python gen_rq3_v3_main_figure.py
@@ -114,6 +114,3 @@ python gen_rq3_v3_per_template_plots.py
 python gen_rq3_v3_per_epsilon_plots.py
 ```
 
-## Compared with v2
-
-v2 results remain in `../rq3_v2_deliverables/` and `../results_rq3_adversarial_v2/` for reference. The script `compare_v2_v3.py` reports per-cell deltas.
