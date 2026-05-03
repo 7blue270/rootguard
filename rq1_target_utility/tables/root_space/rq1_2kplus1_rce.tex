@@ -1,0 +1,26 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Aggregate Risk Class Error (\%) averaged across 8 templates with bootstrap SE. Budget $B = (2k+1) \cdot \varepsilon$. Best mean per row in \textbf{bold}.}
+\label{tab:rq1_2kplus1_rce}
+\begin{tabular}{cc|ccc|ccc|ccc}
+\toprule
+& & \multicolumn{3}{c|}{\textbf{Exponential}} & \multicolumn{3}{c|}{\textbf{Bounded Laplace}} & \multicolumn{3}{c}{\textbf{Staircase}} \\
+$\varepsilon$ & $\bar{B}$ & All & Roots & Opt & All & Roots & Opt & All & Roots & Opt \\
+\midrule
+5.0 & 31.25 & 0.6\pmstd{0.2} & 0.5\pmstd{0.2} & 0.6\pmstd{0.2} & 0.7\pmstd{0.2} & 0.5\pmstd{0.2} & \textbf{0.3\pmstd{0.1}} & 0.5\pmstd{0.2} & 0.4\pmstd{0.2} & 0.4\pmstd{0.2} \\
+2.0 & 12.50 & 1.7\pmstd{0.3} & 0.9\pmstd{0.2} & 0.9\pmstd{0.2} & 1.1\pmstd{0.2} & 0.5\pmstd{0.2} & 0.4\pmstd{0.2} & 0.8\pmstd{0.2} & 0.5\pmstd{0.2} & \textbf{0.3\pmstd{0.1}} \\
+1.0 & 6.25 & 2.7\pmstd{0.4} & 1.5\pmstd{0.3} & 0.8\pmstd{0.2} & 1.9\pmstd{0.3} & 0.6\pmstd{0.2} & 0.9\pmstd{0.2} & 1.4\pmstd{0.3} & 0.9\pmstd{0.2} & \textbf{0.4\pmstd{0.2}} \\
+0.5 & 3.12 & 4.8\pmstd{0.5} & 2.8\pmstd{0.4} & 1.9\pmstd{0.3} & 2.8\pmstd{0.4} & 1.3\pmstd{0.3} & 1.2\pmstd{0.3} & 2.9\pmstd{0.4} & 1.0\pmstd{0.2} & \textbf{0.9\pmstd{0.2}} \\
+0.2 & 1.25 & 10.2\pmstd{0.7} & 4.6\pmstd{0.5} & 4.5\pmstd{0.5} & 6.2\pmstd{0.6} & 3.0\pmstd{0.4} & \textbf{2.2\pmstd{0.4}} & 6.6\pmstd{0.6} & 2.8\pmstd{0.4} & 2.4\pmstd{0.4} \\
+0.1 & 0.62 & 15.7\pmstd{0.8} & 10.1\pmstd{0.7} & 7.0\pmstd{0.6} & 10.6\pmstd{0.7} & 5.4\pmstd{0.5} & 4.4\pmstd{0.5} & 11.5\pmstd{0.7} & 5.4\pmstd{0.5} & \textbf{3.6\pmstd{0.4}} \\
+0.05 & 0.31 & 23.2\pmstd{1.0} & 14.5\pmstd{0.8} & 11.7\pmstd{0.7} & 18.3\pmstd{0.9} & 9.2\pmstd{0.7} & 7.4\pmstd{0.6} & 19.5\pmstd{1.0} & 8.7\pmstd{0.7} & \textbf{6.4\pmstd{0.6}} \\
+0.02 & 0.12 & 32.0\pmstd{1.1} & 25.4\pmstd{1.0} & 21.8\pmstd{1.0} & 30.2\pmstd{1.1} & 18.0\pmstd{0.9} & 14.8\pmstd{0.8} & 29.4\pmstd{1.1} & 20.4\pmstd{0.9} & \textbf{14.6\pmstd{0.8}} \\
+0.01 & 0.06 & 35.8\pmstd{1.1} & 30.1\pmstd{1.1} & 27.2\pmstd{1.0} & 37.0\pmstd{1.2} & 27.1\pmstd{1.1} & 24.0\pmstd{1.0} & 37.8\pmstd{1.2} & 25.9\pmstd{1.1} & \textbf{23.1\pmstd{1.0}} \\
+0.005 & 0.03 & 38.0\pmstd{1.1} & 34.6\pmstd{1.1} & 35.7\pmstd{1.1} & 42.5\pmstd{1.2} & 34.8\pmstd{1.2} & 33.6\pmstd{1.2} & 42.4\pmstd{1.2} & 35.1\pmstd{1.2} & \textbf{30.7\pmstd{1.1}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

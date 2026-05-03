@@ -1,0 +1,40 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Per-root MAP reconstruction MAE at $\varepsilon=0.1$, $B=3k{+}1$. Bootstrap SEs.}
+\label{tab:agent_per_root_mae}
+\begin{tabular}{l|l|ccc}
+\toprule
+Template & Root & M-All & M-Roots & M-Opt \\
+\midrule
+HOMA & Glu & 4.2\pmstd{1.1} & 2.5\pmstd{1.0} & 3.7\pmstd{1.0} \\
+ & Ins & 2.5\pmstd{0.2} & 1.4\pmstd{0.2} & 1.0\pmstd{0.1} \\
+\midrule
+ANEMIA & Hb & 0.1\pmstd{0.0} & 0.1\pmstd{0.0} & 0.0\pmstd{0.0} \\
+ & Hct & 0.4\pmstd{0.0} & 0.2\pmstd{0.0} & 0.1\pmstd{0.0} \\
+ & RBC & 0.1\pmstd{0.0} & 0.0\pmstd{0.0} & 1.0\pmstd{0.1} \\
+\midrule
+FIB4 & age & 0.8\pmstd{0.1} & 0.3\pmstd{0.0} & 0.6\pmstd{0.1} \\
+ & AST & 2.2\pmstd{0.2} & 1.2\pmstd{0.1} & 0.7\pmstd{0.1} \\
+ & ALT & 2.7\pmstd{0.2} & 1.6\pmstd{0.2} & 1.6\pmstd{0.2} \\
+ & PLT & 5.0\pmstd{0.4} & 2.6\pmstd{0.2} & 3.1\pmstd{0.3} \\
+\midrule
+AIP & hdl & 1.7\pmstd{0.2} & 0.8\pmstd{0.1} & 1.0\pmstd{0.1} \\
+ & tg & 23.2\pmstd{1.7} & 14.2\pmstd{1.4} & 6.7\pmstd{0.7} \\
+\midrule
+CONICITY & wt & 2.0\pmstd{0.2} & 0.9\pmstd{0.1} & 0.7\pmstd{0.1} \\
+ & ht & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} \\
+ & waist & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} \\
+\midrule
+VASCULAR & sbp & 1.6\pmstd{0.1} & 0.7\pmstd{0.1} & 0.8\pmstd{0.1} \\
+ & dbp & 1.7\pmstd{0.2} & 0.8\pmstd{0.1} & 0.7\pmstd{0.1} \\
+\midrule
+TYG & tg & 23.2\pmstd{1.7} & 13.4\pmstd{1.4} & 9.4\pmstd{1.0} \\
+ & glu & 4.8\pmstd{0.4} & 2.2\pmstd{0.3} & 4.0\pmstd{0.5} \\
+\midrule
+NLR & neu & 0.2\pmstd{0.0} & 0.1\pmstd{0.0} & 0.2\pmstd{0.0} \\
+ & lym & 0.5\pmstd{0.0} & 0.4\pmstd{0.0} & 0.3\pmstd{0.0} \\
+\bottomrule
+\end{tabular}
+\end{table*}

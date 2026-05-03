@@ -1,0 +1,23 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table}[h]
+\centering
+\setlength{\tabcolsep}{2pt}
+\caption{Agent-eval Risk Class Error (\%) per template at $\varepsilon = 0.1$ under deployment (RQ4), with bootstrap SE over patients ($n = 100$). Showing the two larger adversarial budgets; the $B = (k{+}1)\varepsilon$ column and the $\mathcal{M}$-Roots configuration are in App.~\ref{app:agent-eval-rce} (Table~\ref{tab:agent_rce_eps0.1_app}). Lower is better.}
+\label{tab:rce_per_template}
+\begin{tabular}{l|cc|cc}
+\toprule
+& \multicolumn{2}{c|}{\textbf{$\mathcal{M}$-All}} & \multicolumn{2}{c}{\textbf{$\mathcal{M}$-Opt}} \\
+Template & $2k{+}1$ & $3k{+}1$ & $2k{+}1$ & $3k{+}1$ \\
+\midrule
+HOMA & 32.0\pmstd{4.7} & 37.0\pmstd{4.9} & 16.0\pmstd{3.7} & \textbf{12.0\pmstd{3.2}} \\
+AIP & 32.0\pmstd{4.5} & 31.0\pmstd{4.7} & \textbf{6.0\pmstd{2.4}} & 6.0\pmstd{2.4} \\
+FIB4 & 18.0\pmstd{3.9} & 22.0\pmstd{4.2} & \textbf{5.0\pmstd{2.2}} & 5.0\pmstd{2.2} \\
+NLR & 19.0\pmstd{4.0} & 27.0\pmstd{4.3} & 11.0\pmstd{3.1} & \textbf{9.0\pmstd{2.9}} \\
+TYG & 34.0\pmstd{4.6} & 25.0\pmstd{4.4} & 9.0\pmstd{2.9} & \textbf{6.0\pmstd{2.4}} \\
+ANEMIA & 12.0\pmstd{3.3} & 15.0\pmstd{3.5} & 2.0\pmstd{1.5} & \textbf{1.0\pmstd{1.0}} \\
+CONICITY & 8.0\pmstd{2.7} & 10.0\pmstd{3.2} & \textbf{2.0\pmstd{1.4}} & 2.0\pmstd{1.4} \\
+VASCULAR & 2.0\pmstd{1.3} & 1.0\pmstd{1.0} & \textbf{0.0\pmstd{0.0}} & 0.0\pmstd{0.0} \\
+\bottomrule
+\end{tabular}
+\end{table}

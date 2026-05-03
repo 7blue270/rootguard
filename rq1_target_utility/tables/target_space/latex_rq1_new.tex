@@ -1,0 +1,146 @@
+\subsection{RQ1: Target Utility Under Adversarial Queries}
+\label{sec:experiments-rq1}
+
+We evaluate the target-node utility of \sysname{} under a worst-case adversarial query model. The adversary controls $t$ turns of interaction, forcing the user agent to release a sanitized value in each turn. In the final turn, the adversary forces release of the target clinical index $T(x)$.
+
+\paragraph{\textbf{Methods.}}
+\begin{itemize}
+    \item $\mathcal{M}$-All: sanitizes the target directly with $\varepsilon$ (a single independent draw from the mechanism). The remaining $t-1$ adversarial queries produce independent draws that do not affect target utility.
+    \item $\mathcal{M}$-Roots: noises the $k$ root nodes once with total budget $B$ distributed uniformly ($B/k$ per root). All subsequent queries---including the target---are computed deterministically from the noised roots.
+    \item $\mathcal{M}$-Opt: same as $\mathcal{M}$-Roots but allocates $B$ across roots proportionally to their influence on the target, using dependency-aware budget allocation (Sec.~\ref{sec:baselines}).
+\end{itemize}
+We evaluate each variant under three mechanisms: Exponential (Exp), Bounded Laplace (BLap), and Staircase (Stair), yielding 9 method configurations.
+
+\paragraph{\textbf{Budget settings.}}
+The total budget consumed by the adversary is $B = t \cdot \varepsilon$. Crucially, $\mathcal{M}$-All uses only $\varepsilon$ for the target release regardless of $B$, while $\mathcal{M}$-Roots and $\mathcal{M}$-Opt can distribute the full $B$ across root nodes. We evaluate three $k$-dependent budget levels representing increasing adversarial strength:
+
+\begin{table}[h]
+\centering
+\small
+\caption{Budget per template under each adversarial setting ($B / \varepsilon$). $k$: number of root nodes.}
+\label{tab:rq1_budget}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Template} & $k$ & $k{+}1$ & $2k{+}1$ & $3k{+}1$ \\
+\midrule
+ANEMIA, AIP, CONICITY & 3 & 4 & 7 & 10 \\
+FIB4 & 4 & 5 & 9 & 13 \\
+VASCULAR, TYG, HOMA, NLR & 2 & 3 & 5 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{\textbf{Data.}} We use the same 8 clinical templates and 200-patient NHANES 2017--2018 test split as in the experimental setup (Sec.~\ref{sec:exp-setup}), across 10 privacy budgets $\varepsilon \in [0.005, 5.0]$.
+
+% ────────────────────────────────────────────────────────────────────────
+\subsubsection{\textbf{When does root-only noising help?}}
+Under $\mathcal{M}$-All, the target node is noised directly in its own domain. The expected perturbation scales with the target's domain width $D_{\mathrm{target}}$. Under $\mathcal{M}$-Roots (or $\mathcal{M}$-Opt), only root nodes are noised; the target is computed deterministically from the noised roots. The perturbation at the target depends on how much each root is noised \emph{and} how strongly the target formula amplifies or compresses that noise---captured by the partial derivatives $|h_i| = |\partial T / \partial x_i|$.
+
+Root-only noising outperforms direct target noising when the formula \emph{compresses} root-level noise (e.g., division by large denominators), or when the target domain is wide relative to typical values. Conversely, $\mathcal{M}$-All wins when the formula \emph{amplifies} root noise into a narrow target domain (e.g., multiplication by large constants), or when root domains are extremely wide relative to their sensitivities.
+
+Two additional structural factors are relevant under this threat model:
+\begin{itemize}
+    \item \textbf{Budget concentration.} Under \sysname{}, the total budget $B = t\varepsilon$ is distributed among $k$ roots, so each root receives $t/k$ times the per-release budget of $\mathcal{M}$-All. A higher $t/k$ ratio (more adversarial turns relative to roots) increases the advantage of root-only noising.
+    \item \textbf{Zero-sensitivity roots.} Some roots do not affect the target (e.g., RBC has zero sensitivity to MCHC; TC has zero sensitivity to AIP). Under $\mathcal{M}$-Roots, these roots consume budget without reducing target error. $\mathcal{M}$-Opt addresses this by clamping such roots at $\varepsilon_{\min}$ and redistributing the freed budget.
+\end{itemize}
+
+% ────────────────────────────────────────────────────────────────────────
+\subsubsection{Aggregate results.}
+Table~\ref{tab:double_asymmetry} reports the aggregate wMAPE for the Exponential mechanism across all three budget levels. The results demonstrate a consistent pattern: $\mathcal{M}$-All $>$ $\mathcal{M}$-Roots $>$ $\mathcal{M}$-Opt (decreasing error), confirming that both root-only noising and dependency-aware allocation provide additive gains. The Bounded Laplace and Staircase mechanisms follow the same trend; full tables for all three mechanisms and budget levels are in App.~\ref{app:rq1-tables}.
+
+At $\varepsilon = 0.1$ and $B = (2k{+}1)\varepsilon$, Exp-Opt achieves 7.6\% aggregate wMAPE compared to 17.1\% for Exp-All---a 2.3$\times$ improvement. The gap widens at lower $\varepsilon$: at $\varepsilon = 0.01$, Exp-Opt achieves 49.0\% vs.\ 166\% for Exp-All.
+
+% ────────────────────────────────────────────────────────────────────────
+\subsubsection{\textbf{Budget scaling: the double asymmetry.}}
+\label{sec:double-asymmetry}
+
+A key property of the adversarial model is that $\mathcal{M}$-All's target utility depends only on $\varepsilon$, not on $B$---the adversary's additional queries are independent draws that do not affect the final target release. In contrast, $\mathcal{M}$-Roots and $\mathcal{M}$-Opt benefit from every unit of additional budget, since more budget means less noise per root.
+
+Table~\ref{tab:double_asymmetry} illustrates this \emph{double asymmetry} across six privacy levels. The $\mathcal{M}$-All columns are nearly identical across budget levels --- the target is always a single release at $\varepsilon$. The $\mathcal{M}$-Opt columns decrease left-to-right as additional budget is concentrated on roots. At $\varepsilon = 0.1$, Exp-Opt improves from 13.1\% ($k{+}1$) to 7.6\% ($2k{+}1$) to 5.7\% ($3k{+}1$), while Exp-All stays at ${\sim}17\%$. At $\varepsilon \geq 1.0$, all methods achieve $\leq 1\%$ wMAPE and differences are negligible (see App.~\ref{app:rq1-tables}).
+
+Table~\ref{tab:rq1_win_rate} quantifies the effect per template: the fraction of (template, $\varepsilon$, mechanism) triples where $\mathcal{M}$-Opt achieves lower wMAPE than $\mathcal{M}$-All increases from 27\% at $B = (k{+}1)\varepsilon$ to 42\% at $(2k{+}1)\varepsilon$ to 65\% at $(3k{+}1)\varepsilon$. FIB4 and HOMA are consistent wins at all budget levels; templates like VASCULAR and CONICITY transition from losses to wins as root budget grows.
+
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Aggregate wMAPE (\%) at mid-to-high privacy levels across three adversary budget levels (Exponential mechanism). $\bar{B}$: average total budget across templates. $\mathcal{M}$-All is invariant to the budget level; $\mathcal{M}$-Opt improves with each additional adversarial turn. Bootstrap standard errors shown beneath each mean. At $\varepsilon \geq 1.0$, all methods achieve $\leq 1\%$ wMAPE and differences are negligible (see App.~\ref{app:rq1-tables}).}
+\label{tab:double_asymmetry}
+\begin{tabular}{c|cccc|cccc|cccc}
+\toprule
+& \multicolumn{4}{c|}{$B = (k{+}1)\varepsilon$} & \multicolumn{4}{c|}{$B = (2k{+}1)\varepsilon$} & \multicolumn{4}{c}{$B = (3k{+}1)\varepsilon$} \\
+$\varepsilon$ & $\bar{B}$ & All & Roots & Opt & $\bar{B}$ & All & Roots & Opt & $\bar{B}$ & All & Roots & Opt \\
+\midrule
+0.5 & 1.81 & 3.6\pmstd{0.2} & 4.0\pmstd{0.2} & 2.8\pmstd{0.1} & 3.12 & 3.7\pmstd{0.3} & 2.4\pmstd{0.1} & 1.8\pmstd{0.1} & 4.44 & 3.7\pmstd{0.2} & 1.9\pmstd{0.1} & \textbf{1.2\pmstd{0.1}} \\
+0.2 & 0.73 & 8.7\pmstd{0.6} & 10.1\pmstd{0.5} & 6.7\pmstd{0.3} & 1.25 & 9.2\pmstd{0.6} & 5.6\pmstd{0.3} & 4.2\pmstd{0.2} & 1.77 & 8.6\pmstd{0.5} & 4.5\pmstd{0.3} & \textbf{3.1\pmstd{0.2}} \\
+0.1 & 0.36 & 16.5\pmstd{1.1} & 15.8\pmstd{0.7} & 13.1\pmstd{0.6} & 0.62 & 17.1\pmstd{1.2} & 10.7\pmstd{0.5} & 7.6\pmstd{0.3} & 0.89 & 17.3\pmstd{1.1} & 8.0\pmstd{0.4} & \textbf{5.7\pmstd{0.3}} \\
+0.05 & 0.18 & 33.6\pmstd{2.3} & 24.6\pmstd{1.0} & 23.6\pmstd{1.1} & 0.31 & 30.5\pmstd{2.1} & 16.2\pmstd{0.7} & 14.8\pmstd{0.7} & 0.44 & 31.0\pmstd{2.1} & 13.9\pmstd{0.6} & \textbf{10.2\pmstd{0.5}} \\
+0.02 & 0.07 & 79.3\pmstd{5.5} & 51.1\pmstd{2.8} & 47.9\pmstd{3.0} & 0.12 & 77.4\pmstd{5.6} & 34.6\pmstd{1.6} & 30.2\pmstd{1.4} & 0.18 & 80.5\pmstd{6.0} & 25.8\pmstd{1.2} & \textbf{21.0\pmstd{1.0}} \\
+0.01 & 0.04 & 164\pmstd{12} & 87.0\pmstd{5.6} & 86.5\pmstd{6.9} & 0.06 & 166\pmstd{12} & 61.8\pmstd{3.9} & 49.0\pmstd{2.4} & 0.09 & 165\pmstd{12} & 43.4\pmstd{1.9} & \textbf{42.1\pmstd{5.1}} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+\begin{table}[t]
+\centering
+\small
+\caption{$\mathcal{M}$-Opt vs.\ $\mathcal{M}$-All win rate per template (across 3 mechanisms $\times$ 10 $\varepsilon$ values = 30 pairs). A ``win'' means $\mathcal{M}$-Opt achieves lower wMAPE.}
+\label{tab:rq1_win_rate}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Template} & $k$ & $k{+}1$ & $2k{+}1$ & $3k{+}1$ \\
+\midrule
+FIB4     & 4 & 27/30 & 30/30 & 30/30 \\
+HOMA     & 2 & 30/30 & 30/30 & 30/30 \\
+VASCULAR & 2 &  3/30 & 27/30 & 28/30 \\
+AIP      & 3 &  2/30 &  9/30 & 21/30 \\
+NLR      & 2 &  2/30 &  3/30 &  9/30 \\
+TYG      & 2 &  0/30 &  1/30 &  5/30 \\
+CONICITY & 3 &  0/30 &  1/30 & 23/30 \\
+ANEMIA   & 3 &  0/30 &  0/30 & 10/30 \\
+\midrule
+\textbf{Total} & & 64/240 (27\%) & 101/240 (42\%) & 156/240 (65\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ────────────────────────────────────────────────────────────────────────
+\subsubsection{Per-template analysis.}
+\label{sec:per-template}
+
+The aggregate results mask substantial per-template variation that tracks the structural conditions identified above. All per-template numbers in this section are reported at $B = (2k{+}1)\varepsilon$ for the Exponential mechanism unless otherwise noted. Fig.~\ref{fig:per_template} shows the full per-template breakdown, with detailed tables in App.~\ref{app:rq1-tables}.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/rq1_per_template_grid.pdf}
+    \caption{Per-template wMAPE (\%) vs.\ $\varepsilon$ at $B = (2k{+}1)\varepsilon$. Top row: templates where $\mathcal{M}$-Opt consistently wins (FIB4, HOMA, VASCULAR). Bottom row: templates where $\mathcal{M}$-All wins or ties (ANEMIA, AIP, CONICITY, NLR, TYG). Nine methods shown per panel (3 mechanisms $\times$ 3 variants).}
+    \label{fig:per_template}
+\end{figure*}
+
+\paragraph{\textbf{Where \sysname{} wins.}}
+\sysname{} achieves its largest improvements on templates where the target formula compresses root noise:
+\begin{itemize}
+    \item FIB4 ($= \text{age} \cdot \text{AST} / (\text{PLT} \cdot \sqrt{\text{ALT}})$) divides the numerator by $\text{PLT} \cdot \sqrt{\text{ALT}} \approx 1{,}275$ at population means, compressing all partial derivatives to the range 0.004--0.037. Root perturbations are strongly attenuated before reaching the target. Meanwhile, the target domain (width 37.83) is enormous relative to a typical value of ${\sim}1$. At $\varepsilon = 0.1$: Exp-All produces 48.1\% wMAPE; Exp-Opt reduces this to 9.4\%---a $5.1\times$ improvement.
+    \item HOMA ($= \text{Glu} \cdot \text{Ins} / 405$) shows a similar pattern: division by 405 attenuates root noise, while the target domain (width 155) dwarfs the typical value of ${\sim}4$. At $\varepsilon = 0.1$: Exp-All produces 50.5\% wMAPE; Exp-Opt reduces this to 10.8\%---a $4.7\times$ improvement.
+\end{itemize}
+
+\paragraph{\textbf{Where \sysname{} loses.}}
+$\mathcal{M}$-All has a structural advantage on templates where the formula amplifies root noise or the target domain is narrow:
+\begin{itemize}
+    \item ANEMIA ($\text{MCHC} = 100 \cdot \text{Hb} / \text{Hct}$) multiplies hemoglobin noise by $100/\text{Hct} \approx 2.3$ and projects it into a narrow target domain (width 8.58). Additionally, RBC---one of three roots---has zero sensitivity to MCHC, wasting budget under uniform allocation. At $\varepsilon = 0.1$: Exp-All achieves 0.5\% wMAPE, while Exp-Opt achieves 0.8\%. $\mathcal{M}$-All wins by 0.3 percentage points---clinically negligible.
+    \item CONICITY ($= \text{waist} / (0.109 \cdot \sqrt{\text{wt}/\text{ht}})$) has a very narrow target domain (width 0.59) while the waist sensitivity (${\approx}1.28$) amplifies root noise directly. At $\varepsilon = 0.1$: Exp-All achieves 0.9\% vs.\ Exp-Opt's 1.0\%---effectively tied.
+    \item TYG ($= \ln(\text{TG} \cdot \text{Glu} / 2)$) compresses the enormous product $\text{TG} \times \text{Glu}$ through a logarithm into a narrow target (width 5.54). Direct noising of TYG is cheap; at $\varepsilon = 0.1$: Exp-All achieves 1.3\% vs.\ Exp-Opt's 2.1\%.
+\end{itemize}
+
+\paragraph{\textbf{Asymmetry of wins and losses.}}
+When $\mathcal{M}$-Opt wins, it wins by large multiplicative factors on high-error templates (FIB4: $+38.7$pp, HOMA: $+39.7$pp at $\varepsilon = 0.1$, Exponential). When $\mathcal{M}$-All wins, it wins by small absolute margins on low-error templates (CONICITY: $-0.1$pp, ANEMIA: $-0.3$pp, TYG: $-0.8$pp). This asymmetry explains why the aggregate always favors $\mathcal{M}$-Opt: the large gains on compressing templates dominate the small losses on amplifying ones. The largest loss---NLR ($-2.7$pp)---is still an order of magnitude smaller than the largest wins.
+
+% ────────────────────────────────────────────────────────────────────────
+\subsubsection{\textbf{CAPE-F: text-DP reference.}}
+CAPE-F achieves 263--403\% wMAPE across all privacy levels, $65$--$125\times$ worse than BLap-Opt. Its error is essentially flat across $\varepsilon$---the $1.5\times$ ratio from $\varepsilon = 5.0$ to $\varepsilon = 0.005$ compares to BLap-Opt's $225\times$---confirming that the error is dominated by the linguistic-vs-numeric utility mismatch rather than privacy noise. This is because the embedding model cannot capture the relationship between numerical tokens and the rest of the context. As a result, the sampled values often have no semantic bearing to the actual medical condition of the patient. For example, ``$0$'' might get replaced by ``$00$'', which immediately increases error by an order of magnitude.
+
+% ────────────────────────────────────────────────────────────────────────
+\paragraph{\textbf{Caveats for comparison.}} Even on templates where $\mathcal{M}$-All achieves lower target wMAPE, both methods produce small absolute errors (ANEMIA: 0.3pp difference; CONICITY: 0.1pp). More importantly, the $t - 1$ adversarial turns that precede the target release have no utility cost for either method --- but they have a severe privacy cost for $\mathcal{M}$-All. Each adversarial query produces an independent noisy observation that a reconstruction adversary can exploit, while \sysname{}'s post-processed responses reveal no additional information. The same budget scaling that improves \sysname{}'s utility simultaneously degrades $\mathcal{M}$-All's privacy. We quantify this asymmetry in Sec.~\ref{sec:experiments-rq2}.

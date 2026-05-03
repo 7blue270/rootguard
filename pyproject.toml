@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rootguard"
+version = "0.1.27"
+description = "Sanitize prompts containing PII values, while maintaining high utility with cryptographic privacy guarantees"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    # Numerical / experiment runners (RQ1, RQ2, RQ3, and analysis for all RQs)
+    "numpy>=1.23",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "networkx>=3.0",
+    "diffprivlib>=0.6.4",
+    # RQ4 — LLM agent eval
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    # Core preempt/ sanitizer (NER, FPE, name lists)
+    "ff3>=1.0.0",
+    "names>=0.3.0",
+    "names-dataset>=3.3.1",
+    "protobuf>=5.29.4",
+    "sentencepiece>=0.2.0",
+    "torch>=2.6.0",
+    "tqdm>=4.67.1",
+    "transformers>=4.51.3",
+]
+
+# The project name `rootguard` is a marketing alias; the actual Python
+# packages live at the repo root under preempt/, utils/, and baselines/.
+# Tell Hatchling to ship those as the wheel contents.
+[tool.hatch.build.targets.wheel]
+packages = ["preempt", "utils", "baselines"]

@@ -1,0 +1,24 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Aggregate wMAPE (\%) at $\varepsilon=0.01$ across the three agent-eval configurations and three turn budgets, with bootstrap standard errors. Per-template breakdown.}}
+\label{tab:agent_double_asymmetry_eps0.01}
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{M-All}} & \multicolumn{3}{c|}{\textbf{M-Roots}} & \multicolumn{3}{c}{\textbf{M-Opt}} \\
+Template & $B=k+1$ & $B=2k+1$ & $B=3k+1$ & $B=k+1$ & $B=2k+1$ & $B=3k+1$ & $B=k+1$ & $B=2k+1$ & $B=3k+1$ \\
+\midrule
+HOMA & 300\pmstd{48} & 393\pmstd{57} & 436\pmstd{76} & 241\pmstd{33} & 130\pmstd{18} & 88.9\pmstd{12} & 215\pmstd{30} & 104\pmstd{14} & \textbf{68.8\pmstd{9.0}} \\
+ANEMIA & 17.7\pmstd{1.5} & 16.3\pmstd{1.4} & 17.9\pmstd{1.6} & 14.0\pmstd{1.4} & 9.2\pmstd{0.9} & 6.6\pmstd{0.7} & 10.7\pmstd{1.1} & 6.4\pmstd{0.6} & \textbf{4.5\pmstd{0.4}} \\
+FIB4 & 147\pmstd{26} & 127\pmstd{19} & 121\pmstd{19} & 107\pmstd{13} & 68.8\pmstd{7.0} & 52.1\pmstd{4.8} & 82.9\pmstd{7.8} & 59.1\pmstd{5.2} & \textbf{43.7\pmstd{3.6}} \\
+AIP & 151\pmstd{20} & 158\pmstd{20} & 172\pmstd{20} & 143\pmstd{17} & 108\pmstd{13} & 88.4\pmstd{11} & 89.3\pmstd{10} & 73.6\pmstd{9.1} & \textbf{59.7\pmstd{7.5}} \\
+CONICITY & 21.7\pmstd{1.8} & 19.7\pmstd{1.9} & 19.8\pmstd{1.6} & 17.0\pmstd{1.6} & 11.4\pmstd{1.1} & 8.2\pmstd{0.8} & 13.7\pmstd{1.2} & 8.8\pmstd{0.7} & \textbf{6.5\pmstd{0.6}} \\
+VASCULAR & 53.3\pmstd{5.0} & 53.5\pmstd{4.1} & 51.4\pmstd{5.2} & 37.9\pmstd{3.8} & 26.4\pmstd{2.8} & 19.5\pmstd{2.1} & 36.0\pmstd{3.6} & 25.3\pmstd{2.7} & \textbf{18.8\pmstd{2.0}} \\
+TYG & 16.6\pmstd{1.2} & 19.9\pmstd{1.3} & 20.6\pmstd{1.3} & 16.4\pmstd{1.0} & 11.7\pmstd{0.8} & 9.3\pmstd{0.7} & 16.5\pmstd{1.1} & 10.9\pmstd{0.8} & \textbf{8.2\pmstd{0.7}} \\
+NLR & 82.1\pmstd{5.2} & 79.2\pmstd{4.2} & 82.4\pmstd{5.3} & 85.1\pmstd{5.8} & 78.0\pmstd{5.3} & \textbf{72.3\pmstd{5.2}} & 108\pmstd{17} & 89.2\pmstd{11} & 73.5\pmstd{7.7} \\
+\bottomrule
+\end{tabular}
+\end{table*}

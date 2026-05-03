@@ -1,0 +1,24 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Per-template agent-eval Risk Class Error (\%) at $\varepsilon = 0.1$, with bootstrap SE over patients ($n = 100$ per template-cell). Best per row in \textbf{bold}.}
+\label{tab:agent_rce_eps0.1_app}
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{$\mathcal{M}$-All}} & \multicolumn{3}{c|}{\textbf{$\mathcal{M}$-Roots}} & \multicolumn{3}{c}{\textbf{$\mathcal{M}$-Opt}} \\
+Template & $B{=}k+1$ & $B{=}2k+1$ & $B{=}3k+1$ & $B{=}k+1$ & $B{=}2k+1$ & $B{=}3k+1$ & $B{=}k+1$ & $B{=}2k+1$ & $B{=}3k+1$ \\
+\midrule
+HOMA & 32.0\pmstd{4.6} & 32.0\pmstd{4.7} & 37.0\pmstd{4.9} & 30.0\pmstd{4.7} & 21.0\pmstd{4.1} & 16.0\pmstd{3.7} & 23.0\pmstd{4.3} & 16.0\pmstd{3.7} & \textbf{12.0\pmstd{3.2}} \\
+AIP & 36.0\pmstd{4.9} & 32.0\pmstd{4.5} & 31.0\pmstd{4.7} & 27.0\pmstd{4.5} & 19.0\pmstd{4.0} & 14.0\pmstd{3.6} & 16.0\pmstd{3.8} & \textbf{6.0\pmstd{2.4}} & 6.0\pmstd{2.4} \\
+FIB4 & 15.0\pmstd{3.6} & 18.0\pmstd{3.9} & 22.0\pmstd{4.2} & 13.0\pmstd{3.3} & 6.0\pmstd{2.4} & 6.0\pmstd{2.4} & 8.0\pmstd{2.6} & \textbf{5.0\pmstd{2.2}} & 5.0\pmstd{2.2} \\
+NLR & 17.0\pmstd{3.7} & 19.0\pmstd{4.0} & 27.0\pmstd{4.3} & 17.0\pmstd{3.6} & 14.0\pmstd{3.4} & 12.0\pmstd{3.3} & 17.0\pmstd{3.7} & 11.0\pmstd{3.1} & \textbf{9.0\pmstd{2.9}} \\
+TYG & 27.0\pmstd{4.4} & 34.0\pmstd{4.6} & 25.0\pmstd{4.4} & 22.0\pmstd{4.2} & 11.0\pmstd{3.2} & 10.0\pmstd{3.1} & 14.0\pmstd{3.5} & 9.0\pmstd{2.9} & \textbf{6.0\pmstd{2.4}} \\
+ANEMIA & 10.0\pmstd{3.0} & 12.0\pmstd{3.3} & 15.0\pmstd{3.5} & 11.0\pmstd{3.1} & 4.0\pmstd{2.0} & 3.0\pmstd{1.7} & 5.0\pmstd{2.2} & 2.0\pmstd{1.5} & \textbf{1.0\pmstd{1.0}} \\
+CONICITY & 8.0\pmstd{2.7} & 8.0\pmstd{2.7} & 10.0\pmstd{3.2} & 5.0\pmstd{2.2} & \textbf{2.0\pmstd{1.4}} & 2.0\pmstd{1.4} & 3.0\pmstd{1.7} & 2.0\pmstd{1.4} & 2.0\pmstd{1.4} \\
+VASCULAR & 1.0\pmstd{1.0} & 2.0\pmstd{1.3} & 1.0\pmstd{1.0} & \textbf{0.0\pmstd{0.0}} & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} & 0.0\pmstd{0.0} \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,25 @@
+# Generated outputs
+results/
+*.log
+*.tmp
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Environments
+.env
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Big intermediate files
+*.zip.tmp

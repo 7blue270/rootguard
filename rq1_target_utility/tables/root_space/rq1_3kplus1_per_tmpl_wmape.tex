@@ -1,0 +1,24 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Per-template wMAPE (\%) with bootstrap SE at $\varepsilon = 0.1$ ($\bar{B} = 0.89$). Budget $B = (3k+1) \cdot \varepsilon$. Best per row in \textbf{bold}.}
+\label{tab:rq1_3kplus1_per_tmpl_wmape}
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{Exponential}} & \multicolumn{3}{c|}{\textbf{Bounded Laplace}} & \multicolumn{3}{c}{\textbf{Staircase}} \\
+Template & All & Roots & Opt & All & Roots & Opt & All & Roots & Opt \\
+\midrule
+ANEMIA & 2.6\pmstd{0.2} & 0.7\pmstd{0.0} & 0.5\pmstd{0.0} & 1.4\pmstd{0.1} & 0.4\pmstd{0.0} & 0.3\pmstd{0.0} & 1.3\pmstd{0.1} & 0.4\pmstd{0.0} & \textbf{0.2\pmstd{0.0}} \\
+FIB4 & 26.1\pmstd{2.1} & 9.3\pmstd{0.9} & 5.9\pmstd{0.4} & 12.7\pmstd{1.3} & 4.5\pmstd{0.4} & \textbf{3.2\pmstd{0.2}} & 13.2\pmstd{1.0} & 3.9\pmstd{0.3} & 3.9\pmstd{0.5} \\
+AIP & 52.9\pmstd{4.8} & 20.4\pmstd{2.3} & 10.3\pmstd{1.2} & 32.1\pmstd{3.5} & 10.6\pmstd{1.3} & 5.6\pmstd{0.6} & 30.3\pmstd{3.2} & 9.6\pmstd{1.1} & \textbf{5.5\pmstd{0.6}} \\
+CONICITY & 2.7\pmstd{0.2} & 0.8\pmstd{0.1} & 0.7\pmstd{0.0} & 1.6\pmstd{0.1} & 0.5\pmstd{0.0} & \textbf{0.4\pmstd{0.0}} & 1.4\pmstd{0.1} & 0.4\pmstd{0.0} & 0.4\pmstd{0.0} \\
+VASCULAR & 6.0\pmstd{0.4} & 2.0\pmstd{0.1} & 1.6\pmstd{0.1} & 3.5\pmstd{0.2} & 1.0\pmstd{0.1} & \textbf{0.9\pmstd{0.1}} & 3.0\pmstd{0.2} & 0.9\pmstd{0.1} & 1.0\pmstd{0.1} \\
+TYG & 4.4\pmstd{0.3} & 2.0\pmstd{0.2} & 1.4\pmstd{0.1} & 3.1\pmstd{0.2} & 1.1\pmstd{0.1} & \textbf{0.7\pmstd{0.1}} & 3.3\pmstd{0.3} & 1.0\pmstd{0.1} & 0.8\pmstd{0.1} \\
+HOMA & 30.7\pmstd{3.7} & 10.6\pmstd{1.2} & 7.9\pmstd{0.8} & 18.8\pmstd{2.5} & 5.4\pmstd{0.8} & \textbf{3.5\pmstd{0.5}} & 19.6\pmstd{2.7} & 5.4\pmstd{0.8} & 4.5\pmstd{0.4} \\
+NLR & 46.4\pmstd{4.1} & 23.8\pmstd{2.6} & 16.5\pmstd{1.5} & 54.1\pmstd{5.7} & 10.8\pmstd{1.0} & \textbf{8.2\pmstd{0.6}} & 38.5\pmstd{3.8} & 11.1\pmstd{0.9} & 8.5\pmstd{0.9} \\
+\bottomrule
+\end{tabular}
+\end{table*}

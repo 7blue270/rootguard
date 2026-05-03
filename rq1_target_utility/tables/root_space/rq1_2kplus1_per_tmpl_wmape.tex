@@ -1,0 +1,24 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Per-template wMAPE (\%) with bootstrap SE at $\varepsilon = 0.1$ ($\bar{B} = 0.62$). Budget $B = (2k+1) \cdot \varepsilon$. Best per row in \textbf{bold}.}
+\label{tab:rq1_2kplus1_per_tmpl_wmape}
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{Exponential}} & \multicolumn{3}{c|}{\textbf{Bounded Laplace}} & \multicolumn{3}{c}{\textbf{Staircase}} \\
+Template & All & Roots & Opt & All & Roots & Opt & All & Roots & Opt \\
+\midrule
+ANEMIA & 2.4\pmstd{0.1} & 1.1\pmstd{0.1} & 0.7\pmstd{0.0} & 1.3\pmstd{0.1} & 0.6\pmstd{0.0} & 0.4\pmstd{0.0} & 1.4\pmstd{0.1} & 0.6\pmstd{0.0} & \textbf{0.3\pmstd{0.0}} \\
+FIB4 & 23.9\pmstd{1.8} & 10.1\pmstd{0.8} & 10.0\pmstd{0.9} & 13.7\pmstd{1.2} & 7.2\pmstd{0.7} & \textbf{4.6\pmstd{0.4}} & 15.2\pmstd{1.2} & 5.9\pmstd{0.5} & 5.0\pmstd{0.4} \\
+AIP & 41.9\pmstd{4.1} & 25.3\pmstd{2.4} & 12.7\pmstd{1.4} & 28.7\pmstd{3.1} & 14.6\pmstd{1.6} & \textbf{7.6\pmstd{0.8}} & 35.3\pmstd{3.9} & 17.0\pmstd{2.0} & 7.8\pmstd{1.0} \\
+CONICITY & 2.8\pmstd{0.2} & 1.2\pmstd{0.1} & 1.0\pmstd{0.1} & 1.4\pmstd{0.1} & 0.6\pmstd{0.0} & \textbf{0.5\pmstd{0.0}} & 1.5\pmstd{0.1} & 0.6\pmstd{0.0} & 0.6\pmstd{0.0} \\
+VASCULAR & 6.3\pmstd{0.5} & 2.7\pmstd{0.2} & 2.6\pmstd{0.2} & 3.5\pmstd{0.2} & 1.4\pmstd{0.1} & 1.3\pmstd{0.1} & 3.2\pmstd{0.2} & 1.4\pmstd{0.1} & \textbf{1.2\pmstd{0.1}} \\
+TYG & 4.6\pmstd{0.3} & 2.6\pmstd{0.2} & 2.0\pmstd{0.1} & 3.4\pmstd{0.3} & 1.4\pmstd{0.1} & \textbf{1.1\pmstd{0.1}} & 3.3\pmstd{0.3} & 1.6\pmstd{0.1} & 1.1\pmstd{0.1} \\
+HOMA & 31.1\pmstd{4.4} & 17.3\pmstd{1.7} & 9.9\pmstd{1.2} & 18.5\pmstd{2.6} & 7.2\pmstd{1.0} & 6.1\pmstd{0.9} & 17.7\pmstd{2.3} & 6.7\pmstd{1.0} & \textbf{5.6\pmstd{0.7}} \\
+NLR & 49.2\pmstd{4.3} & 31.2\pmstd{3.4} & 23.1\pmstd{1.5} & 41.4\pmstd{4.9} & 16.9\pmstd{2.0} & \textbf{12.5\pmstd{1.6}} & 46.6\pmstd{3.9} & 19.5\pmstd{2.6} & 12.8\pmstd{1.1} \\
+\bottomrule
+\end{tabular}
+\end{table*}

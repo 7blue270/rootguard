@@ -1,0 +1,22 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Aggregate wMAPE (\%) at mid-to-high privacy levels across three adversary budget levels (Exponential mechanism). $\bar{B}$: average total budget across templates. $\mathcal{M}$-All is invariant to the budget level; $\mathcal{M}$-Opt improves with each additional adversarial turn. Aggregate values are the mean across 8 templates; bootstrap SEs are propagated from per-template SEs as $\sqrt{\sum_t \mathrm{SE}_t^2}/k$. At $\varepsilon \geq 1.0$, all methods achieve $\leq 1\%$ wMAPE and differences are negligible (see App.~\ref{app:rq1-tables}).}
+\label{tab:double_asymmetry}
+\begin{tabular}{c|cccc|cccc|cccc}
+\toprule
+& \multicolumn{4}{c|}{$B = (k{+}1)\varepsilon$} & \multicolumn{4}{c|}{$B = (2k{+}1)\varepsilon$} & \multicolumn{4}{c}{$B = (3k{+}1)\varepsilon$} \\
+$\varepsilon$ & $\bar{B}$ & All & Roots & Opt & $\bar{B}$ & All & Roots & Opt & $\bar{B}$ & All & Roots & Opt \\
+\midrule
+0.5 & 1.81 & 5.6\pmstd{0.30} & 4.0\pmstd{0.25} & \textbf{2.7\pmstd{0.13}} & 3.12 & 5.7\pmstd{0.30} & 2.4\pmstd{0.13} & \textbf{1.7\pmstd{0.09}} & 4.44 & 5.9\pmstd{0.33} & 1.8\pmstd{0.10} & \textbf{1.2\pmstd{0.05}} \\
+0.2 & 0.73 & 12.6\pmstd{0.64} & 10.1\pmstd{0.47} & \textbf{6.6\pmstd{0.29}} & 1.25 & 12.3\pmstd{0.62} & 5.9\pmstd{0.37} & \textbf{4.5\pmstd{0.22}} & 1.77 & 12.2\pmstd{0.55} & 4.6\pmstd{0.29} & \textbf{3.3\pmstd{0.20}} \\
+0.1 & 0.36 & 20.5\pmstd{0.88} & 14.9\pmstd{0.67} & \textbf{13.6\pmstd{0.65}} & 0.62 & 20.3\pmstd{0.96} & 11.4\pmstd{0.57} & \textbf{7.8\pmstd{0.32}} & 0.89 & 21.5\pmstd{0.96} & 8.7\pmstd{0.47} & \textbf{5.6\pmstd{0.26}} \\
+0.05 & 0.18 & 35.0\pmstd{1.45} & 26.0\pmstd{1.11} & \textbf{21.6\pmstd{0.94}} & 0.31 & 33.8\pmstd{1.69} & 18.0\pmstd{0.80} & \textbf{13.3\pmstd{0.58}} & 0.44 & 33.7\pmstd{1.75} & 14.3\pmstd{0.68} & \textbf{11.2\pmstd{0.57}} \\
+0.02 & 0.07 & 70.3\pmstd{4.35} & 55.5\pmstd{6.81} & \textbf{46.0\pmstd{2.80}} & 0.12 & 75.7\pmstd{10.89} & 34.1\pmstd{1.55} & \textbf{29.2\pmstd{1.23}} & 0.18 & 72.3\pmstd{5.10} & 27.9\pmstd{1.29} & \textbf{21.9\pmstd{0.96}} \\
+0.01 & 0.04 & 122\pmstd{10.10} & 102\pmstd{9.58} & \textbf{86.6\pmstd{6.21}} & 0.06 & 113\pmstd{8.41} & 63.0\pmstd{5.39} & \textbf{48.3\pmstd{2.62}} & 0.09 & 129\pmstd{9.85} & 47.3\pmstd{2.59} & \textbf{37.3\pmstd{1.58}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

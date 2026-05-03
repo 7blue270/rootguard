@@ -1,0 +1,26 @@
+\providecommand{\pmstd}[1]{{\scriptsize $\pm$#1}}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{2.8pt}
+\small
+\caption{Aggregate wMAPE (\%) averaged across 8 templates with bootstrap SE. Budget $B = (3k+1) \cdot \varepsilon$. Best mean per row in \textbf{bold}.}
+\label{tab:rq1_3kplus1_wmape}
+\begin{tabular}{cc|ccc|ccc|ccc}
+\toprule
+& & \multicolumn{3}{c|}{\textbf{Exponential}} & \multicolumn{3}{c|}{\textbf{Bounded Laplace}} & \multicolumn{3}{c}{\textbf{Staircase}} \\
+$\varepsilon$ & $\bar{B}$ & All & Roots & Opt & All & Roots & Opt & All & Roots & Opt \\
+\midrule
+5.0 & 44.38 & 0.6\pmstd{0.0} & 0.4\pmstd{0.0} & 0.4\pmstd{0.0} & 0.5\pmstd{0.0} & 0.4\pmstd{0.0} & 0.4\pmstd{0.0} & 0.4\pmstd{0.0} & \textbf{0.4\pmstd{0.0}} & 0.4\pmstd{0.0} \\
+2.0 & 17.75 & 1.5\pmstd{0.1} & 0.5\pmstd{0.0} & 0.4\pmstd{0.0} & 0.8\pmstd{0.0} & 0.4\pmstd{0.0} & 0.4\pmstd{0.0} & 0.8\pmstd{0.1} & 0.4\pmstd{0.0} & \textbf{0.4\pmstd{0.0}} \\
+1.0 & 8.88 & 3.0\pmstd{0.2} & 0.9\pmstd{0.1} & 0.6\pmstd{0.0} & 1.6\pmstd{0.1} & 0.6\pmstd{0.0} & 0.5\pmstd{0.0} & 1.5\pmstd{0.1} & 0.4\pmstd{0.0} & \textbf{0.4\pmstd{0.0}} \\
+0.5 & 4.44 & 5.9\pmstd{0.3} & 1.8\pmstd{0.1} & 1.2\pmstd{0.1} & 3.0\pmstd{0.2} & 1.0\pmstd{0.1} & 0.7\pmstd{0.0} & 3.0\pmstd{0.2} & 0.9\pmstd{0.0} & \textbf{0.6\pmstd{0.0}} \\
+0.2 & 1.77 & 12.2\pmstd{0.5} & 4.6\pmstd{0.3} & 3.3\pmstd{0.2} & 7.3\pmstd{0.4} & 2.2\pmstd{0.1} & \textbf{1.5\pmstd{0.1}} & 7.3\pmstd{0.4} & 2.3\pmstd{0.2} & 1.6\pmstd{0.1} \\
+0.1 & 0.89 & 21.5\pmstd{1.0} & 8.7\pmstd{0.5} & 5.6\pmstd{0.3} & 15.9\pmstd{0.9} & 4.3\pmstd{0.2} & \textbf{2.8\pmstd{0.1}} & 13.8\pmstd{0.7} & 4.1\pmstd{0.2} & 3.1\pmstd{0.2} \\
+0.05 & 0.44 & 33.7\pmstd{1.8} & 14.3\pmstd{0.7} & 11.2\pmstd{0.6} & 25.9\pmstd{1.1} & 8.7\pmstd{0.6} & \textbf{5.6\pmstd{0.3}} & 26.2\pmstd{1.2} & 8.4\pmstd{0.5} & 6.2\pmstd{0.3} \\
+0.02 & 0.18 & 72.3\pmstd{5.1} & 27.9\pmstd{1.3} & 21.9\pmstd{1.0} & 50.0\pmstd{2.1} & 19.4\pmstd{1.0} & \textbf{14.5\pmstd{0.7}} & 48.1\pmstd{2.2} & 19.1\pmstd{0.9} & 14.8\pmstd{0.8} \\
+0.01 & 0.09 & 129\pmstd{9.8} & 47.3\pmstd{2.6} & 37.3\pmstd{1.6} & 94.2\pmstd{9.2} & 35.7\pmstd{1.7} & \textbf{27.1\pmstd{1.2}} & 84.6\pmstd{6.1} & 34.9\pmstd{1.5} & 30.1\pmstd{2.9} \\
+0.005 & 0.04 & 235\pmstd{26} & 81.0\pmstd{5.3} & 76.6\pmstd{5.1} & 193\pmstd{26} & 53.3\pmstd{2.4} & \textbf{45.4\pmstd{2.0}} & 176\pmstd{20} & 54.3\pmstd{2.4} & 50.6\pmstd{3.8} \\
+\bottomrule
+\end{tabular}
+\end{table*}
