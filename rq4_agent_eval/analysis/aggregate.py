@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 REPO = Path(__file__).resolve().parent.parent
 DEFAULT_SWEEP = REPO / "results" / "sweep_v2"
-# The artifact ships a pre-built aggregates.json at the rq4_agent_eval/ root
-# so reviewers can run the analysis pipeline without rerunning the LLM sweep.
+# A pre-built aggregates.json is shipped at the rq4_agent_eval/ root so
+# the analysis pipeline can run without rerunning the (paid) LLM sweep.
 # Re-running aggregate.py overwrites that file in place.
 DEFAULT_OUT = REPO / "aggregates.json"
 B_BOOTSTRAP = 1000

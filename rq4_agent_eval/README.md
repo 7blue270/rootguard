@@ -121,4 +121,4 @@ ToolDispatcher
 - `attack/adversary.py` — t-turn protocol, regex parser with alias map, MAP attack post-session.
 - `attack/map_recon.py` — MAP estimator over discrete index space.
 - `experiments/run_sweep.py` — driver, resumable, transcript-saving, configurable concurrency.
-- `analysis/{aggregate,gen_tables,gen_plots,gen_summary,strip_median_recompute,package_zip}.py` — derived artifacts.
+- `analysis/{aggregate,gen_tables,gen_plots,gen_summary,strip_median_recompute,package_zip}.py` — derived outputs (aggregates, tables, figures, summary).
