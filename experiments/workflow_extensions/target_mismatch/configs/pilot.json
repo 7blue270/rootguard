@@ -1,0 +1,12 @@
+{
+  "templates": ["FIB4", "HOMA", "ANEMIA"],
+  "patients": 200,
+  "repeats": 30,
+  "budgets": [0.1, 0.3, 0.7],
+  "levels": [-1.0, -0.75, -0.5, -0.25, -0.1, 0.0, 0.1, 0.25, 0.5, 1.0],
+  "families": ["weights", "power"],
+  "grid_size": 1000,
+  "epsilon_min": 0.001,
+  "seed": 20261012,
+  "bootstrap": 2000
+}
