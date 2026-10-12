@@ -2,6 +2,30 @@
 results/
 *.log
 *.tmp
+reproduction/
+
+# RQ experiment outputs (keep source, input data and example configs tracked)
+/rq1_target_utility/results*/
+/rq1_target_utility/plots*/
+/rq1_target_utility/tables/
+/rq1_target_utility/latex_*.tex
+/rq2_reconstruction/results*/
+/rq2_reconstruction/plots*/
+/rq2_reconstruction/tables/
+/rq2_reconstruction/allocations_v2/
+/rq2_reconstruction/SUMMARY.md
+/rq3_structural_analysis/plots*/
+/rq3_structural_analysis/tables/
+/rq3_structural_analysis/latex_*.tex
+/rq4_agent_eval/results/
+/rq4_agent_eval/plots/
+/rq4_agent_eval/tables/
+/rq4_agent_eval/aggregates.json
+/rq4_agent_eval/SUMMARY.md
+/rq4_agent_eval/data/allocations.csv
+
+# Workflow research outputs
+/experiments/workflow_extensions/outputs/
 
 # Python caches
 __pycache__/
