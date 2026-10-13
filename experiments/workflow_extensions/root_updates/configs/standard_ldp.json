@@ -1,0 +1,15 @@
+{
+  "templates": ["FIB4", "HOMA", "ANEMIA"],
+  "synthetic_patients": 60,
+  "real_patients": 40,
+  "horizons": [4, 8, 16],
+  "budgets": [0.1, 0.3, 0.7],
+  "standard_eps": [1.0, 4.0, 8.0],
+  "amplitudes": [0.01],
+  "scenarios": ["no_updates", "drift", "jump", "sparse"],
+  "repeats": 30,
+  "seed": 20261016,
+  "bootstrap": 1000,
+  "grid_size": 1000,
+  "methods": ["static", "full_opt", "root_opt", "period2", "period4", "predictive30", "predictive100"]
+}

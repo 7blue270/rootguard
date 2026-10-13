@@ -1,0 +1,16 @@
+{
+  "horizons": [8, 16],
+  "templates": ["FIB4", "HOMA", "ANEMIA"],
+  "scenarios": ["cancel", "near_cancel", "amplify", "independent"],
+  "amplitude": 0.12,
+  "budgets": [0.3, 0.7],
+  "standard_eps": [4],
+  "validation_repeats": 12,
+  "test_repeats": 60,
+  "seed": 2026101301,
+  "bootstrap": 1000,
+  "periods": [1, 2, 4, 8, 16],
+  "trigger_caps": [2, 4],
+  "trigger_fractions": [0.2, 0.5],
+  "trigger_thresholds": [0.01, 0.03, 0.1]
+}
