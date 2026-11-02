@@ -1,0 +1,473 @@
+
+===== USER (turn None) =====
+背景：https://chat.deepseek.com/share/ehmtvpy94bn8zvkbbf
+我是一名正在研究rootguard数值型多轮对话DP隐私保护的研究生，目前已经将场景设定为有限流下的根节点更新保护，探索检测更新或复用、怎样更新的机制
+你先理解我的内容，下载查找文献、思考创新点等的github上好评且好用的skill，因为我们后面将要一起探讨这次场景下的创新
+
+===== USER (turn None) =====
+Current runtime context. This snapshot supersedes earlier runtime-context snapshots.
+
+Current working directory: "C:\\Users\\Admin\\Documents\\deepseek-harness\\default-workspace".
+
+Current DSH file policy: workspace-write. Any available operation enforced by the DSH file sandbox may modify files under the session workspace: "C:\\Users\\Admin\\Documents\\deepseek-harness\\default-workspace". Some platform temporary areas may also be writable.
+
+Approval policy: ask. Operations that require approval may ask through the configured answerers; without an available answerer, the request fails closed.
+
+Current DeepSeek Harness implementation checkout: "D:\\dsh\\resources\\app.asar\\dsh\\".
+
+Current DeepSeek Harness Web GUI URL: "http://127.0.0.1:51244".
+
+===== USER (turn None) =====
+<system-reminder>
+A skill is a reusable set of task-specific instructions. The following skills are available in this session:
+
+<available_skills>
+- `diagnose-windows-sandbox-acl`: Use on Windows for unexpected DSH sandbox access denials: workspace writes or listing fail, or an ordinarily readable path cannot be read. One bundled command inspects the path and every ancestor and repairs the ACL problems it proves in that same run. Expected confinement denials need no ACL repair.
+- `office`: Create, edit, inspect, or convert Office documents, spreadsheets, presentations, and PDFs. Load to choose the relevant workflow.
+- `office-docx`: Create, read, edit, and validate Word documents (.docx).
+- `office-export-pdf`: Convert an Office document to a requested PDF with LibreOffice Kit.
+- `office-pptx`: Create, read, edit, and validate PowerPoint presentations (.pptx).
+- `office-recalculate`: Refresh spreadsheet formula caches and verify calculated values with LibreOffice Kit.
+- `office-render`: Render requested document images or inspect visual layout with LibreOffice Kit.
+- `office-xlsx`: Read, create, edit, and validate Excel workbooks, data, and formulas (.xlsx).
+</available_skills>
+
+If the user names a skill, or the task clearly matches a skill's description, call the `skill` tool with the exact skill name before taking task actions. Load all applicable skills, then follow their full instructions. This catalog contains summaries only; do not infer or follow a skill's instructions until it has been loaded.
+A user may also invoke a skill directly; its <skill_content> block then appears in this conversation. Follow it, and do not call the `skill` tool again for that skill.
+</system-reminder>
+
+===== USER (turn None) =====
+Time sampled while preparing turn 1, step 1: 2026-10-23T13:13:11+08:00[Asia/Shanghai]
+Browser time zone for this request: Asia/Shanghai. Interpret otherwise-unqualified dates and times in this zone.
+Elapsed since the preceding model-visible message: unavailable.
+
+----- ASSISTANT (turn 1 step 1) -----
+[TOOL CALL web_fetch args=null]
+[TOOL CALL web_search args=null]
+
+[TOOL CALL] web_fetch null
+
+[TOOL CALL] web_search null
+[TOOL RESULT len=4] null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 2) -----
+[TOOL CALL web_search args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] web_search null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 3) -----
+[TOOL CALL pwsh args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 4) -----
+[TOOL CALL pwsh args=null]
+[TOOL CALL glob args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 5) -----
+[TOOL CALL pwsh args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 6) -----
+[TOOL CALL glob args=null]
+[TOOL CALL glob args=null]
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 7) -----
+[TOOL CALL glob args=null]
+[TOOL CALL glob args=null]
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 8) -----
+[TOOL CALL glob args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 9) -----
+[TOOL CALL load_workspace_dependencies args=null]
+[TOOL CALL pwsh args=null]
+
+[TOOL CALL] load_workspace_dependencies null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 10) -----
+[TOOL CALL grep args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] grep null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 11) -----
+[TOOL CALL web_fetch args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] web_fetch null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 12) -----
+[TOOL CALL web_fetch args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] web_fetch null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 13) -----
+[TOOL CALL pwsh args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 14) -----
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 15) -----
+[TOOL CALL web_search args=null]
+[TOOL CALL web_fetch args=null]
+
+[TOOL CALL] web_search null
+
+[TOOL CALL] web_fetch null
+[TOOL RESULT len=4] null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 16) -----
+[TOOL CALL pwsh args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 17) -----
+[TOOL CALL pwsh args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 18) -----
+[TOOL CALL pwsh args=null]
+
+[TOOL CALL] pwsh null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 19) -----
+[TOOL CALL read args=null]
+[TOOL CALL grep args=null]
+
+[TOOL CALL] read null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] grep null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 20) -----
+[TOOL CALL write args=null]
+
+[TOOL CALL] write null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 21) -----
+[TOOL CALL write args=null]
+
+[TOOL CALL] write null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 22) -----
+[TOOL CALL glob args=null]
+[TOOL CALL read args=null]
+
+[TOOL CALL] glob null
+[TOOL RESULT len=4] null
+
+[TOOL CALL] read null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 1 step 23) -----
+我先把共享对话的内容取回来做比对：`chat.deepseek.com/share/...` 是前端渲染页，`web_fetch` 只返回一个 “DeepSeek” 空壳，因此**我拿不到你那边的正文**。所以我按 arXiv 上的原始论文把场景重建了一遍；如果与你的设定有偏差，请以你为准，我随时调整。
+
+## 我目前理解到的内容
+
+**RootGuard**（arXiv:2605.03188v3）的核心表述是：根节点**只加噪一次**，之后所有发布都是 `f(x̂)` 的确定性后处理，因此隐私只取决于初始消毒，与对手选择什么函数、问多少轮无关；总预算 `B = t·ε` 按 `ε_i ∝ √(|h_i|·D_i)` 分配到各根。
+
+这套结论**完全建立在“根不变”之上**。你的场景正好针对这一点：把根看成**分段常值过程** `s_i(t)`，于是：
+
+> 隐私成本的真实驱动量，从“轮数 t”变成“状态迁移次数 m + 迁移幅度 |Δ|”；而 RootGuard 的“双重不对称”（轮数越多越好）会在这里**反转**——轮数多往往意味着更新多，对“重加噪”来说是成本（`m·ε`），对“不刷新”来说是陈旧。
+
+## 我建议的四个切入点（详细论证在文档里）
+
+| | 一句话 | 新在哪 |
+|---|---|---|
+| **I2 调度隐私** ★最突出 | `d_t = 1[|Δ|>θ]` 是数据的函数；服务方只要看到“刷新发生了”，就能推出 `|Δ|>θ`，让后验概率范围缩窄成外壳状 | 文献里 w-event/streaming DP 都假设**事件流是给定的**，没人把“判定事件”纳入威胁模型 |
+| **I1 信任半径刷新** | 锚点 + 明文累计漂移，`θ=ασ` 才刷新；`m≈TV/θ`，成本 `ε₀+mε_r`，**绝对误差不随 m 增长** | RootGuard 对“体重变 0.2kg”和“变 20kg”收同样的钱；小幅变化本该接近免费 |
+| **I3 检测器读噪声** | 检测器读明文→调度泄密；读加噪 cache→误判率随 ε 上升 → 隐私/检测/效用三难 | 把“检测更新或复用”从工程启发式变成框架内一等公民 |
+| **I4 (m/t, B) 相图** | 有限时域 POMDP 的最优刷新策略；`m/t→1` 时 RootGuard 严格劣于树机制 | 把原论文的结论推成“边界条件”，最适合作为 related work 的对话点 |
+
+**一处必须提前想清楚的证明细节**：刷新次数 `m` 是**数据依赖的随机变量**，朴素组合定理在这里不成立；正确做法是用 pay-as-you-go 组合 / privacy filter（Rogers–Roth–Ullman–Vadhan, NeurIPS 2016）。这一点写进论文，审稿人会认为你真的懂。
+
+## 已下载和安装
+
+- **论文代码**：[refs/rootguard/README.md](refs/rootguard/README.md)（官方实现，217 文件，含 `preempt/` 消毒器、`utils/optimal_budget_allocation_exact`、RQ1–RQ4 与预生成图表；RQ1–3 纯 CPU 约 10–30 分钟）
+- **文献检索技能**：[skills/paper-lookup/SKILL.md](skills/paper-lookup/SKILL.md)（K-Dense 科学技能库，**54k★**，18 个学术 API：arXiv / Semantic Scholar / OpenAlex / Crossref / PMC…，24 个文件含每个库的“静默失败”陷阱）
+- **系统综述技能**：[skills/literature-review/SKILL.md](skills/literature-review/SKILL.md)（PRISMA 流程、筛选计数、引用核验）
+- **我按你场景写的**：[skills/dp-research-radar/SKILL.md](skills/dp-research-radar/SKILL.md)——六行形式化模板、三线检索、攻击优先检查表、创新点五问
+- **完整地图**：[notes/rootguard-update-research-map.md](notes/rootguard-update-research-map.md)（四个点的“要证的命题 / 怎么测 / 怎么死”，实验蓝图映射到仓库，8 个审稿人问题的答案，13 条阅读清单）
+
+顺带说明：GitHub 上 `anthropics/skills`（183k★）是官方 Agent Skills 仓库，但偏文档/办公，没有文献检索；科学向里 K-Dense 这家是当前最完整的，所以我下载了它的两个检索技能。另外 `arxiv-mcp-server`、`paper-search-mcp` 是 MCP 方案，要改配置，暂时没有安装。
+
+> 操作上提醒一句：这台机器在 workspace-write 沙箱下 PowerShell 起不来（0xC0000142），我是逐条申请完全访问权限才下载成功的。后面跑 `pip install -e .` 和实验时也会需要同样授权。
+
+## 下一步需要你回答的五个问题（每个都会改变排序）
+
+1. **“有限流”**是指 T 有界、预算 B 有界，还是“每轮只允许发布有限个值”？
+2. 更新是**用户改口**（“其实我体重是 72”）、**时间演化**（复诊新测量），还是两者都有？
+3. 你现在的“检测更新或复用”是规则、NER 还是模型判定？有初步结果了吗？
+4. 目标是会议（PETS / NeurIPS / USENIX）还是期刊毕业大论文？这决定 I2 那个负结果要不要当主贡献。
+5. 预算沿用 RootGuard 的 `B = t·ε`，还是改成会话级固定 `B`？（后者更干净，也更能逼出“更新要花钱”）
+
+另外，方便的话把 share 里你写的那段场景定义贴过来（或导出），我按你的原始措辞再校一遍形式化那六行。
+
+===== USER (turn None) =====
+我回答你的问题：
+1.我的有限流是指的：有限交互的轮次，预算B有界。但每轮运行更新若干个根节点的值，或者进行延申函数的查询
+2.更改的是根节点的值，具体可以参考 @C:\Users\Admin\Desktop\ANEMIA.json ，这是我自己合成的合成数据集，数据来源是MIMIC-IV。即在多轮对话中，我们之前设定的root节点的值可能会发生变化，这个变化本身有些性质——更新时可能会更新一个根节点，也可能多个根节点同时更新，多个根节点更新的影响可能会相互抵消，也可能会相互扩大。
+3.我对于检测更新或复用的思路是这样的。我继承rootguard提及的NER完美识别，即我在多轮中先进行一次不消化预算的NER检测，只有当操作根节点时才进行检测和后续的更改。我之前在rootguard上进行了些探索实验，实验结果见附图1和图2
+4.我的目标是形成一个逻辑闭环的会议，大致投ccf-b/c
+我目前的理解：我之前想做无限流下的w-event，然后发现其保护对象只能在w窗口内，所以后面转向有限流的有限预算。目前在思考怎么使用（之前已经发布了的扰动后的根节点值、公式函数的AST、根值的新的干净值等进行一次参考LDP-IDS/MTSP-LDP这样的阈值判断，即比较复用带来的影响和更新带来的影响，从而决定进行什么操作）
+你的角色定位：你是一名在系统DP保证和效用优化上都颇具有心得，也擅长把握住核心点进行创新性思考并解决实际问题的研究员
+
+===== USER (turn None) =====
+Time sampled while preparing turn 2, step 1: 2026-10-23T13:45:02+08:00[Asia/Shanghai]
+Browser time zone for this request: Asia/Shanghai. Interpret otherwise-unqualified dates and times in this zone.
+Elapsed since the preceding model-visible message: 23m 15s.
+
+----- ASSISTANT (turn 2 step 1) -----
+[TOOL CALL read args=null]
+[TOOL CALL read_image args=null]
+
+[TOOL CALL] read null
+
+[TOOL CALL] read_image null
+[TOOL RESULT len=4] null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 2 step 2) -----
+[TOOL CALL read args=null]
+
+[TOOL CALL] read null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 2 step 3) -----
+[TOOL CALL write args=null]
+
+[TOOL CALL] write null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 2 step 4) -----
+我把你的数据和两张图都看完了。先说三个判断，再说设计。
+
+## 一、你的决策变量选错了（这是好消息）
+
+你现在的隐含决策量是「**根变没变**」。但 ANEMIA 里 `mchc=100·hb/hct`、`mcv=10·hct/rbc`、`mch=10·hb/rbc` **全是比值**，而 MIMIC 化验批次里 hb 和 hct 是同向共动的。于是：
+
+- 两个根都变了 → **比值几乎没变 → 任务没变**；
+- 你只刷了其中一个 → **比值被“修”坏了 → 误差反而变大**。
+
+这就是你 Fig.1D 里那组一百多的偏差、以及“属性变化不一定意味着任务变化”的真正机理——它不是数据噪声，是**部分刷新破坏了抵消**。这个现象在 RootGuard 框架里根本不存在（它不刷新），所以它是你的**反直觉卖点**，不是 bug。
+
+正确的决策量是一维的：
+
+```
+δ = Σ a_i · Δlog x_i        （a_i 是任务对第 i 个根的弹性）
+```
+
+因为 8 个模板几乎全是单体式 `T = c·∏x_i^{a_i}`（FIB-4 含 √、BMI 含平方、HOMA 是乘积），log 空间里任务对根是**线性**的。于是 k 维的“谁变了”投影成一维的“任务漂了多少”：`δ≈0` 不刷（刷了是纯损失），`|δ|` 大才刷，且只刷对 δ 贡献大的根。阈值型任务（`anemia_class`）换成**边界余量** `margin`——这也正好对应你的 `Recall@1`。
+
+## 二、图 2 已经否掉了“DP 阈值检测器”，但否掉的不是这个想法，是它的位置
+
+你的观察“DP 阈值检测器作用很小且浪费预算”——完全正确，而且原因很硬：
+
+> 判断的结果只影响**怎么刷**。你把预算花在“要不要刷”上，等于为一个不影响发布内容的决定付费。
+
+正确的位置是：**把这次刷新本来就要花的 `ε_r` 切出 `ρ·ε_r`，用它私下地决定这一块预算怎么分**。总花费不变，却买到了自适应。形式上用**指数机制**（公开网格 + 效用 = 负任务误差），而不是 LDP 协议——LDP-IDS/MTSP-LDP 那类是为“不可信收集者 + 频次估计”设计的，和你的场景（客户端可信、数值、敏感度已知）不同构。这个“DP 放在分配里而不是判断里”本身就是一条可写进论文的机制洞察。
+
+顺带一个**必须避开的坑**（系统 DP 的经典陷阱）：如果直接令 `ε_i ∝ |Δ_i|^{2/3}`，噪声尺度就是私有数据的函数，**不自动满足 DP**——对手能从多次发布的离散度反推尺度、再反推 Δ。所以要么指数机制（推荐），要么平滑敏感度。
+
+## 三、四条可证的骨架（够 CCF-B/C）
+
+| | 结论 | 作用 |
+|---|---|---|
+| **L1 抵消引理** | 组内 `Σa_iΔlog x_i=0` 时，只刷一个根会把任务误差从 0 变成 `\|a_iΔlog x_i\|` | 反直觉主结果，解释你的 Fig.1D |
+| **L2 广义幂律** | 最小化 `Σw_i(c_i/ε_i)^p` ⇒ `ε_i ∝ (w_i c_i^p)^{1/(p+1)}`；p=1,c=D 就是 **RootGuard 的 √律**，p=2,c=\|Δ\| 得 `ε_i ∝ \|a_i\|^{1/3}\|Δ_i\|^{2/3}` | 把 RootGuard 收成特例，最省力的差异化 |
+| **L3 增量 vs 重锚** | 小幅漂移用增量发布（噪声尺度 `\|Δ\|/ε` 而非 `D/ε`），绝对误差压回锚点水平 | 直接治你“刷新噪声是瓶颈”的观察 |
+| **L4 时机** | 平稳漂移下均匀 epoch 最优，且**时刻公开 ⇒ 无调度信道** | 解释“周期基线很强”，并把 DP 侧做干净 |
+
+**L4 是这篇文章的结构性洞见**：时机是无聊的（公开、均匀、可证无信道），战场全在“怎么分”。你之前纠结的 w-event 之所以走不通，正是因为它把保护对象绑在窗口上，而固定 B 下窗口被迫等于 T——你转向有限流是对的。
+
+## 四、一个必须回你的事实
+
+你图 2 说“简单周期基线已有很强竞争力”——这不是坏消息，这恰恰是 L4 的**实验预演**：它说明时机不是瓶颈。所以你的 money plot 不该是“我的调度更聪明”，而该是：**同预算下，公开周期 + 漂移感知分配 vs 公开周期 + 均匀分配**。前者赢，收益就纯粹来自 L2/L3，审稿人无话可说。
+
+---
+
+完整设计（含预算账本、伪代码、实验矩阵、rebuttal 弹药、12 周路线图、Plan B）写在：[notes/terra-design-v1.md](notes/terra-design-v1.md)
+
+**下一步我建议先做一件小事**：把 `ANEMIA.json` 解析成时序表，画一张「δ vs 各根 |Δlog x|」的散点图。如果 δ≈0 而根漂移很大的点占相当比例，L1 就有了数据支撑，整篇文章的 motivation 也就立住了。
+
+三个问题：
+
+1. 你的**周期基线**具体是什么周期、每次刷新怎么分预算（均匀？按 D？）？这直接决定 money plot 的对照是否公平。
+2. `ANEMIA.json` 里每个 session 是“整批 3 个根一起换”，还是也存在只换 1–2 个的情况？后者更能凸显 L1。
+3. 你手上有几个模板/多少 session？要不要我现在就把解析 + δ 投影的代码写出来跑一版？
+
+===== USER (turn None) =====
+我和你讨论下你给的三个判断：
+1.我的决策量是，根值变化（无论几个）对任务的影响，因为这里包含了我实验观察到的，不是所有根的变化都值得加噪。但我们后续得好好探讨如果同时变大，是该分给预算进行加噪，还是复用之前的（但如果两个变得够大，也会影响中间结果，即使目标函数因为相互抵消变化不大），我们需要认真审核究竟使用什么作为复用还是更新的判断标准
+2.阈值检测我暂时没想好是否必须使用隐私预算进行判断，如果使用，逻辑是怎样的
+关于你的问题：
+1.我的基线是：首先基于rootguard的预算不变动的情况，然后是周期刷新（每2轮/每4轮等）
+2.我理想的数据集里的每个session既存在整批 3 个根一起换，也存在只换 1–2 个的情况
+
+目标：我们现在先不进行实验验证，先把整体思路框架、阈值怎么判断，以及怎么使用AST这个核心辅助信息先想明白，然后我们再去进行实验，先判断我们设计的检测更新的确实有效，也确实比基线有用。
+
+===== USER (turn None) =====
+Time sampled while preparing turn 3, step 1: 2026-10-23T14:04:46+08:00[Asia/Shanghai]
+Browser time zone for this request: Asia/Shanghai. Interpret otherwise-unqualified dates and times in this zone.
+Elapsed since the preceding model-visible message: 17m 4s.
+
+----- ASSISTANT (turn 3 step 1) -----
+[TOOL CALL write args=null]
+
+[TOOL CALL] write null
+[TOOL RESULT len=4] null
+
+----- ASSISTANT (turn 3 step 2) -----
+先说结论：**你第 1 点对了一半，我 v1 的 L1 错了一半。**
+
+## 一、为什么“目标抵消”不等于“不用刷”
+
+你的数据里，`mcv / mch / mchc` **本身就是被查询的节点**，`anemia_class` 只是末端。所以：
+
+- hb、hct 同比漂移 → `mchc=100·hb/hct` **不变**（目标抵消），但 `mcv=10·hct/rbc`、`mch=10·hb/rbc` **都变了**；
+- 服务方下一轮问的恰恰是 mcv/mch——你返回旧值，就是**答错**。
+
+所以“抵消”是**逐节点**的，不是全局的。你的决策量“根值变化对任务的影响”是对的，但**“任务”必须定义成 workload（被查询节点集合 + 查询频率），而不是单一 target**。这正是你担心的“两个都变得够大，中间结果也变了”——它在框架里不需要特判，自动成立。
+
+精确形式是一个 k×k 的半正定矩阵：
+
+```
+M = Σ_j w_j · a_j a_jᵀ        a_j = ∂log T_j/∂log x_i（AST 符号求导）
+J(S,ε) = b_Sᵀ M b_S + Σ_{i∈S} (c_i/ε_i)² M_ii
+         └ 陈旧偏置 ┘   └ 新噪声方差 ┘
+```
+
+**`M` 的对角线就是 RootGuard 的敏感度，非对角线就是“抵消/放大”本身**——RootGuard 只用了对角线，所以它在多根同时漂移时必然做错决定。这句话基本可以当论文的 related work 分水岭。
+
+## 二、用你的 ANEMIA 手算一遍（三个情形，结论完全不同）
+
+`a_mcv=(0,1,−1)`、`a_mch=(1,0,−1)`、`a_mchc=(1,−1,0)`，取 `w=(0.3,0.25,0.3,0.15)`：
+
+```
+M = [[ 0.55, -0.30, -0.25],
+     [-0.30,  0.60, -0.30],
+     [-0.25, -0.30,  0.55]]
+```
+
+| 漂移 | `J(∅)` | 决策 |
+|---|---|---|
+| Δ=(δ,δ,0)（hb/hct 同比，rbc 不动） | `0.55δ² > 0` | **要刷**（mcv/mch 变了） |
+| 同上，但 workload 里只有 anemia_class | `≈0` | **不刷**（真抵消） |
+| Δ=(δ,δ,δ)（三根同比） | `0` | **不刷**（所有比值不变） |
+| Δ=(δ,δ,1.2δ) | `>0` | 要刷，且只刷 rbc 性价比最高 |
+
+同一漂移、不同 workload，结论相反——**这就是为什么“是否更新”既不能只看根，也不能只看 target**。
+
+## 三、阈值：其实不需要阈值了
+
+给定 S，预算分配仍有闭式解（还是那个“弹性 1/3、漂移 2/3”）：
+
+```
+ε_i = E · (M_ii c_i²)^{1/3} / Σ_l (M_ll c_l²)^{1/3}
+J(S) = b_Sᵀ M b_S + (Σ_{i∈S} (M_ii c_i²)^{1/3})³ / E²
+```
+
+而 `k ≤ 6`（ANEMIA=3，FIB-4=4），`2^k = 8~64`，**直接穷举**：
+
+```
+S* = argmin_S J(S)   s.t.  J(∅) − J(S) > λ·E     (λ = 预算影子价格)
+```
+
+**阈值不是被删掉，是被 `J` 的等值面替代了。** 在 k=2 的漂移平面上，决策区是一条**围绕“补偿方向”的带状区**，外面才是刷新区——任何标量阈值 `|Δ|>θ` 都切不出这个形状。这大概也是你之前阈值实验“效果有限”的理论解释：用一维阈值去拟合二维楔形区，必然有系统性 regret。
+
+## 四、检测要不要花隐私预算：判据只有一句
+
+> **决定是否改变“发布值的分布”，而它又依赖私有数据 → 必须计价；否则不用。**
+
+- 「刷 / 不刷」改变分布，由私有 Δ 决定 → 要计价，**但二值判断信息量太低，买了也白买**（这正是你图 2 测到的）；
+- 「选哪个 S + 怎么切」候选空间大得多 → 同样 `ρ` 买到的东西多得多。
+
+而且 `ε_a` **从这次刷新本来就要花的 `ε_r` 里切**，不是额外开销：
+
+```
+ε_r = ε_a + ε_v = ρ·ε_r + (1−ρ)·ε_r      方差 ×1/(1−ρ)², 典型 ρ = 0.05–0.15
+```
+
+这里有个必须踩住的坑：**数据依赖的噪声尺度不自动满足 DP**。若直接令 `ε_i ∝ (M_ii Δ_i²)^{1/3}`，`σ_i` 就成了 `Δ_i` 的函数，对手能从多次发布的离散度反推它。所以只能走“公开网格 + 指数机制”或“平滑敏感度”。这一步不做，整套机制在理论上不成立——也是审稿人最容易一剑封喉的地方。
+
+---
+
+完整推导、决策区域图怎么画、两类节点（连续 / 阈值用 margin）怎么进同一个目标、最坏情况（`λ_max(M)` 谱形式）、以及 evaluation 的“生死线”都写在 [notes/framework-v2-workload-ast.md](notes/framework-v2-workload-ast.md)。
+
+**下一步建议（都不跑实验）**：① 把 8 个模板的 `M` 都算出来，看非对角项占比——若普遍很大，“抵消”就是你的数据里的普遍现象，motivation 彻底立住；② 画 k=2 的决策区域图，确认是带状；③ 先把“生死线”写死（`2^k` vs oracle 差距 <20%、同预算 vs 周期均匀提升 ≥15%、`|A|=1` 时收益归零）。
+
+一个问题：你说的“中间结果”是**确定性依赖 AST 的派生节点**（mcv/mch/mchc），还是也可能出现**用户直接报出一个中间值**（比如用户自己说“我的 mcv 是 98”）？后者会让 M 的结构变成“根 + 派生节点都可被直接更新”，需要多一层一致性约束。

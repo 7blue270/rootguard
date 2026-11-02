@@ -1,0 +1,169 @@
+{
+  "source": "MIMIC-IV Clinical Database Demo 2.2",
+  "source_sha256": "d51a4cf1ea63245abe7d544b0d50a928e9ee2ec5eb9a5ce85500aed0bd6c6dfc",
+  "rules": "one admission; complete panel at identical charttime; valid positive numeric values; expected units; conflicting duplicates rejected; order by availability and require increasing measurement time; adjacent identical root vectors excluded; maximum count over admissions per patient; 17/21/25 snapshots support 16/20/24 atomic-panel update rounds; these are capacity counts, not final selected 40-turn sequences",
+  "small_change_definition": "0<relative target change<=20%, same class; descriptive only",
+  "labs": {
+    "tc": {
+      "positive_numeric_rows": 61,
+      "patients": 29
+    },
+    "hdl": {
+      "positive_numeric_rows": 59,
+      "patients": 30
+    },
+    "tg": {
+      "positive_numeric_rows": 78,
+      "patients": 38
+    },
+    "glu": {
+      "positive_numeric_rows": 2711,
+      "patients": 100
+    },
+    "ins": {
+      "positive_numeric_rows": 0,
+      "patients": 0
+    },
+    "lym": {
+      "positive_numeric_rows": 563,
+      "patients": 45
+    },
+    "neu": {
+      "positive_numeric_rows": 554,
+      "patients": 45
+    }
+  },
+  "templates": {
+    "ANEMIA": {
+      "patients_with_complete_panels": 100,
+      "changed_snapshots_same_admission_total": 2133,
+      "patients_by_min_changed_snapshots": {
+        "17": 25,
+        "21": 21,
+        "25": 14
+      },
+      "patients_also_with_category_event": {
+        "17": 23,
+        "21": 19,
+        "25": 12
+      },
+      "patients_also_with_category_event_and_small_class_preserving_change": {
+        "17": 23,
+        "21": 19,
+        "25": 12
+      },
+      "max_changed_snapshots_one_admission": 56
+    },
+    "FIB4": {
+      "patients_with_complete_panels": 65,
+      "changed_snapshots_same_admission_total": 743,
+      "patients_by_min_changed_snapshots": {
+        "17": 6,
+        "21": 5,
+        "25": 3
+      },
+      "patients_also_with_category_event": {
+        "17": 5,
+        "21": 5,
+        "25": 3
+      },
+      "patients_also_with_category_event_and_small_class_preserving_change": {
+        "17": 5,
+        "21": 5,
+        "25": 3
+      },
+      "max_changed_snapshots_one_admission": 42
+    },
+    "AIP": {
+      "patients_with_complete_panels": 11,
+      "changed_snapshots_same_admission_total": 12,
+      "patients_by_min_changed_snapshots": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "patients_also_with_category_event": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "patients_also_with_category_event_and_small_class_preserving_change": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "max_changed_snapshots_one_admission": 1
+    },
+    "TYG": {
+      "patients_with_complete_panels": 21,
+      "changed_snapshots_same_admission_total": 29,
+      "patients_by_min_changed_snapshots": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "patients_also_with_category_event": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "patients_also_with_category_event_and_small_class_preserving_change": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "max_changed_snapshots_one_admission": 4
+    },
+    "HOMA": {
+      "patients_with_complete_panels": 0,
+      "changed_snapshots_same_admission_total": 0,
+      "patients_by_min_changed_snapshots": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "patients_also_with_category_event": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "patients_also_with_category_event_and_small_class_preserving_change": {
+        "17": 0,
+        "21": 0,
+        "25": 0
+      },
+      "max_changed_snapshots_one_admission": 0
+    },
+    "NLR": {
+      "patients_with_complete_panels": 32,
+      "changed_snapshots_same_admission_total": 233,
+      "patients_by_min_changed_snapshots": {
+        "17": 2,
+        "21": 1,
+        "25": 1
+      },
+      "patients_also_with_category_event": {
+        "17": 2,
+        "21": 1,
+        "25": 1
+      },
+      "patients_also_with_category_event_and_small_class_preserving_change": {
+        "17": 2,
+        "21": 1,
+        "25": 1
+      },
+      "max_changed_snapshots_one_admission": 33
+    }
+  },
+  "not_audited": [
+    "VASCULAR: chartevents/omr not available locally",
+    "CONICITY: required waist series not established"
+  ],
+  "caveats": [
+    "Full MIMIC not available locally; no extrapolated patient counts",
+    "No partial-root carry-forward or interpolation used",
+    "NLR uses absolute counts only, not percentage roots",
+    "Blood glucose fasting status not established; numeric TYG/HOMA formula feasibility is not clinical validity",
+    "Counts for different templates may overlap in patients"
+  ]
+}

@@ -1,0 +1,32 @@
+corpus,unit,type,basis
+RootGuard_derived_numeric_nodes,ANEMIA:mcv,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,ANEMIA:mch,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,ANEMIA:mchc,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,AIP:non_hdl,affine,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,AIP:ldl,affine,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,AIP:aip,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,CONICITY:bmi,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,CONICITY:wthr,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,CONICITY:conicity,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,VASCULAR:pp,affine,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,VASCULAR:map,affine,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,VASCULAR:mbp,affine,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,VASCULAR:ppi,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,FIB4:fib4_prod,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,FIB4:fib4_denom,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,FIB4:fib4,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,TYG:tyg_prod,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,TYG:tyg_half,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,TYG:tyg,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,HOMA:homa_prod,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,HOMA:homa,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,NLR:nlr_sum,affine,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,NLR:nlr_diff,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+RootGuard_derived_numeric_nodes,NLR:nlr,nonlinear,classify after composing to raw root attributes; exclude categorical nodes
+official_selected_score_programs,apsiii,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit
+official_selected_score_programs,lods,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit
+official_selected_score_programs,oasis,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit
+official_selected_score_programs,sapsii,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit
+official_selected_score_programs,sirs,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit
+official_selected_score_programs,sofa,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit
+official_selected_score_programs,meld,nonlinear,piecewise thresholds/rounding/logs as function of underlying measured inputs; one program is one unit

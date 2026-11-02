@@ -1,0 +1,15 @@
+{
+  "templates": ["ANEMIA", "FIB4", "HOMA"],
+  "horizons": [8,16],
+  "stress_patterns": ["single","spaced","adjacent","chatter","stable"],
+  "budgets": [0.3,0.7],
+  "K": [1,2,4],
+  "validation_repeats": 12,
+  "test_repeats": 60,
+  "bootstrap": 1000,
+  "seed": 2026101317,
+  "recall_constraints": [20,50,80],
+  "false_change_constraint": 20,
+  "B_cases": ["stress_ANEMIA_single_H8","stress_ANEMIA_chatter_H16","stress_FIB4_spaced_H16","stress_FIB4_adjacent_H8","stress_HOMA_single_H16","stress_HOMA_chatter_H8","real_ANEMIA_H8","real_ANEMIA_H16"],
+  "B_K": [2,4]
+}

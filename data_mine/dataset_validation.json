@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "total_turns": 1920,
+  "source_references_checked": 5440,
+  "datasets": {
+    "ANEMIA": {
+      "patients": 20,
+      "turns": 800,
+      "sha256": "5dc0983ee4a850d3e5e5b2f2dcefc268eb75dd25c0ca301d1106d4cda35eeed1"
+    },
+    "FIB4": {
+      "patients": 20,
+      "turns": 800,
+      "sha256": "6a297c0820475f1c38f914b079e5b0c14050f9bc44a4f31b7b474b0381ead5b3"
+    },
+    "NLR": {
+      "patients": 2,
+      "turns": 80,
+      "sha256": "2e1fb617b874297323c6da2480a41798d0288afdbc914cd90bf9be45c6626255"
+    },
+    "TYG": {
+      "patients": 6,
+      "turns": 240,
+      "sha256": "a9e74ef0f50b38c5e114824f8069fa574ee66e620e601e9d217f248213139af8"
+    }
+  },
+  "checks": [
+    "unique patients within templates",
+    "40 sequential turns",
+    "16-24 real update batches",
+    "replay changed roots",
+    "no unavailable future results",
+    "original source patient/admission/value/time",
+    "canonical RootGuard formulas and classes",
+    "parent/node versions",
+    "text/private_value consistency",
+    "event annotations",
+    "file hashes"
+  ]
+}

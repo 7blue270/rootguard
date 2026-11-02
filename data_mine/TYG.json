@@ -1,0 +1,2347 @@
+{
+  "TYG": [
+    {
+      "id": "TYG_10004733",
+      "topic": "What is my triglyceride-glucose index?",
+      "target_attribute": "tyg_class",
+      "target_risk": "Elevated",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "tg 309.0; glu 94.0",
+          "private_value": {
+            "tg": 309.0,
+            "glu": 94.0
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 93.0",
+          "private_value": {
+            "glu": 93.0
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 28737.0",
+          "private_value": {
+            "tyg_prod": 28737.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 94.0",
+          "private_value": {
+            "glu": 94.0
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 14523.0",
+          "private_value": {
+            "tyg_half": 14523.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.583488878607804",
+          "private_value": {
+            "tyg": 9.583488878607804
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 89.0",
+          "private_value": {
+            "glu": 89.0
+          }
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 78.0",
+          "private_value": {
+            "glu": 78.0
+          }
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.396902923027392",
+          "private_value": {
+            "tyg": 9.396902923027392
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 73.0",
+          "private_value": {
+            "glu": 73.0
+          }
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 22557.0",
+          "private_value": {
+            "tyg_prod": 22557.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 89.0",
+          "private_value": {
+            "glu": 89.0
+          }
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 13750.5",
+          "private_value": {
+            "tyg_half": 13750.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.52883046606994",
+          "private_value": {
+            "tyg": 9.52883046606994
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 102.0",
+          "private_value": {
+            "glu": 102.0
+          }
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 96.0",
+          "private_value": {
+            "glu": 96.0
+          }
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.604542287805636",
+          "private_value": {
+            "tyg": 9.604542287805636
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 114.0",
+          "private_value": {
+            "glu": 114.0
+          }
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 35226.0",
+          "private_value": {
+            "tyg_prod": 35226.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 125.0",
+          "private_value": {
+            "glu": 125.0
+          }
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 19312.5",
+          "private_value": {
+            "tyg_half": 19312.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.868507833640102",
+          "private_value": {
+            "tyg": 9.868507833640102
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 116.0",
+          "private_value": {
+            "glu": 116.0
+          }
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 112.0",
+          "private_value": {
+            "glu": 112.0
+          }
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.758692967632895",
+          "private_value": {
+            "tyg": 9.758692967632895
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 107.0",
+          "private_value": {
+            "glu": 107.0
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 33063.0",
+          "private_value": {
+            "tyg_prod": 33063.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 109.0",
+          "private_value": {
+            "glu": 109.0
+          }
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 16840.5",
+          "private_value": {
+            "tyg_half": 16840.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.731541978566943",
+          "private_value": {
+            "tyg": 9.731541978566943
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 84.0",
+          "private_value": {
+            "glu": 84.0
+          }
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.471010895181113",
+          "private_value": {
+            "tyg": 9.471010895181113
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 92.0",
+          "private_value": {
+            "glu": 92.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "TYG_10005866",
+      "topic": "What is my triglyceride-glucose index?",
+      "target_attribute": "tyg_class",
+      "target_risk": "Normal",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "tg 36.0; glu 95.0",
+          "private_value": {
+            "tg": 36.0,
+            "glu": 95.0
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 112.0",
+          "private_value": {
+            "glu": 112.0
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 4032.0",
+          "private_value": {
+            "tyg_prod": 4032.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 116.0",
+          "private_value": {
+            "glu": 116.0
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 2088.0",
+          "private_value": {
+            "tyg_half": 2088.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 104.0",
+          "private_value": {
+            "glu": 104.0
+          }
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.534762657037537",
+          "private_value": {
+            "tyg": 7.534762657037537
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 82.0",
+          "private_value": {
+            "glu": 82.0
+          }
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.297091005160418",
+          "private_value": {
+            "tyg": 7.297091005160418
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 99.0",
+          "private_value": {
+            "glu": 99.0
+          }
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 102.0",
+          "private_value": {
+            "glu": 102.0
+          }
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 3672.0",
+          "private_value": {
+            "tyg_prod": 3672.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 1836.0",
+          "private_value": {
+            "tyg_half": 1836.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "tg 31.0; glu 105.0",
+          "private_value": {
+            "tg": 31.0,
+            "glu": 105.0
+          }
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.394800374082724",
+          "private_value": {
+            "tyg": 7.394800374082724
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 114.0",
+          "private_value": {
+            "glu": 114.0
+          }
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.4770384723196965",
+          "private_value": {
+            "tyg": 7.4770384723196965
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 108.0",
+          "private_value": {
+            "glu": 108.0
+          }
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 112.0",
+          "private_value": {
+            "glu": 112.0
+          }
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 3472.0",
+          "private_value": {
+            "tyg_prod": 3472.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 103.0",
+          "private_value": {
+            "glu": 103.0
+          }
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 1596.5",
+          "private_value": {
+            "tyg_half": 1596.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.375569012154837",
+          "private_value": {
+            "tyg": 7.375569012154837
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 92.0",
+          "private_value": {
+            "glu": 92.0
+          }
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 100.0",
+          "private_value": {
+            "glu": 100.0
+          }
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.346010209913293",
+          "private_value": {
+            "tyg": 7.346010209913293
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 105.0",
+          "private_value": {
+            "glu": 105.0
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 3255.0",
+          "private_value": {
+            "tyg_prod": 3255.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 124.0",
+          "private_value": {
+            "glu": 124.0
+          }
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 1922.0",
+          "private_value": {
+            "tyg_half": 1922.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 110.0",
+          "private_value": {
+            "glu": 110.0
+          }
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.4413203897176174",
+          "private_value": {
+            "tyg": 7.4413203897176174
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "tg 16.0; glu 108.0",
+          "private_value": {
+            "tg": 16.0,
+            "glu": 108.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "TYG_10007795",
+      "topic": "What is my triglyceride-glucose index?",
+      "target_attribute": "tyg_class",
+      "target_risk": "Elevated",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "tg 134.0; glu 114.0",
+          "private_value": {
+            "tg": 134.0,
+            "glu": 114.0
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 139.0",
+          "private_value": {
+            "glu": 139.0
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 18626.0",
+          "private_value": {
+            "tyg_prod": 18626.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 147.0",
+          "private_value": {
+            "glu": 147.0
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 9849.0",
+          "private_value": {
+            "tyg_half": 9849.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 138.0",
+          "private_value": {
+            "glu": 138.0
+          }
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.13194630454817",
+          "private_value": {
+            "tyg": 9.13194630454817
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 191.0",
+          "private_value": {
+            "glu": 191.0
+          }
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.456966047437597",
+          "private_value": {
+            "tyg": 9.456966047437597
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 189.0",
+          "private_value": {
+            "glu": 189.0
+          }
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 150.0",
+          "private_value": {
+            "glu": 150.0
+          }
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 20100.0",
+          "private_value": {
+            "tyg_prod": 20100.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 10050.0",
+          "private_value": {
+            "tyg_half": 10050.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 200.0",
+          "private_value": {
+            "glu": 200.0
+          }
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.503009985939002",
+          "private_value": {
+            "tyg": 9.503009985939002
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 112.0",
+          "private_value": {
+            "glu": 112.0
+          }
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.92319149068606",
+          "private_value": {
+            "tyg": 8.92319149068606
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 144.0",
+          "private_value": {
+            "glu": 144.0
+          }
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 90.0",
+          "private_value": {
+            "glu": 90.0
+          }
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 12060.0",
+          "private_value": {
+            "tyg_prod": 12060.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 105.0",
+          "private_value": {
+            "glu": 105.0
+          }
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 7035.0",
+          "private_value": {
+            "tyg_half": 7035.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.858652969548489",
+          "private_value": {
+            "tyg": 8.858652969548489
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 142.0",
+          "private_value": {
+            "glu": 142.0
+          }
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 133.0",
+          "private_value": {
+            "glu": 133.0
+          }
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.09504174761272",
+          "private_value": {
+            "tyg": 9.09504174761272
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 135.0",
+          "private_value": {
+            "glu": 135.0
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 18090.0",
+          "private_value": {
+            "tyg_prod": 18090.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 151.0",
+          "private_value": {
+            "glu": 151.0
+          }
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 10117.0",
+          "private_value": {
+            "tyg_half": 10117.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 141.0",
+          "private_value": {
+            "glu": 141.0
+          }
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.153452509769135",
+          "private_value": {
+            "tyg": 9.153452509769135
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 170.0",
+          "private_value": {
+            "glu": 170.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "TYG_10020740",
+      "topic": "What is my triglyceride-glucose index?",
+      "target_attribute": "tyg_class",
+      "target_risk": "Normal",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "tg 137.0; glu 148.0",
+          "private_value": {
+            "tg": 137.0,
+            "glu": 148.0
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 236.0",
+          "private_value": {
+            "glu": 236.0
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 32332.0",
+          "private_value": {
+            "tyg_prod": 32332.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 181.0",
+          "private_value": {
+            "glu": 181.0
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 12398.5",
+          "private_value": {
+            "tyg_half": 12398.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 161.0",
+          "private_value": {
+            "glu": 161.0
+          }
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.308238110252642",
+          "private_value": {
+            "tyg": 9.308238110252642
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 257.0",
+          "private_value": {
+            "glu": 257.0
+          }
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 317.0",
+          "private_value": {
+            "glu": 317.0
+          }
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.98573551914546",
+          "private_value": {
+            "tyg": 9.98573551914546
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 293.0",
+          "private_value": {
+            "glu": 293.0
+          }
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 398.0",
+          "private_value": {
+            "glu": 398.0
+          }
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 54526.0",
+          "private_value": {
+            "tyg_prod": 54526.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 366.0",
+          "private_value": {
+            "glu": 366.0
+          }
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 25071.0",
+          "private_value": {
+            "tyg_half": 25071.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 231.0",
+          "private_value": {
+            "glu": 231.0
+          }
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.669251455789974",
+          "private_value": {
+            "tyg": 9.669251455789974
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 190.0",
+          "private_value": {
+            "glu": 190.0
+          }
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.473857817428666",
+          "private_value": {
+            "tyg": 9.473857817428666
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 161.0",
+          "private_value": {
+            "glu": 161.0
+          }
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 87.0",
+          "private_value": {
+            "glu": 87.0
+          }
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 11919.0",
+          "private_value": {
+            "tyg_prod": 11919.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 225.0",
+          "private_value": {
+            "glu": 225.0
+          }
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 15412.5",
+          "private_value": {
+            "tyg_half": 15412.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 84.0",
+          "private_value": {
+            "glu": 84.0
+          }
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.657650544111494",
+          "private_value": {
+            "tyg": 8.657650544111494
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 132.0",
+          "private_value": {
+            "glu": 132.0
+          }
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 142.0",
+          "private_value": {
+            "glu": 142.0
+          }
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 9.18266080286944",
+          "private_value": {
+            "tyg": 9.18266080286944
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 137.0",
+          "private_value": {
+            "glu": 137.0
+          }
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 204.0",
+          "private_value": {
+            "glu": 204.0
+          }
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 27948.0",
+          "private_value": {
+            "tyg_prod": 27948.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 13974.0",
+          "private_value": {
+            "tyg_half": 13974.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 63.0",
+          "private_value": {
+            "glu": 63.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "TYG_10035631",
+      "topic": "What is my triglyceride-glucose index?",
+      "target_attribute": "tyg_class",
+      "target_risk": "Elevated",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "tg 587.0; glu 276.0",
+          "private_value": {
+            "tg": 587.0,
+            "glu": 276.0
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "tg 570.0; glu 242.0",
+          "private_value": {
+            "tg": 570.0,
+            "glu": 242.0
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 137940.0",
+          "private_value": {
+            "tyg_prod": 137940.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 202.0",
+          "private_value": {
+            "glu": 202.0
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 57570.0",
+          "private_value": {
+            "tyg_half": 57570.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 194.0",
+          "private_value": {
+            "glu": 194.0
+          }
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 10.920347339331979",
+          "private_value": {
+            "tyg": 10.920347339331979
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "tg 448.0; glu 173.0",
+          "private_value": {
+            "tg": 448.0,
+            "glu": 173.0
+          }
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "tg 393.0; glu 126.0",
+          "private_value": {
+            "tg": 393.0,
+            "glu": 126.0
+          }
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 10.116944338260794",
+          "private_value": {
+            "tyg": 10.116944338260794
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 134.0",
+          "private_value": {
+            "glu": 134.0
+          }
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 151.0",
+          "private_value": {
+            "glu": 151.0
+          }
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 59343.0",
+          "private_value": {
+            "tyg_prod": 59343.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 132.0",
+          "private_value": {
+            "glu": 132.0
+          }
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 25938.0",
+          "private_value": {
+            "tyg_half": 25938.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 145.0",
+          "private_value": {
+            "glu": 145.0
+          }
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 10.25739617372989",
+          "private_value": {
+            "tyg": 10.25739617372989
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 156.0",
+          "private_value": {
+            "glu": 156.0
+          }
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 140.0",
+          "private_value": {
+            "glu": 140.0
+          }
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 10.22230485391862",
+          "private_value": {
+            "tyg": 10.22230485391862
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 104.0",
+          "private_value": {
+            "glu": 104.0
+          }
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 103.0",
+          "private_value": {
+            "glu": 103.0
+          }
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 40479.0",
+          "private_value": {
+            "tyg_prod": 40479.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 96.0",
+          "private_value": {
+            "glu": 96.0
+          }
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 18864.0",
+          "private_value": {
+            "tyg_half": 18864.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 132.0",
+          "private_value": {
+            "glu": 132.0
+          }
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 10.163464353895687",
+          "private_value": {
+            "tyg": 10.163464353895687
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 114.0",
+          "private_value": {
+            "glu": 114.0
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 129.0",
+          "private_value": {
+            "glu": 129.0
+          }
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 10.140474835670988",
+          "private_value": {
+            "tyg": 10.140474835670988
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 117.0",
+          "private_value": {
+            "glu": 117.0
+          }
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Elevated",
+          "private_value": {
+            "tyg_class": "Elevated"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 136.0",
+          "private_value": {
+            "glu": 136.0
+          }
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 53448.0",
+          "private_value": {
+            "tyg_prod": 53448.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 111.0",
+          "private_value": {
+            "glu": 111.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "TYG_10039708",
+      "topic": "What is my triglyceride-glucose index?",
+      "target_attribute": "tyg_class",
+      "target_risk": "Normal",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "tg 59.0; glu 124.0",
+          "private_value": {
+            "tg": 59.0,
+            "glu": 124.0
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 87.0",
+          "private_value": {
+            "glu": 87.0
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 108.0",
+          "private_value": {
+            "glu": 108.0
+          }
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 6372.0",
+          "private_value": {
+            "tyg_prod": 6372.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 159.0",
+          "private_value": {
+            "glu": 159.0
+          }
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 4690.5",
+          "private_value": {
+            "tyg_half": 4690.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 126.0",
+          "private_value": {
+            "glu": 126.0
+          }
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.220672170297252",
+          "private_value": {
+            "tyg": 8.220672170297252
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 132.0",
+          "private_value": {
+            "glu": 132.0
+          }
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 151.0",
+          "private_value": {
+            "glu": 151.0
+          }
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.401670100160699",
+          "private_value": {
+            "tyg": 8.401670100160699
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 129.0",
+          "private_value": {
+            "glu": 129.0
+          }
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 83.0",
+          "private_value": {
+            "glu": 83.0
+          }
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 4897.0",
+          "private_value": {
+            "tyg_prod": 4897.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 120.0",
+          "private_value": {
+            "glu": 120.0
+          }
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 3540.0",
+          "private_value": {
+            "tyg_half": 3540.0
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 143.0",
+          "private_value": {
+            "glu": 143.0
+          }
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.347234893605682",
+          "private_value": {
+            "tyg": 8.347234893605682
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 150.0",
+          "private_value": {
+            "glu": 150.0
+          }
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 145.0",
+          "private_value": {
+            "glu": 145.0
+          }
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 143.0",
+          "private_value": {
+            "glu": 143.0
+          }
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.347234893605682",
+          "private_value": {
+            "tyg": 8.347234893605682
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 151.0",
+          "private_value": {
+            "glu": 151.0
+          }
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 102.0",
+          "private_value": {
+            "glu": 102.0
+          }
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What is the current tyg_prod, using the latest available measurements?",
+          "user_response": "tyg_prod 6018.0",
+          "private_value": {
+            "tyg_prod": 6018.0
+          },
+          "math_expression": "tyg_prod=tg*glu"
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 89.0",
+          "private_value": {
+            "glu": 89.0
+          }
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current tyg_half, using the latest available measurements?",
+          "user_response": "tyg_half 2625.5",
+          "private_value": {
+            "tyg_half": 2625.5
+          },
+          "math_expression": "tyg_half=tyg_prod/2"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 122.0",
+          "private_value": {
+            "glu": 122.0
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 8.188411308079031",
+          "private_value": {
+            "tyg": 8.188411308079031
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 112.0",
+          "private_value": {
+            "glu": 112.0
+          }
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 94.0",
+          "private_value": {
+            "glu": 94.0
+          }
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What is the current tyg, using the latest available measurements?",
+          "user_response": "tyg 7.927685045615778",
+          "private_value": {
+            "tyg": 7.927685045615778
+          },
+          "math_expression": "tyg=ln(tyg_half)"
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 102.0",
+          "private_value": {
+            "glu": 102.0
+          }
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current tyg_class, using the latest available measurements?",
+          "user_response": "tyg_class Normal",
+          "private_value": {
+            "tyg_class": "Normal"
+          },
+          "math_expression": "class=1 if tyg>8.5 else 0"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "glu 94.0",
+          "private_value": {
+            "glu": 94.0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1418 @@
+[
+  {
+    "task": "ANEMIA",
+    "B": 0.03,
+    "test_patients": 50,
+    "reference_patients": 50,
+    "mae_ratio_opt_over_roots": 0.7786047527098691,
+    "mae_gap_CI_low": -1.7290985180181295,
+    "mae_gap_CI_high": -1.5931707187157993,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 7.50041587433312,
+        "wMAPE": 22.777091130984257,
+        "p95_absolute_error": 21.288724612095486,
+        "CMR": 73.3,
+        "RCE": 41.099999999999994
+      },
+      "M-Opt": {
+        "MAE": 5.839859447056313,
+        "wMAPE": 17.734351407490145,
+        "p95_absolute_error": 15.960030447202914,
+        "CMR": 69.1,
+        "RCE": 38.18333333333334
+      }
+    }
+  },
+  {
+    "task": "ANEMIA",
+    "B": 0.1,
+    "test_patients": 50,
+    "reference_patients": 50,
+    "mae_ratio_opt_over_roots": 0.6793235776634287,
+    "mae_gap_CI_low": -0.9590238328264906,
+    "mae_gap_CI_high": -0.8489961287975637,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 2.8219822389733284,
+        "wMAPE": 8.569731026125199,
+        "p95_absolute_error": 7.753609181268721,
+        "CMR": 52.666666666666664,
+        "RCE": 27.583333333333332
+      },
+      "M-Opt": {
+        "MAE": 1.9170390706820135,
+        "wMAPE": 5.821620340280653,
+        "p95_absolute_error": 5.231106514471173,
+        "CMR": 41.63333333333333,
+        "RCE": 21.433333333333334
+      }
+    }
+  },
+  {
+    "task": "ANEMIA",
+    "B": 0.3,
+    "test_patients": 50,
+    "reference_patients": 50,
+    "mae_ratio_opt_over_roots": 0.6691832402515666,
+    "mae_gap_CI_low": -0.3330861676102287,
+    "mae_gap_CI_high": -0.29843524090409274,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.9547374562901593,
+        "wMAPE": 2.8993248391068125,
+        "p95_absolute_error": 2.634016261949139,
+        "CMR": 22.733333333333334,
+        "RCE": 11.433333333333334
+      },
+      "M-Opt": {
+        "MAE": 0.6388943045897871,
+        "wMAPE": 1.9401795903753487,
+        "p95_absolute_error": 1.7754186769591564,
+        "CMR": 15.9,
+        "RCE": 7.95
+      }
+    }
+  },
+  {
+    "task": "ANEMIA",
+    "B": 0.7,
+    "test_patients": 50,
+    "reference_patients": 50,
+    "mae_ratio_opt_over_roots": 0.6661394104655666,
+    "mae_gap_CI_low": -0.14448982851049005,
+    "mae_gap_CI_high": -0.12939546963266887,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.41020072958599507,
+        "wMAPE": 1.2456881800047073,
+        "p95_absolute_error": 1.137429817993534,
+        "CMR": 9.8,
+        "RCE": 4.9
+      },
+      "M-Opt": {
+        "MAE": 0.27325087217896016,
+        "wMAPE": 0.8298019898522607,
+        "p95_absolute_error": 0.7504401157954619,
+        "CMR": 6.7,
+        "RCE": 3.35
+      }
+    }
+  },
+  {
+    "task": "ANEMIA",
+    "B": 1.0,
+    "test_patients": 50,
+    "reference_patients": 50,
+    "mae_ratio_opt_over_roots": 0.6689445183774312,
+    "mae_gap_CI_low": -0.09999118818364625,
+    "mae_gap_CI_high": -0.09010140060260997,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.28705494210018,
+        "wMAPE": 0.8717218732083363,
+        "p95_absolute_error": 0.7900897239519972,
+        "CMR": 7.000000000000001,
+        "RCE": 3.5000000000000004
+      },
+      "M-Opt": {
+        "MAE": 0.19202382999106635,
+        "wMAPE": 0.5831335686324228,
+        "p95_absolute_error": 0.530820440805222,
+        "CMR": 4.366666666666666,
+        "RCE": 2.183333333333333
+      }
+    }
+  },
+  {
+    "task": "ANEMIA",
+    "B": 3.0,
+    "test_patients": 50,
+    "reference_patients": 50,
+    "mae_ratio_opt_over_roots": 0.6707710364199506,
+    "mae_gap_CI_low": -0.032992441986423614,
+    "mae_gap_CI_high": -0.02962995507046302,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.09513241362510033,
+        "wMAPE": 0.288895934699362,
+        "p95_absolute_error": 0.2662057867011752,
+        "CMR": 1.866666666666667,
+        "RCE": 0.9333333333333335
+      },
+      "M-Opt": {
+        "MAE": 0.06381206768443999,
+        "wMAPE": 0.1937830255358014,
+        "p95_absolute_error": 0.1743880653136296,
+        "CMR": 0.9333333333333335,
+        "RCE": 0.46666666666666673
+      }
+    }
+  },
+  {
+    "task": "FIB4",
+    "B": 0.03,
+    "test_patients": 36,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.6253163812536044,
+    "mae_gap_CI_low": -15.859976278860678,
+    "mae_gap_CI_high": -6.973379047657587,
+    "patient_win_fraction_opt": 0.8333333333333334,
+    "methods": {
+      "M-Roots": {
+        "MAE": 29.928369373734164,
+        "wMAPE": 501.54295967493636,
+        "p95_absolute_error": 117.72624486453789,
+        "CMR": 68.28703703703704,
+        "RCE": 51.2962962962963
+      },
+      "M-Opt": {
+        "MAE": 18.71469963360465,
+        "wMAPE": 313.62302858715367,
+        "p95_absolute_error": 86.32581340186194,
+        "CMR": 69.12037037037037,
+        "RCE": 51.08796296296296
+      }
+    }
+  },
+  {
+    "task": "FIB4",
+    "B": 0.1,
+    "test_patients": 36,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.6423945304656533,
+    "mae_gap_CI_low": -12.377441210196928,
+    "mae_gap_CI_high": -1.9644079816068936,
+    "patient_win_fraction_opt": 0.6666666666666666,
+    "methods": {
+      "M-Roots": {
+        "MAE": 18.510245984487714,
+        "wMAPE": 310.19677147925916,
+        "p95_absolute_error": 78.78832257669404,
+        "CMR": 63.51851851851852,
+        "RCE": 45.83333333333333
+      },
+      "M-Opt": {
+        "MAE": 11.89088077800873,
+        "wMAPE": 199.26870936638025,
+        "p95_absolute_error": 64.17476865574682,
+        "CMR": 67.63888888888889,
+        "RCE": 48.842592592592595
+      }
+    }
+  },
+  {
+    "task": "FIB4",
+    "B": 0.3,
+    "test_patients": 36,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.7733817335904347,
+    "mae_gap_CI_low": -4.153841657965597,
+    "mae_gap_CI_high": -0.9506993417338506,
+    "patient_win_fraction_opt": 0.9444444444444444,
+    "methods": {
+      "M-Roots": {
+        "MAE": 10.080995271154986,
+        "wMAPE": 168.93844571436688,
+        "p95_absolute_error": 42.54647513583518,
+        "CMR": 58.7037037037037,
+        "RCE": 40.27777777777778
+      },
+      "M-Opt": {
+        "MAE": 7.796457599122816,
+        "wMAPE": 130.6539080166506,
+        "p95_absolute_error": 36.956176354001855,
+        "CMR": 55.32407407407407,
+        "RCE": 36.851851851851855
+      }
+    }
+  },
+  {
+    "task": "FIB4",
+    "B": 0.7,
+    "test_patients": 36,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.7656113155995191,
+    "mae_gap_CI_low": -2.1268203399181544,
+    "mae_gap_CI_high": -0.8649952256222697,
+    "patient_win_fraction_opt": 0.9722222222222222,
+    "methods": {
+      "M-Roots": {
+        "MAE": 6.127045116117405,
+        "wMAPE": 102.67770700184902,
+        "p95_absolute_error": 25.758406690989638,
+        "CMR": 53.05555555555556,
+        "RCE": 34.745370370370374
+      },
+      "M-Opt": {
+        "MAE": 4.690935072088255,
+        "wMAPE": 78.61121434042757,
+        "p95_absolute_error": 18.573578527493005,
+        "CMR": 48.333333333333336,
+        "RCE": 30.138888888888886
+      }
+    }
+  },
+  {
+    "task": "FIB4",
+    "B": 1.0,
+    "test_patients": 36,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.7702201769681991,
+    "mae_gap_CI_low": -1.626094594553675,
+    "mae_gap_CI_high": -0.7210743062585543,
+    "patient_win_fraction_opt": 0.9722222222222222,
+    "methods": {
+      "M-Roots": {
+        "MAE": 4.942396675438918,
+        "wMAPE": 82.82523600041755,
+        "p95_absolute_error": 20.75028517390368,
+        "CMR": 50.231481481481474,
+        "RCE": 32.12962962962963
+      },
+      "M-Opt": {
+        "MAE": 3.806733642003602,
+        "wMAPE": 63.793667929674456,
+        "p95_absolute_error": 14.194348850686845,
+        "CMR": 44.72222222222222,
+        "RCE": 26.944444444444443
+      }
+    }
+  },
+  {
+    "task": "FIB4",
+    "B": 3.0,
+    "test_patients": 36,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.7231981745298963,
+    "mae_gap_CI_low": -1.27137602438486,
+    "mae_gap_CI_high": -0.3499728586124894,
+    "patient_win_fraction_opt": 0.9722222222222222,
+    "methods": {
+      "M-Roots": {
+        "MAE": 2.5635399621546977,
+        "wMAPE": 42.96008926541865,
+        "p95_absolute_error": 8.228437194242032,
+        "CMR": 37.824074074074076,
+        "RCE": 21.62037037037037
+      },
+      "M-Opt": {
+        "MAE": 1.8539474209647169,
+        "wMAPE": 31.06865813439217,
+        "p95_absolute_error": 5.979495001836943,
+        "CMR": 29.814814814814817,
+        "RCE": 16.22685185185185
+      }
+    }
+  },
+  {
+    "task": "NLR",
+    "B": 0.03,
+    "test_patients": 22,
+    "reference_patients": 10,
+    "mae_ratio_opt_over_roots": 1.3631000365252743,
+    "mae_gap_CI_low": 1.6539053485433415,
+    "mae_gap_CI_high": 3.1115402718850156,
+    "patient_win_fraction_opt": 0.13636363636363635,
+    "methods": {
+      "M-Roots": {
+        "MAE": 6.593196886117077,
+        "wMAPE": 83.58904943107123,
+        "p95_absolute_error": 28.418453791846765,
+        "CMR": 57.12121212121212,
+        "RCE": 57.12121212121212
+      },
+      "M-Opt": {
+        "MAE": 8.987186916284513,
+        "wMAPE": 113.94023633260615,
+        "p95_absolute_error": 34.24132241336625,
+        "CMR": 37.27272727272727,
+        "RCE": 37.27272727272727
+      }
+    }
+  },
+  {
+    "task": "NLR",
+    "B": 0.1,
+    "test_patients": 22,
+    "reference_patients": 10,
+    "mae_ratio_opt_over_roots": 1.0101803167830556,
+    "mae_gap_CI_low": -0.3954863346107719,
+    "mae_gap_CI_high": 0.4244717702574061,
+    "patient_win_fraction_opt": 0.4090909090909091,
+    "methods": {
+      "M-Roots": {
+        "MAE": 5.248646309084256,
+        "wMAPE": 66.54273539139429,
+        "p95_absolute_error": 21.917172144561654,
+        "CMR": 33.71212121212121,
+        "RCE": 33.71212121212121
+      },
+      "M-Opt": {
+        "MAE": 5.3020791911929495,
+        "wMAPE": 67.22016151728974,
+        "p95_absolute_error": 20.30881397155992,
+        "CMR": 28.257575757575758,
+        "RCE": 28.257575757575758
+      }
+    }
+  },
+  {
+    "task": "NLR",
+    "B": 0.3,
+    "test_patients": 22,
+    "reference_patients": 10,
+    "mae_ratio_opt_over_roots": 0.8522203200711573,
+    "mae_gap_CI_low": -0.9200450734182025,
+    "mae_gap_CI_high": -0.25157728076895475,
+    "patient_win_fraction_opt": 0.8181818181818182,
+    "methods": {
+      "M-Roots": {
+        "MAE": 3.6831041920440315,
+        "wMAPE": 46.69467387161041,
+        "p95_absolute_error": 14.191035668899854,
+        "CMR": 14.924242424242424,
+        "RCE": 14.924242424242424
+      },
+      "M-Opt": {
+        "MAE": 3.138816233399185,
+        "wMAPE": 39.794149912482126,
+        "p95_absolute_error": 12.056034055892338,
+        "CMR": 12.424242424242424,
+        "RCE": 12.424242424242424
+      }
+    }
+  },
+  {
+    "task": "NLR",
+    "B": 0.7,
+    "test_patients": 22,
+    "reference_patients": 10,
+    "mae_ratio_opt_over_roots": 0.7215769211436319,
+    "mae_gap_CI_low": -1.1166079782493565,
+    "mae_gap_CI_high": -0.25565000153850304,
+    "patient_win_fraction_opt": 0.8181818181818182,
+    "methods": {
+      "M-Roots": {
+        "MAE": 2.269491873008572,
+        "wMAPE": 28.77278983671463,
+        "p95_absolute_error": 9.213106179865408,
+        "CMR": 6.0606060606060606,
+        "RCE": 6.0606060606060606
+      },
+      "M-Opt": {
+        "MAE": 1.63761295828602,
+        "wMAPE": 20.761781103089323,
+        "p95_absolute_error": 6.619304400375063,
+        "CMR": 5.303030303030303,
+        "RCE": 5.303030303030303
+      }
+    }
+  },
+  {
+    "task": "NLR",
+    "B": 1.0,
+    "test_patients": 22,
+    "reference_patients": 10,
+    "mae_ratio_opt_over_roots": 0.684432404961536,
+    "mae_gap_CI_low": -0.931466293932642,
+    "mae_gap_CI_high": -0.22764148470522275,
+    "patient_win_fraction_opt": 0.8181818181818182,
+    "methods": {
+      "M-Roots": {
+        "MAE": 1.7072587747806838,
+        "wMAPE": 21.644756038950568,
+        "p95_absolute_error": 7.348497147474569,
+        "CMR": 3.7121212121212124,
+        "RCE": 3.7121212121212124
+      },
+      "M-Opt": {
+        "MAE": 1.168503229114829,
+        "wMAPE": 14.81437243054467,
+        "p95_absolute_error": 4.7771433657426625,
+        "CMR": 2.727272727272727,
+        "RCE": 2.727272727272727
+      }
+    }
+  },
+  {
+    "task": "NLR",
+    "B": 3.0,
+    "test_patients": 22,
+    "reference_patients": 10,
+    "mae_ratio_opt_over_roots": 0.6652674726787149,
+    "mae_gap_CI_low": -0.30957640585496354,
+    "mae_gap_CI_high": -0.0782909933068113,
+    "patient_win_fraction_opt": 0.8636363636363636,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.5450676966002918,
+        "wMAPE": 6.910409535977699,
+        "p95_absolute_error": 2.6103605412315365,
+        "CMR": 0.22727272727272727,
+        "RCE": 0.22727272727272727
+      },
+      "M-Opt": {
+        "MAE": 0.36261580895608464,
+        "wMAPE": 4.597270687174775,
+        "p95_absolute_error": 1.5791834840414847,
+        "CMR": 0.15151515151515152,
+        "RCE": 0.15151515151515152
+      }
+    }
+  },
+  {
+    "task": "TYG",
+    "B": 0.03,
+    "test_patients": 15,
+    "reference_patients": 6,
+    "mae_ratio_opt_over_roots": 0.9570991655322584,
+    "mae_gap_CI_low": -0.03871128064691036,
+    "mae_gap_CI_high": -0.002435494853060899,
+    "patient_win_fraction_opt": 0.7333333333333333,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.48933607246140837,
+        "wMAPE": 5.2468423103274775,
+        "p95_absolute_error": 1.4611060805728127,
+        "CMR": 17.333333333333336,
+        "RCE": 17.333333333333336
+      },
+      "M-Opt": {
+        "MAE": 0.4683431466176467,
+        "wMAPE": 5.021748396893775,
+        "p95_absolute_error": 1.3055266083194335,
+        "CMR": 16.22222222222222,
+        "RCE": 16.22222222222222
+      }
+    }
+  },
+  {
+    "task": "TYG",
+    "B": 0.1,
+    "test_patients": 15,
+    "reference_patients": 6,
+    "mae_ratio_opt_over_roots": 0.9340325999619533,
+    "mae_gap_CI_low": -0.019093425024933296,
+    "mae_gap_CI_high": -0.006945789431229806,
+    "patient_win_fraction_opt": 0.8,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.19614298595636045,
+        "wMAPE": 2.1031176230543744,
+        "p95_absolute_error": 0.6665862088035679,
+        "CMR": 6.444444444444445,
+        "RCE": 6.444444444444445
+      },
+      "M-Opt": {
+        "MAE": 0.18320394313712032,
+        "wMAPE": 1.964380421487281,
+        "p95_absolute_error": 0.5950186236040361,
+        "CMR": 5.444444444444444,
+        "RCE": 5.444444444444444
+      }
+    }
+  },
+  {
+    "task": "TYG",
+    "B": 0.3,
+    "test_patients": 15,
+    "reference_patients": 6,
+    "mae_ratio_opt_over_roots": 0.9155809004847005,
+    "mae_gap_CI_low": -0.009586941367594535,
+    "mae_gap_CI_high": -0.00285036542841581,
+    "patient_win_fraction_opt": 0.7333333333333333,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.07224717148629971,
+        "wMAPE": 0.7746608874531676,
+        "p95_absolute_error": 0.26759424018824,
+        "CMR": 1.2222222222222223,
+        "RCE": 1.2222222222222223
+      },
+      "M-Opt": {
+        "MAE": 0.06614813032689888,
+        "wMAPE": 0.7092647129046487,
+        "p95_absolute_error": 0.22470874937152657,
+        "CMR": 0.6666666666666667,
+        "RCE": 0.6666666666666667
+      }
+    }
+  },
+  {
+    "task": "TYG",
+    "B": 0.7,
+    "test_patients": 15,
+    "reference_patients": 6,
+    "mae_ratio_opt_over_roots": 0.9096413398578591,
+    "mae_gap_CI_low": -0.004631344328984145,
+    "mae_gap_CI_high": -0.0011539296000959785,
+    "patient_win_fraction_opt": 0.7333333333333333,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.031191651336598736,
+        "wMAPE": 0.33444841934222164,
+        "p95_absolute_error": 0.11779398016003619,
+        "CMR": 0.0,
+        "RCE": 0.0
+      },
+      "M-Opt": {
+        "MAE": 0.02837321551420285,
+        "wMAPE": 0.30422810828380153,
+        "p95_absolute_error": 0.09844186047924662,
+        "CMR": 0.0,
+        "RCE": 0.0
+      }
+    }
+  },
+  {
+    "task": "TYG",
+    "B": 1.0,
+    "test_patients": 15,
+    "reference_patients": 6,
+    "mae_ratio_opt_over_roots": 0.9073588071601146,
+    "mae_gap_CI_low": -0.0034457986953446793,
+    "mae_gap_CI_high": -0.0008028284322726933,
+    "patient_win_fraction_opt": 0.7333333333333333,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.021846282540655952,
+        "wMAPE": 0.23424391948280487,
+        "p95_absolute_error": 0.07983653261906642,
+        "CMR": 0.0,
+        "RCE": 0.0
+      },
+      "M-Opt": {
+        "MAE": 0.01982241686697242,
+        "wMAPE": 0.2125432833664277,
+        "p95_absolute_error": 0.06986016451795779,
+        "CMR": 0.0,
+        "RCE": 0.0
+      }
+    }
+  },
+  {
+    "task": "TYG",
+    "B": 3.0,
+    "test_patients": 15,
+    "reference_patients": 6,
+    "mae_ratio_opt_over_roots": 0.9329328057183005,
+    "mae_gap_CI_low": -0.0008517753124887897,
+    "mae_gap_CI_high": -0.00013591538951173332,
+    "patient_win_fraction_opt": 0.7333333333333333,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.007198773605613899,
+        "wMAPE": 0.07718791248397593,
+        "p95_absolute_error": 0.024983296353514817,
+        "CMR": 0.0,
+        "RCE": 0.0
+      },
+      "M-Opt": {
+        "MAE": 0.006715972057616221,
+        "wMAPE": 0.0720111357612143,
+        "p95_absolute_error": 0.022041691201054193,
+        "CMR": 0.0,
+        "RCE": 0.0
+      }
+    }
+  },
+  {
+    "task": "AADO2_affine",
+    "B": 0.03,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.8265038264372295,
+    "mae_gap_CI_low": -23.383744567484143,
+    "mae_gap_CI_high": -7.957917898553314,
+    "patient_win_fraction_opt": 0.9285714285714286,
+    "methods": {
+      "M-Roots": {
+        "MAE": 86.41366372324705,
+        "wMAPE": 27.05923398254175,
+        "p95_absolute_error": 236.91196696696701
+      },
+      "M-Opt": {
+        "MAE": 71.42122372372374,
+        "wMAPE": 22.36456042703108,
+        "p95_absolute_error": 178.5870645645646
+      }
+    }
+  },
+  {
+    "task": "AADO2_affine",
+    "B": 0.1,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.8348321525631957,
+    "mae_gap_CI_low": -6.031448640604889,
+    "mae_gap_CI_high": -4.092879212545878,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 30.100205979789315,
+        "wMAPE": 9.425459833971917,
+        "p95_absolute_error": 82.86422672672673
+      },
+      "M-Opt": {
+        "MAE": 25.128619750703088,
+        "wMAPE": 7.868676922092717,
+        "p95_absolute_error": 67.10783533533534
+      }
+    }
+  },
+  {
+    "task": "AADO2_affine",
+    "B": 0.3,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.8384159364970248,
+    "mae_gap_CI_low": -1.871161675067929,
+    "mae_gap_CI_high": -1.4336320219028573,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 10.093040183040184,
+        "wMAPE": 3.1604948122875167,
+        "p95_absolute_error": 27.431118618618587
+      },
+      "M-Opt": {
+        "MAE": 8.462165737165737,
+        "wMAPE": 2.6498092178380266,
+        "p95_absolute_error": 23.137202202202207
+      }
+    }
+  },
+  {
+    "task": "AADO2_affine",
+    "B": 0.7,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.845935962206742,
+    "mae_gap_CI_low": -0.7445701236951247,
+    "mae_gap_CI_high": -0.5966445746341618,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 4.319299120549125,
+        "wMAPE": 1.352528298277478,
+        "p95_absolute_error": 11.643050550550498
+      },
+      "M-Opt": {
+        "MAE": 3.6538504576004596,
+        "wMAPE": 1.144152327415206,
+        "p95_absolute_error": 9.8783408408408
+      }
+    }
+  },
+  {
+    "task": "AADO2_affine",
+    "B": 1.0,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.8462894136082245,
+    "mae_gap_CI_low": -0.5193045590233059,
+    "mae_gap_CI_high": -0.40857553982553974,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 3.02329502121169,
+        "wMAPE": 0.9467026839554378,
+        "p95_absolute_error": 8.224527027027019
+      },
+      "M-Opt": {
+        "MAE": 2.5585825706659064,
+        "wMAPE": 0.8011844592659798,
+        "p95_absolute_error": 6.994139139139156
+      }
+    }
+  },
+  {
+    "task": "AADO2_affine",
+    "B": 3.0,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.8547639155221517,
+    "mae_gap_CI_low": -0.16208879862004982,
+    "mae_gap_CI_high": -0.12639615508365828,
+    "patient_win_fraction_opt": 1.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.9932455074121795,
+        "wMAPE": 0.3110209824368811,
+        "p95_absolute_error": 2.790390390390428
+      },
+      "M-Opt": {
+        "MAE": 0.8489904189904209,
+        "wMAPE": 0.2658495127572948,
+        "p95_absolute_error": 2.275660660660666
+      }
+    }
+  },
+  {
+    "task": "PF_ratio",
+    "B": 0.03,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.9434484635830679,
+    "mae_gap_CI_low": -5.5977654319905845,
+    "mae_gap_CI_high": -0.08695682312177905,
+    "patient_win_fraction_opt": 0.6428571428571429,
+    "methods": {
+      "M-Roots": {
+        "MAE": 51.33544260647419,
+        "wMAPE": 26.41887707401208,
+        "p95_absolute_error": 146.61589138073148
+      },
+      "M-Opt": {
+        "MAE": 48.43234445443483,
+        "wMAPE": 24.92484898506663,
+        "p95_absolute_error": 133.88563286626666
+      }
+    }
+  },
+  {
+    "task": "PF_ratio",
+    "B": 0.1,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.9746082822207419,
+    "mae_gap_CI_low": -0.7423660970824103,
+    "mae_gap_CI_high": -0.08183678906324261,
+    "patient_win_fraction_opt": 0.7142857142857143,
+    "methods": {
+      "M-Roots": {
+        "MAE": 16.76011283165441,
+        "wMAPE": 8.625295471597019,
+        "p95_absolute_error": 47.74388934294512
+      },
+      "M-Opt": {
+        "MAE": 16.334544776684524,
+        "wMAPE": 8.406284403219516,
+        "p95_absolute_error": 46.24493967462898
+      }
+    }
+  },
+  {
+    "task": "PF_ratio",
+    "B": 0.3,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.9753474160378012,
+    "mae_gap_CI_low": -0.24363826481174775,
+    "mae_gap_CI_high": -0.026766328465342524,
+    "patient_win_fraction_opt": 0.7142857142857143,
+    "methods": {
+      "M-Roots": {
+        "MAE": 5.727127084813113,
+        "wMAPE": 2.9473646034531518,
+        "p95_absolute_error": 16.075597525590453
+      },
+      "M-Opt": {
+        "MAE": 5.585938603492577,
+        "wMAPE": 2.874704450099311,
+        "p95_absolute_error": 15.932365340425912
+      }
+    }
+  },
+  {
+    "task": "PF_ratio",
+    "B": 0.7,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.9676182038601417,
+    "mae_gap_CI_low": -0.13388968078287303,
+    "mae_gap_CI_high": -0.020685136823427912,
+    "patient_win_fraction_opt": 0.7142857142857143,
+    "methods": {
+      "M-Roots": {
+        "MAE": 2.4997444574137035,
+        "wMAPE": 1.2864492480001906,
+        "p95_absolute_error": 7.0326937696561
+      },
+      "M-Opt": {
+        "MAE": 2.418798241991993,
+        "wMAPE": 1.2447917107071746,
+        "p95_absolute_error": 6.873519395134781
+      }
+    }
+  },
+  {
+    "task": "PF_ratio",
+    "B": 1.0,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.9668584971359234,
+    "mae_gap_CI_low": -0.10147746415955636,
+    "mae_gap_CI_high": -0.013891776426994315,
+    "patient_win_fraction_opt": 0.7142857142857143,
+    "methods": {
+      "M-Roots": {
+        "MAE": 1.7534144085135435,
+        "wMAPE": 0.9023636958470255,
+        "p95_absolute_error": 4.8853071918514
+      },
+      "M-Opt": {
+        "MAE": 1.6953036198718787,
+        "wMAPE": 0.8724580068366726,
+        "p95_absolute_error": 4.935880957323589
+      }
+    }
+  },
+  {
+    "task": "PF_ratio",
+    "B": 3.0,
+    "test_patients": 14,
+    "reference_patients": 13,
+    "mae_ratio_opt_over_roots": 0.9484447542109882,
+    "mae_gap_CI_low": -0.04713716184370777,
+    "mae_gap_CI_high": -0.01396943345314623,
+    "patient_win_fraction_opt": 0.8571428571428571,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.5743592778339773,
+        "wMAPE": 0.2955838381239657,
+        "p95_absolute_error": 1.5975050643868933
+      },
+      "M-Opt": {
+        "MAE": 0.5447480440940473,
+        "wMAPE": 0.2803449406982252,
+        "p95_absolute_error": 1.605447276361815
+      }
+    }
+  },
+  {
+    "task": "MELD_smooth",
+    "B": 0.03,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.040792777385832,
+    "mae_gap_CI_low": -0.03359199421338317,
+    "mae_gap_CI_high": 0.7610868071939817,
+    "patient_win_fraction_opt": 0.28125,
+    "methods": {
+      "M-Roots": {
+        "MAE": 8.950642444413294,
+        "wMAPE": 69.25450945571538,
+        "p95_absolute_error": 20.215254547910853
+      },
+      "M-Opt": {
+        "MAE": 9.315764009108428,
+        "wMAPE": 72.0795932429074,
+        "p95_absolute_error": 20.393234684380346
+      }
+    }
+  },
+  {
+    "task": "MELD_smooth",
+    "B": 0.1,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.9766298147438857,
+    "mae_gap_CI_low": -0.13485966031378616,
+    "mae_gap_CI_high": 0.0038218391379714048,
+    "patient_win_fraction_opt": 0.59375,
+    "methods": {
+      "M-Roots": {
+        "MAE": 2.8849772742500233,
+        "wMAPE": 22.322161471635994,
+        "p95_absolute_error": 8.526579517416868
+      },
+      "M-Opt": {
+        "MAE": 2.81755482089112,
+        "wMAPE": 21.800488422726957,
+        "p95_absolute_error": 7.945295943334773
+      }
+    }
+  },
+  {
+    "task": "MELD_smooth",
+    "B": 0.3,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0119019522309285,
+    "mae_gap_CI_low": -0.028706588769244288,
+    "mae_gap_CI_high": 0.04538870149117689,
+    "patient_win_fraction_opt": 0.4375,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.8831257329760067,
+        "wMAPE": 6.833078162243742,
+        "p95_absolute_error": 2.7895863175969033
+      },
+      "M-Opt": {
+        "MAE": 0.8936366532637907,
+        "wMAPE": 6.914405132120968,
+        "p95_absolute_error": 2.7238549470513638
+      }
+    }
+  },
+  {
+    "task": "MELD_smooth",
+    "B": 0.7,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0367140577294103,
+    "mae_gap_CI_low": -0.010126500002282973,
+    "mae_gap_CI_high": 0.034783271349040384,
+    "patient_win_fraction_opt": 0.375,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.3710973546200649,
+        "wMAPE": 2.8713207363754623,
+        "p95_absolute_error": 1.1930459158748503
+      },
+      "M-Opt": {
+        "MAE": 0.3847218443208174,
+        "wMAPE": 2.976738571650404,
+        "p95_absolute_error": 1.1633679334171465
+      }
+    }
+  },
+  {
+    "task": "MELD_smooth",
+    "B": 1.0,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0360549160767552,
+    "mae_gap_CI_low": -0.007760720418107735,
+    "mae_gap_CI_high": 0.025355901506616495,
+    "patient_win_fraction_opt": 0.375,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.2627154161633401,
+        "wMAPE": 2.0327286433168266,
+        "p95_absolute_error": 0.878535187169315
+      },
+      "M-Opt": {
+        "MAE": 0.27218759844517926,
+        "wMAPE": 2.106018503958432,
+        "p95_absolute_error": 0.8384492493767142
+      }
+    }
+  },
+  {
+    "task": "MELD_smooth",
+    "B": 3.0,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0216063797678918,
+    "mae_gap_CI_low": -0.004348753320806267,
+    "mae_gap_CI_high": 0.007542406475267067,
+    "patient_win_fraction_opt": 0.40625,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.0903373892778435,
+        "wMAPE": 0.6989745840927899,
+        "p95_absolute_error": 0.3064577916909202
+      },
+      "M-Opt": {
+        "MAE": 0.09228925321782047,
+        "wMAPE": 0.7140768944048029,
+        "p95_absolute_error": 0.2856755801290444
+      }
+    }
+  },
+  {
+    "task": "MELDNA_smooth",
+    "B": 0.03,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.8947243981509942,
+    "mae_gap_CI_low": -1.6108031310681028,
+    "mae_gap_CI_high": -0.7338821567305616,
+    "patient_win_fraction_opt": 0.8125,
+    "methods": {
+      "M-Roots": {
+        "MAE": 11.230590336221042,
+        "wMAPE": 82.82239104380754,
+        "p95_absolute_error": 23.47814577739093
+      },
+      "M-Opt": {
+        "MAE": 10.048283179455744,
+        "wMAPE": 74.10321398009701,
+        "p95_absolute_error": 21.793935731279102
+      }
+    }
+  },
+  {
+    "task": "MELDNA_smooth",
+    "B": 0.1,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 0.8396939263792756,
+    "mae_gap_CI_low": -1.0907844459905793,
+    "mae_gap_CI_high": -0.30238574799501416,
+    "patient_win_fraction_opt": 0.875,
+    "methods": {
+      "M-Roots": {
+        "MAE": 4.600908053471975,
+        "wMAPE": 33.93038073272654,
+        "p95_absolute_error": 12.68782671159784
+      },
+      "M-Opt": {
+        "MAE": 3.8633545483299128,
+        "wMAPE": 28.491134621006868,
+        "p95_absolute_error": 10.998817155508231
+      }
+    }
+  },
+  {
+    "task": "MELDNA_smooth",
+    "B": 0.3,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.2489401678488572,
+    "mae_gap_CI_low": -0.012156537491326256,
+    "mae_gap_CI_high": 0.8557516053833594,
+    "patient_win_fraction_opt": 0.5625,
+    "methods": {
+      "M-Roots": {
+        "MAE": 1.4868749543341588,
+        "wMAPE": 10.965277444404094,
+        "p95_absolute_error": 4.969873195141953
+      },
+      "M-Opt": {
+        "MAE": 1.8570178550363658,
+        "wMAPE": 13.694975451923336,
+        "p95_absolute_error": 7.590276863448844
+      }
+    }
+  },
+  {
+    "task": "MELDNA_smooth",
+    "B": 0.7,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 2.3416668133035854,
+    "mae_gap_CI_low": 0.33623719037539346,
+    "mae_gap_CI_high": 1.3318940699510267,
+    "patient_win_fraction_opt": 0.375,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.5828527377706485,
+        "wMAPE": 4.29837220692691,
+        "p95_absolute_error": 1.9601899750502303
+      },
+      "M-Opt": {
+        "MAE": 1.364846913080665,
+        "wMAPE": 10.065355548187238,
+        "p95_absolute_error": 6.840646141742709
+      }
+    }
+  },
+  {
+    "task": "MELDNA_smooth",
+    "B": 1.0,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 3.133183989534567,
+    "mae_gap_CI_low": 0.4026828278649995,
+    "mae_gap_CI_high": 1.4341116703487524,
+    "patient_win_fraction_opt": 0.25,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.40708631287972163,
+        "wMAPE": 3.0021451040881857,
+        "p95_absolute_error": 1.3690953377111856
+      },
+      "M-Opt": {
+        "MAE": 1.2754763178734032,
+        "wMAPE": 9.40627297438869,
+        "p95_absolute_error": 6.824126613348131
+      }
+    }
+  },
+  {
+    "task": "MELDNA_smooth",
+    "B": 3.0,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 7.889432845990252,
+    "mae_gap_CI_low": 0.494066531089303,
+    "mae_gap_CI_high": 1.566233407250056,
+    "patient_win_fraction_opt": 0.25,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.14311494257848825,
+        "wMAPE": 1.055431761251123,
+        "p95_absolute_error": 0.45238079902770284
+      },
+      "M-Opt": {
+        "MAE": 1.1290957287307346,
+        "wMAPE": 8.326758003915955,
+        "p95_absolute_error": 6.787131902134444
+      }
+    }
+  },
+  {
+    "task": "MELDNA_exact",
+    "B": 0.03,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 11.428973362424925,
+        "wMAPE": 85.17285933142932,
+        "p95_absolute_error": 24.0
+      },
+      "M-Opt": {
+        "MAE": 11.428973362424925,
+        "wMAPE": 85.17285933142932,
+        "p95_absolute_error": 24.0
+      }
+    }
+  },
+  {
+    "task": "MELDNA_exact",
+    "B": 0.1,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 4.656758736861862,
+        "wMAPE": 34.70385696576561,
+        "p95_absolute_error": 13.0
+      },
+      "M-Opt": {
+        "MAE": 4.656758736861862,
+        "wMAPE": 34.70385696576561,
+        "p95_absolute_error": 13.0
+      }
+    }
+  },
+  {
+    "task": "MELDNA_exact",
+    "B": 0.3,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 1.505967894456957,
+        "wMAPE": 11.223019563063904,
+        "p95_absolute_error": 5.0
+      },
+      "M-Opt": {
+        "MAE": 1.505967894456957,
+        "wMAPE": 11.223019563063904,
+        "p95_absolute_error": 5.0
+      }
+    }
+  },
+  {
+    "task": "MELDNA_exact",
+    "B": 0.7,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.6293394722847848,
+        "wMAPE": 4.690066259219531,
+        "p95_absolute_error": 2.0
+      },
+      "M-Opt": {
+        "MAE": 0.6293394722847848,
+        "wMAPE": 4.690066259219531,
+        "p95_absolute_error": 2.0
+      }
+    }
+  },
+  {
+    "task": "MELDNA_exact",
+    "B": 1.0,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.4508607685810812,
+        "wMAPE": 3.3599781540018254,
+        "p95_absolute_error": 1.0140588588588595
+      },
+      "M-Opt": {
+        "MAE": 0.4508607685810812,
+        "wMAPE": 3.3599781540018254,
+        "p95_absolute_error": 1.0140588588588595
+      }
+    }
+  },
+  {
+    "task": "MELDNA_exact",
+    "B": 3.0,
+    "test_patients": 32,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.20084130380380386,
+        "wMAPE": 1.4967423209736799,
+        "p95_absolute_error": 1.0
+      },
+      "M-Opt": {
+        "MAE": 0.20084130380380386,
+        "wMAPE": 1.4967423209736799,
+        "p95_absolute_error": 1.0
+      }
+    }
+  },
+  {
+    "task": "SOFA_lab3",
+    "B": 0.03,
+    "test_patients": 35,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 2.9457142857142857,
+        "wMAPE": 229.1111111111111,
+        "p95_absolute_error": 6.0
+      },
+      "M-Opt": {
+        "MAE": 2.9457142857142857,
+        "wMAPE": 229.1111111111111,
+        "p95_absolute_error": 6.0
+      }
+    }
+  },
+  {
+    "task": "SOFA_lab3",
+    "B": 0.1,
+    "test_patients": 35,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 1.1876190476190476,
+        "wMAPE": 92.37037037037035,
+        "p95_absolute_error": 3.0
+      },
+      "M-Opt": {
+        "MAE": 1.1876190476190476,
+        "wMAPE": 92.37037037037035,
+        "p95_absolute_error": 3.0
+      }
+    }
+  },
+  {
+    "task": "SOFA_lab3",
+    "B": 0.3,
+    "test_patients": 35,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.4142857142857143,
+        "wMAPE": 32.22222222222222,
+        "p95_absolute_error": 2.0
+      },
+      "M-Opt": {
+        "MAE": 0.4142857142857143,
+        "wMAPE": 32.22222222222222,
+        "p95_absolute_error": 2.0
+      }
+    }
+  },
+  {
+    "task": "SOFA_lab3",
+    "B": 0.7,
+    "test_patients": 35,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.17476190476190476,
+        "wMAPE": 13.592592592592592,
+        "p95_absolute_error": 1.0
+      },
+      "M-Opt": {
+        "MAE": 0.17476190476190476,
+        "wMAPE": 13.592592592592592,
+        "p95_absolute_error": 1.0
+      }
+    }
+  },
+  {
+    "task": "SOFA_lab3",
+    "B": 1.0,
+    "test_patients": 35,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.1295238095238095,
+        "wMAPE": 10.074074074074073,
+        "p95_absolute_error": 1.0
+      },
+      "M-Opt": {
+        "MAE": 0.1295238095238095,
+        "wMAPE": 10.074074074074073,
+        "p95_absolute_error": 1.0
+      }
+    }
+  },
+  {
+    "task": "SOFA_lab3",
+    "B": 3.0,
+    "test_patients": 35,
+    "reference_patients": 29,
+    "mae_ratio_opt_over_roots": 1.0,
+    "mae_gap_CI_low": 0.0,
+    "mae_gap_CI_high": 0.0,
+    "patient_win_fraction_opt": 0.0,
+    "methods": {
+      "M-Roots": {
+        "MAE": 0.037142857142857144,
+        "wMAPE": 2.888888888888889,
+        "p95_absolute_error": 0.0
+      },
+      "M-Opt": {
+        "MAE": 0.037142857142857144,
+        "wMAPE": 2.888888888888889,
+        "p95_absolute_error": 0.0
+      }
+    }
+  }
+]

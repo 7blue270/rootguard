@@ -1,0 +1,812 @@
+{
+  "NLR": [
+    {
+      "id": "NLR_10014354",
+      "topic": "What is my systemic inflammation status?",
+      "target_attribute": "nlr_class",
+      "target_risk": "Normal",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "neu 6.86; lym 12.48",
+          "private_value": {
+            "neu": 6.86,
+            "lym": 12.48
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 7.22; lym 7.57",
+          "private_value": {
+            "neu": 7.22,
+            "lym": 7.57
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 14.79",
+          "private_value": {
+            "nlr_sum": 14.79
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 7.47; lym 14.94",
+          "private_value": {
+            "neu": 7.47,
+            "lym": 14.94
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 7.47",
+          "private_value": {
+            "nlr_diff": 7.47
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.5",
+          "private_value": {
+            "nlr": 0.5
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 6.0; lym 13.66",
+          "private_value": {
+            "neu": 6.0,
+            "lym": 13.66
+          }
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 7.49; lym 9.2",
+          "private_value": {
+            "neu": 7.49,
+            "lym": 9.2
+          }
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.8141304347826088",
+          "private_value": {
+            "nlr": 0.8141304347826088
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 6.53; lym 10.69",
+          "private_value": {
+            "neu": 6.53,
+            "lym": 10.69
+          }
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 17.22",
+          "private_value": {
+            "nlr_sum": 17.22
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 9.02; lym 7.84",
+          "private_value": {
+            "neu": 9.02,
+            "lym": 7.84
+          }
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 1.1799999999999997",
+          "private_value": {
+            "nlr_diff": 1.1799999999999997
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 1.1505102040816326",
+          "private_value": {
+            "nlr": 1.1505102040816326
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 9.74; lym 8.53",
+          "private_value": {
+            "neu": 9.74,
+            "lym": 8.53
+          }
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 11.39; lym 5.8",
+          "private_value": {
+            "neu": 11.39,
+            "lym": 5.8
+          }
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 1.963793103448276",
+          "private_value": {
+            "nlr": 1.963793103448276
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 7.13; lym 7.83",
+          "private_value": {
+            "neu": 7.13,
+            "lym": 7.83
+          }
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 14.96",
+          "private_value": {
+            "nlr_sum": 14.96
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 6.81; lym 12.71",
+          "private_value": {
+            "neu": 6.81,
+            "lym": 12.71
+          }
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 5.900000000000001",
+          "private_value": {
+            "nlr_diff": 5.900000000000001
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.5357985837922895",
+          "private_value": {
+            "nlr": 0.5357985837922895
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 7.1; lym 8.11",
+          "private_value": {
+            "neu": 7.1,
+            "lym": 8.11
+          }
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 9.87; lym 3.15",
+          "private_value": {
+            "neu": 9.87,
+            "lym": 3.15
+          }
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 3.1333333333333333",
+          "private_value": {
+            "nlr": 3.1333333333333333
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Elevated",
+          "private_value": {
+            "nlr_class": "Elevated"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 10.67; lym 5.7",
+          "private_value": {
+            "neu": 10.67,
+            "lym": 5.7
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 16.37",
+          "private_value": {
+            "nlr_sum": 16.37
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 8.38; lym 7.7",
+          "private_value": {
+            "neu": 8.38,
+            "lym": 7.7
+          }
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 0.6800000000000006",
+          "private_value": {
+            "nlr_diff": 0.6800000000000006
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 1.0883116883116883",
+          "private_value": {
+            "nlr": 1.0883116883116883
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 8.45; lym 7.57",
+          "private_value": {
+            "neu": 8.45,
+            "lym": 7.57
+          }
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 1.116248348745046",
+          "private_value": {
+            "nlr": 1.116248348745046
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 7.91; lym 10.04",
+          "private_value": {
+            "neu": 7.91,
+            "lym": 10.04
+          }
+        }
+      ]
+    },
+    {
+      "id": "NLR_10035631",
+      "topic": "What is my systemic inflammation status?",
+      "target_attribute": "nlr_class",
+      "target_risk": "Normal",
+      "turns": [
+        {
+          "turn": 1,
+          "speaker": "assistant",
+          "text": "What are your initial measurements?",
+          "user_response": "neu 3.89; lym 4.96",
+          "private_value": {
+            "neu": 3.89,
+            "lym": 4.96
+          }
+        },
+        {
+          "turn": 2,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 3.94; lym 5.91",
+          "private_value": {
+            "neu": 3.94,
+            "lym": 5.91
+          }
+        },
+        {
+          "turn": 3,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 9.85",
+          "private_value": {
+            "nlr_sum": 9.85
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 4,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 1.86; lym 5.36",
+          "private_value": {
+            "neu": 1.86,
+            "lym": 5.36
+          }
+        },
+        {
+          "turn": 5,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 3.5",
+          "private_value": {
+            "nlr_diff": 3.5
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 6,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 1.92; lym 2.11",
+          "private_value": {
+            "neu": 1.92,
+            "lym": 2.11
+          }
+        },
+        {
+          "turn": 7,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.9099526066350712",
+          "private_value": {
+            "nlr": 0.9099526066350712
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 8,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 9,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 0.6; lym 0.18",
+          "private_value": {
+            "neu": 0.6,
+            "lym": 0.18
+          }
+        },
+        {
+          "turn": 10,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 3.3333333333333335",
+          "private_value": {
+            "nlr": 3.3333333333333335
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 11,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 0.12; lym 0.24",
+          "private_value": {
+            "neu": 0.12,
+            "lym": 0.24
+          }
+        },
+        {
+          "turn": 12,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 13,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 0.07; lym 0.16",
+          "private_value": {
+            "neu": 0.07,
+            "lym": 0.16
+          }
+        },
+        {
+          "turn": 14,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 0.23",
+          "private_value": {
+            "nlr_sum": 0.23
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 15,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 0.09",
+          "private_value": {
+            "nlr_diff": 0.09
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 16,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 0.02; lym 0.52",
+          "private_value": {
+            "neu": 0.02,
+            "lym": 0.52
+          }
+        },
+        {
+          "turn": 17,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.038461538461538464",
+          "private_value": {
+            "nlr": 0.038461538461538464
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 18,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.46",
+          "private_value": {
+            "lym": 0.46
+          }
+        },
+        {
+          "turn": 19,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 20,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.043478260869565216",
+          "private_value": {
+            "nlr": 0.043478260869565216
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 21,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.38",
+          "private_value": {
+            "lym": 0.38
+          }
+        },
+        {
+          "turn": 22,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 23,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.39",
+          "private_value": {
+            "lym": 0.39
+          }
+        },
+        {
+          "turn": 24,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 0.41000000000000003",
+          "private_value": {
+            "nlr_sum": 0.41000000000000003
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 25,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.4",
+          "private_value": {
+            "lym": 0.4
+          }
+        },
+        {
+          "turn": 26,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 0.38",
+          "private_value": {
+            "nlr_diff": 0.38
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 27,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.049999999999999996",
+          "private_value": {
+            "nlr": 0.049999999999999996
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 28,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.29",
+          "private_value": {
+            "lym": 0.29
+          }
+        },
+        {
+          "turn": 29,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 30,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.4",
+          "private_value": {
+            "lym": 0.4
+          }
+        },
+        {
+          "turn": 31,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.049999999999999996",
+          "private_value": {
+            "nlr": 0.049999999999999996
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 32,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.3",
+          "private_value": {
+            "lym": 0.3
+          }
+        },
+        {
+          "turn": 33,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 34,
+          "speaker": "assistant",
+          "text": "What is the current nlr_sum, using the latest available measurements?",
+          "user_response": "nlr_sum 0.32",
+          "private_value": {
+            "nlr_sum": 0.32
+          },
+          "math_expression": "nlr_sum=neu+lym"
+        },
+        {
+          "turn": 35,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "lym 0.4",
+          "private_value": {
+            "lym": 0.4
+          }
+        },
+        {
+          "turn": 36,
+          "speaker": "assistant",
+          "text": "What is the current nlr_diff, using the latest available measurements?",
+          "user_response": "nlr_diff 0.38",
+          "private_value": {
+            "nlr_diff": 0.38
+          },
+          "math_expression": "nlr_diff=abs(neu-lym)"
+        },
+        {
+          "turn": 37,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 0.01; lym 0.5",
+          "private_value": {
+            "neu": 0.01,
+            "lym": 0.5
+          }
+        },
+        {
+          "turn": 38,
+          "speaker": "assistant",
+          "text": "What is the current nlr, using the latest available measurements?",
+          "user_response": "nlr 0.02",
+          "private_value": {
+            "nlr": 0.02
+          },
+          "math_expression": "nlr=neu/lym"
+        },
+        {
+          "turn": 39,
+          "speaker": "assistant",
+          "text": "What is the current nlr_class, using the latest available measurements?",
+          "user_response": "nlr_class Normal",
+          "private_value": {
+            "nlr_class": "Normal"
+          },
+          "math_expression": "class=1 if nlr>=3.0 else 0"
+        },
+        {
+          "turn": 40,
+          "speaker": "assistant",
+          "text": "What measurements have changed in the next available laboratory batch?",
+          "user_response": "neu 0.03; lym 0.46",
+          "private_value": {
+            "neu": 0.03,
+            "lym": 0.46
+          }
+        }
+      ]
+    }
+  ]
+}

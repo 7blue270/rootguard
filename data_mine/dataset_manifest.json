@@ -1,0 +1,94 @@
+{
+  "templates": {
+    "ANEMIA": {
+      "patients": 20,
+      "eligible_patients": 25,
+      "requested_patients": 20,
+      "shortfall": 0,
+      "turns_per_patient": 40,
+      "total_turns": 800,
+      "update_count_range": [
+        16,
+        24
+      ],
+      "patients_with_category_change": 18,
+      "update_types": {
+        "class_change": 62,
+        "class_preserving_small_target_change": 324,
+        "task_irrelevant_root_update": 1
+      }
+    },
+    "FIB4": {
+      "patients": 20,
+      "eligible_patients": 21,
+      "requested_patients": 20,
+      "shortfall": 0,
+      "turns_per_patient": 40,
+      "total_turns": 800,
+      "update_count_range": [
+        16,
+        24
+      ],
+      "patients_with_category_change": 17,
+      "update_types": {
+        "class_preserving_large_target_change": 96,
+        "class_preserving_small_target_change": 232,
+        "class_change": 45
+      }
+    },
+    "NLR": {
+      "patients": 2,
+      "eligible_patients": 2,
+      "requested_patients": 20,
+      "shortfall": 18,
+      "turns_per_patient": 40,
+      "total_turns": 80,
+      "update_count_range": [
+        16,
+        17
+      ],
+      "patients_with_category_change": 2,
+      "update_types": {
+        "class_preserving_large_target_change": 21,
+        "class_preserving_small_target_change": 8,
+        "class_change": 4
+      }
+    },
+    "TYG": {
+      "patients": 6,
+      "eligible_patients": 6,
+      "requested_patients": 20,
+      "shortfall": 14,
+      "turns_per_patient": 40,
+      "total_turns": 240,
+      "update_count_range": [
+        16,
+        21
+      ],
+      "patients_with_category_change": 1,
+      "update_types": {
+        "class_preserving_small_target_change": 109,
+        "class_change": 1
+      }
+    }
+  },
+  "unique_patients_across_templates": 25,
+  "source_hashes": {
+    "/home/rootguard_research_audit/datasets/mimic-iv-demo-2.2/labevents.csv.gz": "d51a4cf1ea63245abe7d544b0d50a928e9ee2ec5eb9a5ce85500aed0bd6c6dfc",
+    "/home/rootguard_research_audit/datasets/mimic-iv-demo-2.2/d_labitems.csv.gz": "72ea5f020469fd24543bd98ab3bd0a4f645a5a4b7802d9d52af20d736f9d76db",
+    "/home/rootguard-research/data_mine/sources/patients.csv.gz": "59dcc6cd8450ddf03ad32cc7d76e41caa4c9633541715987f590c74835cf6fae"
+  },
+  "builder_sha256": "89f68fde38adfde64bc0d966dcf066ff1b52dd30106df72eba55075275f04117",
+  "updates_are_real": true,
+  "dialogue_is_synthetic": true,
+  "dp_or_llm_execution": false,
+  "notes": [
+    "Same patients can occur in more than one template; no splits assigned.",
+    "NLR absolute counts only.",
+    "TYG uses recorded glucose without confirmed fasting status; numeric benchmark, not a verified clinical diagnosis.",
+    "No interpolated roots, no duplicate patients to meet quotas, no artificial value changes.",
+    "Window selection uses a fixed task-event coverage rule and no DP method output.",
+    "Small target change means relative change <=20%; descriptive benchmark label, not clinical standard.",
+    "Root ages for FIB4 are year-resolution estimates."
+  ]
+}

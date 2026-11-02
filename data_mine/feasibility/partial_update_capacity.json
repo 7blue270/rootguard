@@ -1,0 +1,114 @@
+{
+  "source": "MIMIC-IV Demo 2.2",
+  "definition": "Initialize from earliest complete same-time panel; thereafter merge actual available partial-root measurements, grouped by charttime, respecting per-root increasing measurement times and result availability; retain older unmeasured roots. Counts describe latest-observed state, not a contemporaneous clinical score. No interpolation, simulated values, splitting one charttime batch, or new independent patients. Event existence checked over whole available admission, not yet over selected 40-turn windows.",
+  "templates": {
+    "ANEMIA": {
+      "patients_by_min_true_update_batches": {
+        "16": 25,
+        "20": 22,
+        "24": 16
+      },
+      "patients_also_with_latest_state_category_event": {
+        "16": 24,
+        "20": 20,
+        "24": 14
+      },
+      "patients_also_with_event_and_small_class_preserving_change": {
+        "16": 24,
+        "20": 20,
+        "24": 14
+      },
+      "max_update_batches_in_one_admission": 62
+    },
+    "FIB4": {
+      "patients_by_min_true_update_batches": {
+        "16": 21,
+        "20": 15,
+        "24": 11
+      },
+      "patients_also_with_latest_state_category_event": {
+        "16": 18,
+        "20": 13,
+        "24": 9
+      },
+      "patients_also_with_event_and_small_class_preserving_change": {
+        "16": 18,
+        "20": 13,
+        "24": 9
+      },
+      "max_update_batches_in_one_admission": 60
+    },
+    "AIP": {
+      "patients_by_min_true_update_batches": {
+        "16": 0,
+        "20": 0,
+        "24": 0
+      },
+      "patients_also_with_latest_state_category_event": {
+        "16": 0,
+        "20": 0,
+        "24": 0
+      },
+      "patients_also_with_event_and_small_class_preserving_change": {
+        "16": 0,
+        "20": 0,
+        "24": 0
+      },
+      "max_update_batches_in_one_admission": 0
+    },
+    "TYG": {
+      "patients_by_min_true_update_batches": {
+        "16": 6,
+        "20": 5,
+        "24": 3
+      },
+      "patients_also_with_latest_state_category_event": {
+        "16": 1,
+        "20": 1,
+        "24": 1
+      },
+      "patients_also_with_event_and_small_class_preserving_change": {
+        "16": 1,
+        "20": 1,
+        "24": 1
+      },
+      "max_update_batches_in_one_admission": 48
+    },
+    "HOMA": {
+      "patients_by_min_true_update_batches": {
+        "16": 0,
+        "20": 0,
+        "24": 0
+      },
+      "patients_also_with_latest_state_category_event": {
+        "16": 0,
+        "20": 0,
+        "24": 0
+      },
+      "patients_also_with_event_and_small_class_preserving_change": {
+        "16": 0,
+        "20": 0,
+        "24": 0
+      },
+      "max_update_batches_in_one_admission": 0
+    },
+    "NLR": {
+      "patients_by_min_true_update_batches": {
+        "16": 2,
+        "20": 2,
+        "24": 2
+      },
+      "patients_also_with_latest_state_category_event": {
+        "16": 2,
+        "20": 2,
+        "24": 2
+      },
+      "patients_also_with_event_and_small_class_preserving_change": {
+        "16": 2,
+        "20": 2,
+        "24": 2
+      },
+      "max_update_batches_in_one_admission": 32
+    }
+  }
+}
