@@ -27,6 +27,17 @@ reproduction/
 # Workflow research outputs
 /experiments/workflow_extensions/outputs/
 
+# Local gate/MELD outputs and research materials (keep experiment source tracked)
+/analysis/
+/_refs/
+/_deck/
+/notes/gate-mechanism-v1.md
+/notes/finite-cache-implementation-plan-20261110.md
+/experiments/gate_dr/outputs/
+/experiments/gate_dr/results*/
+/experiments/meld_na/outputs/
+/experiments/meld_na/results*/
+
 # Python caches
 __pycache__/
 *.pyc
