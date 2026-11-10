@@ -1,5 +1,20 @@
 # RootGuard动态根更新数据集
 
+> **格式说明（2026-11-10）**：根目录四份 JSON 是精简对话版，仅保留对话字段和公式；下文部分元数据说明对应原构建器的完整记录。旧 `dataset_validation.json` 的哈希对应完整版本，不能当作当前精简文件的校验。数值可通过当前校验器回放；来源和时间元数据可从本地原始数据恢复。
+>
+> 新有限缓存实验使用独立的 `data_mine/finite_cache/*.jsonl`，保留同住院批次、实际被测集合（含未变值）、结果可用时间与来源，同时补建 MELD_NA。生成数据已被 Git 忽略，原精简 JSON 不覆盖。新建窗口按最早合格住院和最早时间选择，不按任务类别事件筛选。
+
+新版入口（仓库根，Python 3.12）：
+
+```bash
+python -B -m data_mine.build_datasets --format finite
+python -B -m data_mine.validate_datasets --format finite --input data_mine/finite_cache \
+  --report data_mine/finite_cache/validation.json
+python -B -m data_mine.validate_datasets --format compact --input data_mine
+```
+
+`build_datasets` 默认导出新格式；完整旧格式仅在显式 `--format legacy --output <新空目录>` 时导出。校验器默认只读，只有显式 `--report` 才写报告。原始来源默认位于 `/home/rootguard_research_audit/datasets/mimic-iv-demo-2.2`，可用 `--source` 指定。详细协议见 `experiments/workflow_extensions/finite_cache/README.md`。
+
 来源：MIMIC-IV Clinical Database Demo 2.2真实检验值。对话文本、查询顺序和轮次安排为确定性合成；不是自然采集的医患对话。未调用LLM或运行DP机制。
 
 |文件|患者数|每人问答轮数|每人更新数|有类别变化的患者|

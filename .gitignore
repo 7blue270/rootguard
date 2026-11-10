@@ -37,6 +37,7 @@ reproduction/
 /experiments/gate_dr/results*/
 /experiments/meld_na/outputs/
 /experiments/meld_na/results*/
+/data_mine/finite_cache/
 
 # Python caches
 __pycache__/

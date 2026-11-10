@@ -164,21 +164,49 @@ def build(t,key,start,states,demo):
   turns.append(entry)
  return record
 
-def main():
+def legacy_main(output):
+ output=Path(output)
+ output.mkdir(parents=True,exist_ok=True)
+ if any((output/f'{t}.json').exists() for t in ROOTS):
+  raise FileExistsError('Legacy export requires an empty output directory; existing dialogue files are preserved')
  demo,by=load();summary={};all_ids=set()
  for t in ROOTS:
   chosen,capacity=choose(t,by,demo);records=[build(t,key,start,states,demo) for key,start,states in chosen]
-  (BASE/f'{t}.json').write_text(json.dumps({t:records},indent=2,ensure_ascii=False)+'\n')
+  (output/f'{t}.json').write_text(json.dumps({t:records},indent=2,ensure_ascii=False)+'\n')
   all_ids.update(r['subject_id'] for r in records)
   summary[t]={'patients':len(records),'eligible_patients':capacity,'requested_patients':20,'shortfall':20-len(records),'turns_per_patient':40,
    'total_turns':40*len(records),'update_count_range':[min(r['update_count'] for r in records),max(r['update_count'] for r in records)],
    'patients_with_category_change':sum(any(u['old_class']!=u['new_class'] for u in r['updates']) for r in records),
    'update_types':dict(Counter(u['type'] for r in records for u in r['updates']))}
  sourcefiles=[SOURCE/'labevents.csv.gz',SOURCE/'d_labitems.csv.gz',BASE/'sources/patients.csv.gz']
- (BASE/'dataset_manifest.json').write_text(json.dumps({'templates':summary,'unique_patients_across_templates':len(all_ids),
+ (output/'dataset_manifest.json').write_text(json.dumps({'templates':summary,'unique_patients_across_templates':len(all_ids),
   'source_hashes':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in sourcefiles},'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
   'updates_are_real':True,'dialogue_is_synthetic':True,'dp_or_llm_execution':False,
   'notes':['Same patients can occur in more than one template; no splits assigned.','NLR absolute counts only.','TYG uses recorded glucose without confirmed fasting status; numeric benchmark, not a verified clinical diagnosis.','No interpolated roots, no duplicate patients to meet quotas, no artificial value changes.','Window selection uses a fixed task-event coverage rule and no DP method output.','Small target change means relative change <=20%; descriptive benchmark label, not clinical standard.','Root ages for FIB4 are year-resolution estimates.']},ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(summary,indent=2))
+
+def main():
+ import argparse
+ # Support both `python -m data_mine.build_datasets` and the legacy script entry.
+ import sys
+ sys.path.insert(0,str(BASE.parent))
+ from data_mine.finite_trajectories import build,DEFAULT_OUT,DEFAULT_SOURCE
+ p=argparse.ArgumentParser(description=__doc__)
+ p.add_argument('--format',choices=['finite','legacy'],default='finite')
+ p.add_argument('--output',type=Path,default=DEFAULT_OUT)
+ p.add_argument('--source',type=Path,default=DEFAULT_SOURCE)
+ p.add_argument('--templates',nargs='+',default=['ANEMIA','FIB4','NLR','TYG','MELD_NA'])
+ p.add_argument('--turns',type=int,default=40)
+ p.add_argument('--min-updates',type=int,default=16)
+ p.add_argument('--max-updates',type=int,default=24)
+ p.add_argument('--patients',type=int,default=20)
+ p.add_argument('--overwrite',action='store_true')
+ a=p.parse_args()
+ if a.format=='legacy':
+  global SOURCE
+  SOURCE=a.source
+  legacy_main(a.output)
+ else:
+  print(json.dumps(build(a.output,a.source,a.templates,a.turns,a.min_updates,a.max_updates,a.patients,a.overwrite),indent=2))
 
 if __name__=='__main__':main()

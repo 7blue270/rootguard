@@ -1,0 +1,18 @@
+{
+  "templates": ["MELD_NA", "ANEMIA", "FIB4"],
+  "seed": 20261110,
+  "split_fractions": [0.5, 0.25],
+  "repeats": 20,
+  "bootstrap": 500,
+  "budget_grid": {"low": 80, "high": 1280, "ratio": 1.1},
+  "periods": [2, 3, 4, 5, 6, 8, 10, 12],
+  "quantiles": [0.5, 0.75, 0.9, 0.95, 0.99],
+  "targets": {"MELD_NA": [4.0, 5.0, 6.0], "ANEMIA": [2.0, 3.0, 4.0], "FIB4": [1.0, 2.0, 3.0]},
+  "target_reference_budgets": [320, 480, 640, 960],
+  "fixed_gate_period": 4,
+  "significant_delta": 0.02,
+  "mechanism": {"mu_a": 0.5, "c": 0.125, "eps_max": 40.0, "eps_min": 0.01, "q_min": 0.05, "gamma": 1.0, "age_mode": "per_root"},
+  "refine": true,
+  "save_logs": true,
+  "plots": false
+}
