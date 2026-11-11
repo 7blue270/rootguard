@@ -101,3 +101,32 @@ $FC_PY -B -m experiments.workflow_extensions.finite_cache.report \
 批量重复仅适用于当前不依赖噪声的公开调度，已同逐次参考实现核对全部指标与发布值。全部20次重复保留指标，逐轮完整账本默认保存repeat=0；公开调度/收费在所有重复中相同，噪声流保持独立。
 
 严格显著阈值比较采用1e-12容差排除十进制相等值的浮点误计。首轮历史结果的边界修订仅重算事件/Miss计数，原始指标与修订记录保留在运行目录；未重采噪声或重新选参。当前源码从头运行即得到修正语义，无需再次调用`rescore_significance`。
+
+## 更新时间配对诊断
+
+`matched_timing` 只读已有首轮的划分、公开统计、公式、预算与 validation 选择，不重拟合。
+M1 每对先运行；离线 `matched_periodic` 在合法机会中寻找与 K 个等间隔对话轮目标最接近的 K 个不同时间，
+复用 M1 的初始化和按序实际 epsilon 总额。共用 `Cache.allocate/publish`，只发布当时测量的活动根。
+逐根预算及根集合差异全部记录，不保证逐根费用相等。
+噪声按 `(seed,subject,trajectory,B,repeat,action_index,root)` 配对，不含 turn。
+
+```bash
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.matched_timing \
+  --source experiments/workflow_extensions/outputs/finite_cache/round1_meld_20261110 \
+  --output experiments/workflow_extensions/outputs/finite_cache/matched_timing_precheck_new \
+  --repeats 2
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.matched_timing \
+  --source experiments/workflow_extensions/outputs/finite_cache/round1_meld_20261110 \
+  --output experiments/workflow_extensions/outputs/finite_cache/matched_timing_formal_new \
+  --precheck experiments/workflow_extensions/outputs/finite_cache/matched_timing_precheck_new \
+  --repeats 50
+```
+
+R=2 会先运行全部单元测试；正式运行要求预检查成功且源码、冻结来源、预指定分析计划一致。
+不允许覆盖输出目录。`configs/matched_timing.json` 预先固定六个前沿附近预算和2000次配对 bootstrap，
+主检验为六预算患者内均值。患者均权，另保留患者/机制两层区间、机制单独区间及方差分量。
+全网格结果也保存，逐预算 CI 是点态诊断。
+
+输出包含 `matched_metrics.jsonl`、`matched_schedules.jsonl`、`paired_summary.csv`、`REPORT-zh.md`、
+逐患者差值、刷新时间表、根覆盖差异、预算停止时间及审计。该对照使用 M1 最终 K/费用与完整公开机会表，
+属于离线诊断；复用的 test 不能代替新划分确认。单任务 MELD 的中间节点不能充当多个独立任务。

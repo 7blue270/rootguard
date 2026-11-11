@@ -119,7 +119,48 @@ class Cache:
         if not self.frozen and (self.remaining < self.eps_min or self.method == 'B0'):
             self.frozen, self.stop_turn = True, turn
 
+    def allocate(self, indices, total):
+        """Common root allocator; total is supplied by the scheduling policy."""
+        ii = np.asarray(indices, int)
+        if not len(ii) or total <= 0 or total > self.remaining + 1e-9:
+            raise ValueError('Invalid publication indices or total epsilon')
+        ratio = np.maximum(self.root_remaining[ii] / self.quota[ii], self.q_min)
+        base = np.ones(len(ii)) if self.method == 'B1' else np.sqrt(self.h[ii])
+        weights = base * ratio ** self.gamma
+        eps = total * weights / weights.sum()
+        assert np.all(eps > 0) and np.isclose(eps.sum(), total)
+        return eps
+
+    def decide_scheduled(self, batch: PublicBatch, total=None):
+        """Offline matched-timing diagnostic, using the ordinary ledger/publish.
+
+        None means skip. A positive total reuses the ordinary root selection and
+        allocator at this opportunity. This API never accepts root values.
+        """
+        if not isinstance(batch, PublicBatch):
+            raise TypeError('Only the current public batch is accepted')
+        if not self.initialized or self._pending is not None:
+            raise RuntimeError('Initialize first and finish the preceding decision')
+        self.batch_count += 1
+        self.ages += 1
+        if self.batch_count > self.N_max:
+            raise ValueError('Public N_max was violated')
+        self._check_stop(batch.turn)
+        idx = tuple(i for i, r in enumerate(self.roots) if r in batch.measured_roots and self.active[i])
+        ages = tuple(int(v) for v in self.ages)
+        if total is None:
+            return Decision(batch.turn, (), (), 'none', False, False, None, None, ages)
+        if self.frozen or not idx:
+            raise RuntimeError('A matched release must have budget and currently measured active roots')
+        eps = self.allocate(idx, total)
+        decision = Decision(batch.turn, idx, tuple(float(v) for v in eps),
+                            'matched_periodic', False, False, None, None, ages)
+        self._pending = decision
+        return decision
+
     def decide(self, batch: PublicBatch):
+        if not isinstance(batch, PublicBatch):
+            raise TypeError('Only the current public batch is accepted')
         if not self.initialized or self._pending is not None:
             raise RuntimeError('Initialize first and finish the preceding decision')
         self.batch_count += 1
@@ -137,11 +178,7 @@ class Cache:
             self.frozen, self.stop_turn = True, batch.turn
             return Decision(batch.turn, (), (), 'frozen', False, False, None, None, ages)
         ii = np.array(idx)
-        ratio = np.maximum(self.root_remaining[ii] / self.quota[ii], self.q_min)
-        base = np.ones(len(ii)) if self.method == 'B1' else np.sqrt(self.h[ii])
-        weights = base * ratio ** self.gamma
-        eps = total * weights / weights.sum()
-        assert np.all(eps > 0) and np.isclose(eps.sum(), total)
+        eps = self.allocate(idx, total)
         keep = float(np.sum(self.h[ii] * (self.ages[ii] * self.C[ii] + 1 / self.last_eps[ii])))
         refresh = float(np.sum(self.h[ii] / eps))
         gate = keep > refresh

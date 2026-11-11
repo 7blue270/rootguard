@@ -1,0 +1,21 @@
+{
+  "templates": ["MELD_NA"],
+  "seed": 20261110,
+  "split_fractions": [0.5, 0.25],
+  "repeats": 20,
+  "bootstrap": 500,
+  "budget_grid": {"low": 80, "high": 960, "ratio": 1.1},
+  "periods": [2, 3, 4, 5, 6, 8, 10, 12],
+  "quantiles": [0.5, 0.75, 0.9, 0.95, 0.99],
+  "targets": {},
+  "target_reference_budgets": [320, 640, 960],
+  "fixed_gate_period": 4,
+  "significant_delta": 0.05,
+  "significant_tolerance": 1e-12,
+  "mechanism": {"mu_a": 0.5, "c": 0.125, "eps_max": 40.0, "eps_min": 0.01, "q_min": 0.05, "gamma": 1.0, "age_mode": "per_root"},
+  "refine": false,
+  "save_logs": true,
+  "log_repeats": 1,
+  "batch_repeats": true,
+  "plots": false
+}

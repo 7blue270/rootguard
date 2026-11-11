@@ -1,0 +1,8 @@
+{
+  "primary_budgets": [592.01999554, 651.22199509, 716.34419460, 787.97861406, 866.77647547, 960.0],
+  "primary_endpoint": "patient_equal_mean_delta_across_prespecified_six_budgets",
+  "bootstrap": 2000,
+  "confidence": 0.95,
+  "uniform_schedule": "minimum_squared_dialogue_distance_to_K_equal_interior_targets_earlier_ties",
+  "interpretation": "offline_mechanism_diagnostic_reused_test_no_retuning"
+}
