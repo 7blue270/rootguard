@@ -1,0 +1,14 @@
+{
+  "primary_budgets": [592.01999554, 651.22199509, 716.34419460, 787.97861406, 866.77647547, 960.0],
+  "repeats": 50,
+  "random_schedules_per_pair": 50,
+  "schedule_seed": 2026111101,
+  "bootstrap": 2000,
+  "availability": "latest_observed_at_original_measurement_opportunities",
+  "random_sampling": "iid_uniform_with_replacement_over_all_feasible_ordered_calendars",
+  "oracle": "exact_exhaustive_enumeration",
+  "oracle_chunk_size": 2048,
+  "gain_reference": "random_mean_primary_and_uniform_secondary; ratio_of_patient_equal_mean_gains",
+  "precheck_budgets": [592.01999554, 960.0],
+  "interpretation": "offline_mechanism_diagnostic_reused_test_no_retuning"
+}

@@ -130,3 +130,58 @@ R=2 会先运行全部单元测试；正式运行要求预检查成功且源码�
 输出包含 `matched_metrics.jsonl`、`matched_schedules.jsonl`、`paired_summary.csv`、`REPORT-zh.md`、
 逐患者差值、刷新时间表、根覆盖差异、预算停止时间及审计。该对照使用 M1 最终 K/费用与完整公开机会表，
 属于离线诊断；复用的 test 不能代替新划分确认。单任务 MELD 的中间节点不能充当多个独立任务。
+
+## 纯更新时间配对诊断
+
+`pure_timing` 进一步固定初始化和每个有序动作包的根集合、逐根epsilon、逐根单位Laplace噪声。
+两种日程通过同一重放函数、原`Cache._publish`和任务投影执行；不重新分配预算。
+用户确认的合法口径是：仍只在原测量批次机会发布，但可使用截至当轮已观测的各根最新值，
+无需本批次同时重测所有根。每条发布记录保留输入和观测来源轮次；禁止未来测量。
+有序最小平方距离匹配使用公开机会和根观测可用性；失败整对排除并报告患者、轨迹和动作覆盖率。
+
+```bash
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.pure_timing \
+  --source experiments/workflow_extensions/outputs/finite_cache/round1_meld_20261110 \
+  --prior experiments/workflow_extensions/outputs/finite_cache/matched_timing_r50_20261110 \
+  --output experiments/workflow_extensions/outputs/finite_cache/pure_timing_precheck_new \
+  --repeats 2
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.pure_timing \
+  --source experiments/workflow_extensions/outputs/finite_cache/round1_meld_20261110 \
+  --prior experiments/workflow_extensions/outputs/finite_cache/matched_timing_r50_20261110 \
+  --output experiments/workflow_extensions/outputs/finite_cache/pure_timing_r50_new \
+  --precheck experiments/workflow_extensions/outputs/finite_cache/pure_timing_precheck_new \
+  --repeats 50
+```
+
+`configs/pure_timing.json`固定上一轮的六个精确预算、2000次bootstrap、最新观测口径及长期作用定义。
+长期作用仅在离线评估中跳过一个动作，保留后续所有动作，比较该轮至T的误差；动作效应非加性。
+主分析只纳入六预算均严格匹配成功的轨迹；逐预算另报各自有效样本。
+输出`pure_timing_metrics.jsonl`、`pure_timing_schedules.jsonl`、`matching_failures.jsonl`、
+`coverage.json`、`paired_summary.csv`、`audit.json`及`REPORT-zh.md`。
+门控、公开统计、数据划分、公式、原网格和validation选择均只读冻结，不新增test调参。
+
+## 随机时间与精确Oracle补测
+
+`timing_supplement`直接读取纯时间实验已保存的动作包与M1/均匀结果。
+`ScheduleSpace`对全部合法有序日程精确计数，均匀抽取编号并反解，
+每个固定噪声包抽50个日程（有放回，重复及差结果不筛除）。日程种子单独冻结在配置中。
+Oracle完整枚举同一空间，用分段缓存误差的精确经验分布前缀加速评分；
+最优日程再通过原`Cache`路径重放核对，不以随机样本最好者代替精确最优。
+
+```bash
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.timing_supplement \
+  --source experiments/workflow_extensions/outputs/finite_cache/pure_timing_r50_20261111 \
+  --output experiments/workflow_extensions/outputs/finite_cache/timing_supplement_precheck_new \
+  --repeats 2
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.timing_supplement \
+  --source experiments/workflow_extensions/outputs/finite_cache/pure_timing_r50_20261111 \
+  --output experiments/workflow_extensions/outputs/finite_cache/timing_supplement_r50_new \
+  --precheck experiments/workflow_extensions/outputs/finite_cache/timing_supplement_precheck_new \
+  --repeats 50
+```
+
+`configs/timing_supplement.json`冻结六预算、R=50、每包50日程、bootstrap=2000；
+小规模预检查为首尾两个预算的R=2，正式运行必须通过预检查且源码/来源/计划一致。
+输出全部随机日程、精确Oracle日程、四方法指标、患者级/两层区间、
+额外嵌套日程抽样的三层区间、随机胜率/百分位、收益比例、审计及中文报告。
+Oracle可见真值和固定包已实现噪声，仅为离线上界，不参与调参或部署结论。
