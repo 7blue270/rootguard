@@ -185,3 +185,32 @@ $FC_PY -B -m experiments.workflow_extensions.finite_cache.timing_supplement \
 输出全部随机日程、精确Oracle日程、四方法指标、患者级/两层区间、
 额外嵌套日程抽样的三层区间、随机胜率/百分位、收益比例、审计及中文报告。
 Oracle可见真值和固定包已实现噪声，仅为离线上界，不参与调参或部署结论。
+
+## 根集合 × 逐根预算因素拆分
+
+`root_allocation_factorial`运行T（M1/均匀时间）×S（M1/原匹配均匀根包）×A（quota/sqrt_h）八组合。
+初始化、K、有序动作编号、逐次总epsilon全部固定；各S/A独立维护原Cache软配额账本。
+跨时间使用截至当轮的最新已知值，根级单位噪声仍按动作序号配对。
+三条历史基线逐动作、逐根epsilon/值和主次指标断言复现。
+
+```bash
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.root_allocation_factorial \
+  --pure-source experiments/workflow_extensions/outputs/finite_cache/pure_timing_r50_20261111 \
+  --matched-source experiments/workflow_extensions/outputs/finite_cache/matched_timing_r50_20261110 \
+  --output experiments/workflow_extensions/outputs/finite_cache/root_allocation_precheck_new \
+  --repeats 2
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.root_allocation_factorial \
+  --pure-source experiments/workflow_extensions/outputs/finite_cache/pure_timing_r50_20261111 \
+  --matched-source experiments/workflow_extensions/outputs/finite_cache/matched_timing_r50_20261110 \
+  --output experiments/workflow_extensions/outputs/finite_cache/root_allocation_r50_new \
+  --precheck experiments/workflow_extensions/outputs/finite_cache/root_allocation_precheck_new \
+  --repeats 50
+```
+
+`configs/root_allocation_factorial.json`冻结六预算和2000次患者级/两层bootstrap；
+小规模预检查使用首尾两预算R=2。主分析报告根集合、分配主效应以及根×分配的差中之差；
+条件效应和逐预算结果另报，不用test选参。
+原M1与原匹配均匀端点同为quota，故其直接Shapley为固定quota下的T/S分解，A直接贡献为0。
+另报完整立方三因素Shapley及共同sqrt_h基点的Shapley差分；三种加和端点分别显式验证。
+输出`factorial_metrics.jsonl`、`factorial_actions.jsonl`、`effect_summary.csv`、
+逐组合/逐根统计、Shapley归因、审计及`REPORT-zh.md`。

@@ -1,0 +1,14 @@
+{
+  "primary_budgets": [592.01999554, 651.22199509, 716.34419460, 787.97861406, 866.77647547, 960.0],
+  "repeats": 50,
+  "bootstrap": 2000,
+  "time_levels": ["M1_time", "uniform_time"],
+  "roots_levels": ["M1_roots", "uniform_roots"],
+  "allocation_levels": ["quota", "sqrt_h"],
+  "precheck_budgets": [592.01999554, 960.0],
+  "availability": "latest_observed_at_original_measurement_opportunities",
+  "interaction": "(Y(S_M,quota)-Y(S_U,quota))-(Y(S_M,sqrt_h)-Y(S_U,sqrt_h))",
+  "primary_effects": "time_averaged_root_effect; time_roots_averaged_allocation_effect; time_averaged_root_allocation_DID",
+  "attribution": "fixed_quota_two_factor_shapley; full_three_factor_shapley; common_sqrt_h_reference_shapley_difference",
+  "interpretation": "mechanism_diagnostic_reused_test_no_retuning"
+}
