@@ -57,7 +57,11 @@ def validate_finite(path, raw, demographics):
         state = dict(rec['initial_state'])
         batches = [(rec['initial_source_rows'], rec['initial_available_time'], rec['initial_measurement_time'])]
         batches += [(e['source_rows'], e['available_time'], e['measurement_time']) for e in rec['events']]
+        if rec['template'] == 'BUN_CR':
+            assert rec['T'] == 40 and len(rec['events']) >= 16
+            assert all(a[2] < b[2] for a, b in zip(batches, batches[1:]))
         for bi, (rows, available, measured) in enumerate(batches):
+            before_state = dict(state)
             values = rec['initial_state'] if bi == 0 else rec['events'][bi - 1]['values']
             assert set(rows) == set(values) - {'age'}
             for key, source in rows.items():
@@ -74,6 +78,8 @@ def validate_finite(path, raw, demographics):
                     unchanged += 1
                 state[key] = values[key]
                 refs += 1
+            if rec['template'] == 'BUN_CR' and bi:
+                assert state != before_state  # A real numerical change, not just a repeated draw.
         if rec['template'] == 'FIB4':
             demo = demographics[rec['subject_id']]
             age = int(demo['anchor_age']) + int(rec['initial_measurement_time'][:4]) - int(demo['anchor_year'])

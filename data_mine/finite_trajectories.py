@@ -19,20 +19,20 @@ DEFAULT_OUT = ROOT / 'data_mine/finite_cache'
 SCHEMA = 'finite-cache-v1'
 ROOTS = {'ANEMIA': ['hb', 'hct', 'rbc'], 'FIB4': ['age', 'ast', 'alt', 'plt'],
          'NLR': ['neu', 'lym'], 'TYG': ['tg', 'glu'],
-         'MELD_NA': ['bil', 'inr', 'cr', 'na']}
+         'MELD_NA': ['bil', 'inr', 'cr', 'na'], 'BUN_CR': ['bun', 'cr']}
 ITEMS = {'51222': 'hb', '51221': 'hct', '51279': 'rbc', '50861': 'alt',
          '50878': 'ast', '51265': 'plt', '51133': 'lym', '52075': 'neu',
          '51000': 'tg', '50931': 'glu', '50885': 'bil', '53089': 'bil',
          '51237': 'inr', '51675': 'inr', '50912': 'cr', '52546': 'cr',
-         '50983': 'na', '52623': 'na'}
+         '50983': 'na', '52623': 'na', '51006': 'bun'}
 UNITS = {'hb': ['g/dL'], 'hct': ['%'], 'rbc': ['m/uL'], 'ast': ['IU/L'],
          'alt': ['IU/L'], 'plt': ['K/uL'], 'lym': ['K/uL'], 'neu': ['K/uL'],
          'tg': ['mg/dL'], 'glu': ['mg/dL'], 'bil': ['mg/dL'], 'cr': ['mg/dL'],
-         'inr': [''], 'na': ['mEq/L', 'mmol/L']}
+         'inr': [''], 'na': ['mEq/L', 'mmol/L'], 'bun': ['mg/dL']}
 NODES = {'ANEMIA': ['mcv', 'mch', 'mchc'],
          'FIB4': ['fib4_prod', 'fib4_denom', 'fib4'],
          'NLR': ['nlr_sum', 'nlr_diff', 'nlr'], 'TYG': ['tyg_prod', 'tyg_half', 'tyg'],
-         'MELD_NA': ['bil_term', 'inr_term', 'cr_term', 'meld', 'meld_na']}
+         'MELD_NA': ['bil_term', 'inr_term', 'cr_term', 'meld', 'meld_na'], 'BUN_CR': ['ratio']}
 TARGETS = {k: v[-1] for k, v in NODES.items()}
 
 

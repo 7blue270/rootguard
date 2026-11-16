@@ -19,6 +19,7 @@ DOMAINS = {
     'NLR': {'neu': [.001, 100.], 'lym': [.001, 100.]},
     'TYG': {'tg': [1., 3000.], 'glu': [1., 1000.]},
     'MELD_NA': {'bil': [.2, 40.], 'inr': [.8, 9.], 'cr': [.2, 15.], 'na': [115., 155.]},
+    'BUN_CR': {'bun': [1., 200.], 'cr': [.2, 15.]},
 }
 # (coefficient, exponents) are exactly the original positive-root formulas.
 MONOMIALS = {
@@ -27,6 +28,7 @@ MONOMIALS = {
              'fib4': (1., [1, 1, -.5, -1])},
     'TYG': {'tyg_prod': (1., [1, 1]), 'tyg_half': (.5, [1, 1])},
     'NLR': {'nlr': (1., [1, -1])},
+    'BUN_CR': {'ratio': (1., [1, -1])},
 }
 FORMULA_VERSION = 'rootguard-continuous-v1_meld-pilot-always-na-v1'
 
@@ -79,7 +81,7 @@ class Workload:
         return self.evaluate(self.denormalize(np.clip(cache, 0., 1.)))
 
     def classes(self, target):
-        if self.template == 'MELD_NA':
+        if self.template in ('MELD_NA', 'BUN_CR'):
             return None  # No invented clinical categories for this numerical workload.
         a = np.asarray(target)
         return np.array([get_risk_class(self.template, v) for v in a.ravel()]).reshape(a.shape)

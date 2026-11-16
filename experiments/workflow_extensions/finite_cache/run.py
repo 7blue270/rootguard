@@ -126,9 +126,12 @@ def simulate(rec, workload, stats, method, parameter, B, repeat, config, *, deta
     return metrics, {'decisions': logs, 'rounds': snapshots, 'transcript': cache.transcript}
 
 
-def run(config, output, data_directory, method_document=None):
+def run(config, output, data_directory, method_document=None, *, refinement_methods=None, sensitivity_periods=None,
+        protocol=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
+    if protocol is not None:
+        write_json(output / 'protocol.json', protocol)
     records = data.load(data_directory, config['templates'])
     assignment = data.split(records, config['seed'], *config['split_fractions'])
     write_json(output / 'splits.json', assignment)
@@ -156,7 +159,8 @@ def run(config, output, data_directory, method_document=None):
                 key = (part, template, method, parameter, B)
                 if key in finished:
                     continue
-                for rec in data.partition(records, assignment, part, template):
+                input_part = 'test' if part == 'test_period_sensitivity' else part
+                for rec in data.partition(records, assignment, input_part, template):
                     assert not rec['subject_id'] in statistics[template]['train_subject_ids']
                     if config.get('batch_repeats', False):
                         from .batch import simulate_repeats
@@ -227,7 +231,7 @@ def run(config, output, data_directory, method_document=None):
             crossings = []
             for template in config['templates']:
                 for tau in targets[template]:
-                    for method in ['B2p', 'M1-a']:
+                    for method in (refinement_methods or ['B2p', 'M1-a']):
                         chosen = selections[template][str(tau)][method]
                         b = chosen['validation_B_min']
                         crossings.append(b)
@@ -248,6 +252,12 @@ def run(config, output, data_directory, method_document=None):
             for method, parameter in sorted(selected):
                 execute('test', template, method, parameter, budgets)
             print(f'{template}: selected test runs complete', flush=True)
+        # Diagnostic-only period sweep. It runs AFTER selections are frozen, and
+        # is excluded from test/frontier inference and any validation selection.
+        if sensitivity_periods:
+            for template in config['templates']:
+                for period in sensitivity_periods:
+                    execute('test_period_sensitivity', template, 'B2', f'P={period}', budgets)
     source_files = sorted(Path(__file__).parent.rglob('*.py'))
     source_files += [ROOT / p for p in ['data_mine/finite_trajectories.py', 'data_mine/build_datasets.py',
                                       'data_mine/build_meld_na.py', 'utils/risk_class.py']]
@@ -265,6 +275,8 @@ def run(config, output, data_directory, method_document=None):
                 'patient_counts': {t: {part: len(data.partition(records, assignment, part, t)) for part in
                                            ['train', 'validation', 'test']} for t in config['templates']},
                 'logs_contain_local_evaluation_diagnostics': True}
+    metadata['refinement_methods'] = refinement_methods or ['B2p', 'M1-a']
+    metadata['diagnostic_only_sensitivity_periods'] = sensitivity_periods or []
     write_json(output / 'metadata.json', metadata)
     ss = summaries(rows, config['bootstrap'], config['seed'])
     ff = frontiers(ss, selections, targets)

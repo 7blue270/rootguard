@@ -214,3 +214,21 @@ $FC_PY -B -m experiments.workflow_extensions.finite_cache.root_allocation_factor
 另报完整立方三因素Shapley及共同sqrt_h基点的Shapley差分；三种加和端点分别显式验证。
 输出`factorial_metrics.jsonl`、`factorial_actions.jsonl`、`effect_summary.csv`、
 逐组合/逐根统计、Shapley归因、审计及`REPORT-zh.md`。
+
+## 跨模板强周期对照（Round 2）
+
+`round2_multi`复用`run.py`和round1配置，比较ANEMIA、FIB4、BUN_CR的五方法预算前沿。
+患者跨模板去重后统一三划分；公开统计只取train，P/q及三个目标只取validation。
+按本轮明确的协议开启1.05局部细化，其余参数与round1一致；全部整数P=2..12另存为诊断，
+7/9/11不进入主选择。机制、收费和缓存发布实现不变。
+
+```bash
+$FC_PY -B -m data_mine.build_bun_cr --help
+$FC_PY -B -m experiments.workflow_extensions.finite_cache.round2_multi \
+  --output experiments/workflow_extensions/outputs/finite_cache/round2_multi_new
+```
+
+BUN_CR构建器只新增数据，不重建ANEMIA/FIB4；要求同住院、charttime排序、至少16次数值改变，
+保留40轮及逐事件来源。输出目录必须不存在，避免覆盖历史结果。
+报告同时给患者级和患者＋机制两层区间；达标前沿删失时显示覆盖率，不将未达标记成960。
+`REPORT-zh.md`、`cross_template.csv`、`Bmin_mean.csv`、`budget960.csv`及周期敏感性图仅供内部go/no-go。
