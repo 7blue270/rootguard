@@ -1,0 +1,52 @@
+{
+  "cohorts": {
+    "2019_BUN": [
+      "finite_cache_physionet2019",
+      "BUN_CR"
+    ],
+    "2012_BUN": [
+      "finite_cache_physionet2012",
+      "BUN_CR"
+    ],
+    "2012_FIB4": [
+      "finite_cache_physionet2012",
+      "FIB4"
+    ],
+    "old_BUN_CR": [
+      "finite_cache",
+      "BUN_CR"
+    ],
+    "old_ANEMIA": [
+      "finite_cache",
+      "ANEMIA"
+    ],
+    "old_FIB4": [
+      "finite_cache",
+      "FIB4"
+    ],
+    "old_MELD_NA": [
+      "finite_cache",
+      "MELD_NA"
+    ]
+  },
+  "anchors": [
+    80.0,
+    318.99,
+    651.22,
+    960.0
+  ],
+  "iso_grid": [
+    80.0,
+    160.0,
+    318.99,
+    480.0,
+    651.22,
+    960.0
+  ],
+  "thresholds": "/home/rootguard-research/experiments/workflow_extensions/outputs/m4_carry/real_v1_20261116/targets.json",
+  "selection": "min validation patient mean MAE per budget and public density cell; empty cell uses all validation; no test selection",
+  "paired_seed": 99361116,
+  "repeats": 4,
+  "privacy": "raw transcript reference-bank full-trajectory MAP normalized root MAE",
+  "primary": "four anchor equal-weight patient trajectory MAE; compare m8, static and forced dynamic; exploratory historical test"
+}
